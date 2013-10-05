@@ -10,57 +10,95 @@
   </head>
   <body>
     <header id="header">
-      <div class="wrap">
-        <hgroup id="logo">
-          <h1 id="name">bbxdesign</h1>
-          <h2 id="description">Web Designer / Intégrateur WordPress</h2>
-        </hgroup>
-        <nav id="nav">
-          <ul>
-            <li><a>Home</a></li>
-            <li><a>Skills</a></li>
-            <li><a>Portfolio</a></li>
-            <li><a>Timeline</a></li>
-            <li><a>Contact</a></li>
-            <li><a>Blog</a></li>
-          </ul>
-        </nav>
-      </div>
+      <hgroup id="logo">
+        <h1 id="name">bbxdesign</h1>
+        <h2 id="description">Web Designer / Intégrateur WordPress</h2>
+      </hgroup>
+      <nav id="nav">
+        <ul>
+          <li><a id="nav-home" class="nav">Home</a></li>
+          <li><a id="nav-skills" class="nav">Skills</a></li>
+          <li><a id="nav-portfolio" class="nav">Portfolio</a></li>
+          <li><a id="nav-timeline" class="nav">Timeline</a></li>
+          <li><a id="nav-contact" class="nav">Contact</a></li>
+          <li><a id="nav-blog" class="nav">Blog</a></li>
+        </ul>
+      </nav>
     </header>
     <section id="hello">
-      <div class="wrap">
-        <hgroup>
-          <h3 id="hey">Web Designer &amp; CSS Guru</h3>
-          <h4 id="there">
-            bbx est un fou : il dessine au pixel pr&egrave;s, il code hyper propre,<br>
-            il d&eacute;v des th&egrave;mes WordPress, et &eacute;crit m&ecirc;me des tutos gratuits.<br>
-            Bref, il sait tout faire, m&ecirc;me les cheesecakes.
-          </h4>
-        </hgroup>
+      <div id="hello-background"></div>
+      <hgroup>
+        <h3 id="hey">Web Designer &amp; CSS Guru</h3>
+        <h4 id="there">
+          bbx est un fou : il dessine au pixel pr&egrave;s, il code hyper propre,<br>
+          il d&eacute;v des th&egrave;mes WordPress, et &eacute;crit m&ecirc;me des tutos gratuits.<br>
+          Bref, il sait tout faire, m&ecirc;me les cheesecakes.
+        </h4>
         <p>
           <a id="view-portfolio" class="button">Voir mon portfolio</a>
           <a id="send-email" class="button button-email">M'envoyer un email</a>
         </p>
-      </div>
+      </hgroup>
     </section>
-    <section id="testimonials">
-      <div class="wrap">
-        <div class="testimonial">
-          <blockquote>
-            &ldquo; Tout d'abord merci pour ce tutorial magique, qui me donne envie de l&acirc;cher tout pour faire des th&egrave;mes wordpress ^^. &rdquo;
-          </blockquote>
-          <p>Thomas Leduc</p>
+    <section id="testimonials" class="slider">
+      <div class="aperture">
+        <div class="reel">
+          <div class="item testimonial">
+            <blockquote>
+              &ldquo; Un grand merci pour ce g&eacute;nialissime tutoriel sur WP. C&rsquo;est &agrave; ce jour le meilleur que j&rsquo;ai pu trouver sur Internet. &rdquo;
+            </blockquote>
+            <p>Fr&eacute;d&eacute;ric Mathieu</p>
+          </div>
+          <div class="item testimonial">
+            <blockquote>
+              &ldquo; Waoouuh quelle r&eacute;activit&eacute; ! Merci pour ton suivi Jeremy, &ccedil;a fait vraiment plaisir. &rdquo;
+            </blockquote>
+            <p>Christian Bouet</p>
+          </div>
+          <div class="item testimonial">
+            <blockquote>
+              &ldquo; Bluff&eacute;, j'ai &eacute;t&eacute; bluff&eacute;, par la passion qui anime vos sites. &rdquo;
+            </blockquote>
+            <p>Nicolas Latchimy</p>
+          </div>
+          <div class="item testimonial">
+            <blockquote>
+              &ldquo; Waou ! C'est beau ! Ce que j'adore avec toi c'est que qd tu fais un truc m&ecirc;me tout petit c'est toujours bien fait ! &rdquo;
+            </blockquote>
+            <p>Corine Dutin</p>
+          </div>
+          <div class="item testimonial">
+            <blockquote>
+              &ldquo; Encore une fois un grand, tr&egrave;s grand merci, si ce blog prend enfin vie ce sera gr&acirc;ce &agrave; vous. &rdquo;
+            </blockquote>
+            <p>Le dinosaure radoteur</p>
+          </div>
+          <div class="item testimonial">
+            <blockquote>
+              &ldquo; Merci pour ce tutorial magique, qui me donne envie de l&acirc;cher tout pour faire des th&egrave;mes wordpress ^^. &rdquo;
+            </blockquote>
+            <p>Thomas Leduc</p>
+          </div>
+          <div class="item testimonial">
+            <blockquote>
+              &ldquo; En tout cas merci pour cette initiative, remplie d&rsquo;humour et de po&eacute;sie, et bonne continuation. &rdquo;
+            </blockquote>
+            <p>Benjamin Danon</p>
+          </div>
         </div>
-        <p class="dots">
-          <a class="current">1</a>
-          <a>2</a>
-          <a>3</a>
-          <a>4</a>
-          <a>5</a>
-        </p>
       </div>
-      <a class="arrow arrow-previous">Previous</a>
-      <a class="arrow arrow-next">Next</a>
+      <div style="clear: left;"></div>
+      <p class="dots">
+        <a class="current">1</a>
+        <a>2</a>
+        <a>3</a>
+        <a>4</a>
+        <a>5</a>
+        <a>6</a>
+        <a>7</a>
+      </p>
+      <a id="testimonial-previous" class="arrow arrow-previous">Previous</a>
+      <a id="testimonial-next" class="arrow arrow-next">Next</a>
     </section>
     <section id="skills">
       <div class="wrap">
@@ -145,124 +183,120 @@
       </div>
     </section>
     <section id="portfolio">
-      <div class="wrap">
         <hgroup class="heading">
           <h3 class="title">Portfolio</h3>
         </hgroup>
-    <section id="projects">
-      <a id="jt" class="project">
-        <img class="project-image" src="projects/jt.png" alt="JThomas">
-        <div class="project-content">
-          <h4 class="project-name">JT.ms</h4>
-          <h5 class="project-description">Digital Web Card</h5>
-          <div class="project-apps">
-            <p class="app">Photoshop</p>
-            <p class="app app-sublime-text">Sublime Text</p>
-          </div>
+        <div id="projects">
+          <a id="jt" class="project">
+            <img class="project-image" src="projects/jt.png" alt="JThomas">
+            <div class="project-content">
+              <h4 class="project-name">JT.ms</h4>
+              <h5 class="project-description">Digital Web Card</h5>
+              <div class="project-apps">
+                <p class="app">Photoshop</p>
+                <p class="app app-sublime-text">Sublime Text</p>
+              </div>
+            </div>
+          </a>
+          <a id="cv" class="project">
+            <img class="project-image" src="projects/cv.png" alt="Cambodia Vietnam 2010">
+            <div class="project-content">
+              <h4 class="project-name">Cambodia<br>Vietnam 2010</h4>
+              <h5 class="project-description">Trip Summary</h5>
+              <div class="project-apps">
+                <p class="app">Photoshop</p>
+                <p class="app app-sublime-text">Sublime Text</p>
+              </div>
+            </div>
+          </a>
+          <a id="wp" class="project">
+            <img class="project-image" src="projects/wp.png" alt="WordPress : le Tutoriel">
+            <div class="project-content">
+              <h4 class="project-name">WordPress : le Tutoriel</h4>
+              <h5 class="project-description">Super Cadeau</h5>
+              <div class="project-apps">
+                <p class="app">Photoshop</p>
+                <p class="app app-sublime-text">Sublime Text</p>
+                <p class="app app-wordpress">WordPress</p>
+              </div>
+            </div>
+          </a>
+          <a id="em" class="project">
+            <img class="project-image" src="projects/em.png" alt="Editions Magellan">
+            <div class="project-content">
+              <h4 class="project-name">Editions Magellan</h4>
+              <h5 class="project-description">Litt&eacute;rature de Voyage</h5>
+              <div class="project-apps">
+                <p class="app">Photoshop</p>
+                <p class="app app-sublime-text">Sublime Text</p>
+              </div>
+            </div>
+          </a>
+          <a id="css" class="project">
+            <img class="project-image" src="projects/css.png" alt="CSS : l'Art & la Science">
+            <div class="project-content">
+              <h4 class="project-name">CSS : l'Art &amp; la Science</h4>
+              <h5 class="project-description">M&eacute;ga Cadeau</h5>
+              <div class="project-apps">
+                <p class="app">Photoshop</p>
+                <p class="app app-sublime-text">Sublime Text</p>
+              </div>
+            </div>
+          </a>
+          <a id="tt" class="project">
+            <img class="project-image" src="projects/tt.png" alt="Task This">
+            <div class="project-content">
+              <h4 class="project-name">Task This</h4>
+              <h5 class="project-description">iPhone App</h5>
+              <div class="project-apps">
+                <p class="app">Photoshop</p>
+                <p class="app app-sublime-text">Sublime Text</p>
+              </div>
+            </div>
+          </a>
+          <a id="at" class="project">
+            <img class="project-image" src="projects/at.png" alt="Australie Trip">
+            <div class="project-content">
+              <h4 class="project-name">Australie Trip</h4>
+              <h5 class="project-description">Blog M&eacute;ridional</h5>
+              <div class="project-apps">
+                <p class="app">Photoshop</p>
+                <p class="app app-sublime-text">Sublime Text</p>
+                <p class="app app-wordpress">WordPress</p>
+              </div>
+            </div>
+          </a>
+          <a id="jg" class="project">
+            <img class="project-image" src="projects/jg.png" alt="jgthms">
+            <div class="project-content">
+              <h4 class="project-name">jgthms.com</h4>
+              <h5 class="project-description">GitHub Blog</h5>
+              <div class="project-apps">
+                <p class="app">Photoshop</p>
+                <p class="app app-sublime-text">Sublime Text</p>
+              </div>
+            </div>
+          </a>
+          <a id="yk" class="project">
+            <img class="project-image" src="projects/yk.png" alt="Yeek">
+            <div class="project-content">
+              <h4 class="project-name">Yeek</h4>
+              <h5 class="project-description">Cadeaux Geek &amp; Design</h5>
+              <div class="project-apps">
+                <p class="app">Photoshop</p>
+                <p class="app app-sublime-text">Sublime Text</p>
+                <p class="app app-wordpress">WordPress</p>
+              </div>
+            </div>
+          </a>
+          <div style="clear: both;"></div>
         </div>
-      </a>
-      <a id="cv" class="project">
-        <img class="project-image" src="projects/cv.png" alt="Cambodia Vietnam 2010">
-        <div class="project-content">
-          <h4 class="project-name">Cambodia<br>Vietnam 2010</h4>
-          <h5 class="project-description">Trip Summary</h5>
-          <div class="project-apps">
-            <p class="app">Photoshop</p>
-            <p class="app app-sublime-text">Sublime Text</p>
-          </div>
-        </div>
-      </a>
-      <a id="wp" class="project">
-        <img class="project-image" src="projects/wp.png" alt="WordPress : le Tutoriel">
-        <div class="project-content">
-          <h4 class="project-name">WordPress : le Tutoriel</h4>
-          <h5 class="project-description">Super Cadeau</h5>
-          <div class="project-apps">
-            <p class="app">Photoshop</p>
-            <p class="app app-sublime-text">Sublime Text</p>
-            <p class="app app-wordpress">WordPress</p>
-          </div>
-        </div>
-      </a>
-      <a id="css" class="project">
-        <img class="project-image" src="projects/css.png" alt="CSS : l'Art & la Science">
-        <div class="project-content">
-          <h4 class="project-name">CSS : l'Art &amp; la Science</h4>
-          <h5 class="project-description">M&eacute;ga Cadeau</h5>
-          <div class="project-apps">
-            <p class="app">Photoshop</p>
-            <p class="app app-sublime-text">Sublime Text</p>
-          </div>
-        </div>
-      </a>
-      <a id="tt" class="project">
-        <img class="project-image" src="projects/tt.png" alt="Task This">
-        <div class="project-content">
-          <h4 class="project-name">Task This</h4>
-          <h5 class="project-description">iPhone App</h5>
-          <div class="project-apps">
-            <p class="app">Photoshop</p>
-            <p class="app app-sublime-text">Sublime Text</p>
-          </div>
-        </div>
-      </a>
-      <a id="at" class="project">
-        <img class="project-image" src="projects/at.png" alt="Australie Trip">
-        <div class="project-content">
-          <h4 class="project-name">Australie Trip</h4>
-          <h5 class="project-description">Blog M&eacute;ridional</h5>
-          <div class="project-apps">
-            <p class="app">Photoshop</p>
-            <p class="app app-sublime-text">Sublime Text</p>
-            <p class="app app-wordpress">WordPress</p>
-          </div>
-        </div>
-      </a>
-      <a id="em" class="project">
-        <img class="project-image" src="projects/em.png" alt="Editions Magellan">
-        <div class="project-content">
-          <h4 class="project-name">Editions Magellan</h4>
-          <h5 class="project-description">Litt&eacute;rature de Voyage</h5>
-          <div class="project-apps">
-            <p class="app">Photoshop</p>
-            <p class="app app-sublime-text">Sublime Text</p>
-          </div>
-        </div>
-      </a>
-      <a id="yk" class="project">
-        <img class="project-image" src="projects/yk.png" alt="Yeek">
-        <div class="project-content">
-          <h4 class="project-name">Yeek</h4>
-          <h5 class="project-description">Cadeaux Geek &amp; Design</h5>
-          <div class="project-apps">
-            <p class="app">Photoshop</p>
-            <p class="app app-sublime-text">Sublime Text</p>
-            <p class="app app-wordpress">WordPress</p>
-          </div>
-        </div>
-      </a>
-      <a id="jg" class="project">
-        <img class="project-image" src="projects/jg.png" alt="jgthms">
-        <div class="project-content">
-          <h4 class="project-name">jgthms.com</h4>
-          <h5 class="project-description">GitHub Blog</h5>
-          <div class="project-apps">
-            <p class="app">Photoshop</p>
-            <p class="app app-sublime-text">Sublime Text</p>
-          </div>
-        </div>
-      </a>
-      <div style="clear: both;"></div>
-    </section>
-      </div>
     </section>
     <section id="timeline">
-      <div class="wrap">
-        <hgroup class="heading">
-          <h3 class="title">Timeline</h3>
-          <h4 class="subtitle">Le parcours atypique d’un type pas typique</h4>
-        </hgroup>
-      </div>
+      <hgroup class="heading">
+        <h3 class="title">Timeline</h3>
+        <h4 class="subtitle">Le parcours atypique d’un type pas typique</h4>
+      </hgroup>
       <div class="timeline">
         <div class="calendar">
           <div class="time"></div>
@@ -328,7 +362,7 @@
           </div>
         </div>
         <div class="stories">
-          <div class="reel" style="left: 350px;">
+          <div class="stories-reel" style="left: 350px;">
             <div class="story current" data-related="0" style="opacity: 1;">
               <time style="background-color: rgb(109, 137, 172); border-bottom-color: rgb(50, 89, 137);">1</time>
               <h5>Dipl&ocirc;mes et d&eacute;viations</h5>
@@ -405,12 +439,14 @@
         </form>
       </div>
     </section>
-    <!--script src="/jquery-1.10.1.min.js"></script>
-    <script src="/jquery.easing.min.js"></script>
+    <script src="jquery-1.10.2.min.js"></script>
+    <script src="jquery.easing.1.3.js"></script>
+    <script src="slider.js"></script>
+    <script src="home.js"></script>
     <script>
     $(document).ready( function() {
         
     });
-    </script-->
+    </script>
   </body>
 </html>
