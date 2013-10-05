@@ -1,0 +1,472 @@
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, img, ins, kbd, q, s, samp, small, strike, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video{ margin: 0; padding: 0; border: 0; font-size: 100%; font: inherit; vertical-align: baseline; }
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section{ display: block; }
+body{ line-height: 1; }
+ol, ul{ list-style: none; }
+blockquote, q{ quotes: none; }
+blockquote:before, blockquote:after, q:before, q:after{ content: ''; content: none; }
+table{ border-collapse: collapse; border-spacing: 0; }
+
+html{ overflow-x: hidden; overflow-y: scroll;}
+body{ background: #292929; color: #708491; font: 16px/1.5 Arial, sans-serif;}
+a{ cursor: pointer;}
+input:focus, input:active{ outline: none;}
+::-webkit-input-placeholder{ padding-top: 5px;}
+textarea::-webkit-input-placeholder{ padding-top: 0;}
+
+#header{ font-family: 'Museo 700', Georgia, serif; font-weight: normal;}
+#description,
+#hello hgroup,
+.heading,
+.project,
+.story h5{ font-family: 'Museo 300', Georgia, serif; font-weight: normal;}
+#testimonials,
+.skills,
+.calendar,
+.story,
+.element{ font-family: 'TisaPro', Georgia, serif; font-weight: normal;}
+
+.button,
+.dots a,
+.arrow,
+.level strong,
+.app{ overflow: hidden; text-indent: -290486px;}
+
+.wrap{ margin: 0 auto; position: relative; width: 960px;}
+.button{ background: url(buttons.png) no-repeat 0 0; display: inline-block; height: 62px; width: 234px;}
+.button-email{ background-position: 0 -70px;}
+.dots{ height: 16px; text-align: center;}
+.dots a{ border-radius: 8px; display: inline-block; height: 16px; margin: 0 4px; width: 16px;}
+.arrow{ background: url(arrows.png) no-repeat 0 0; display: block; height: 80px; width: 40px;}
+.arrow-next{ background-position: -40px 0;}
+.heading{ line-height: 1.25; margin-bottom: 80px; text-align: center;}
+.title{ color: white; font-size: 48px;}
+.subtitle{ color: #f5574c; font-size: 32px;}
+.level,
+.level strong{ background: #1f1f1f; border-radius: 10px; box-shadow: 0 1px 2px rgba(0, 0, 0, 0.48) inset, 0 1px 1px rgba(255, 255, 255, 0.12); height: 20px; position: relative; width: 300px;}
+.level strong{ background: #f5574c; box-shadow: 0 1px 1px #f5b3ae inset, 0 2px 4px rgba(0, 0, 0, 0.48); left: 0; position: absolute; top: 0; width: 100%;}
+.level-90 strong{ width: 90%;}
+.level-80 strong{ width: 80%;}
+.level-60 strong{ width: 60%;}
+.app{ background: url(apps.png) no-repeat 0 0; display: inline-block; height: 32px; width: 33px;}
+.app-sublime-text{ background-position: 0 -40px;}
+.app-wordpress{ background-position: 0 -80px;}
+.element{ background: rgba(41, 41, 41, 0.48); border: 4px solid white; color: white; font-size: 24px;}
+input.element{ line-height: 1; padding: 10px; padding-top: 5px; width: 352px;}
+textarea.element{ height: 300px; line-height: 1.5; max-width: 742px; padding: 10px 15px; width: 742px;}
+.element:focus{ background: rgba(41, 41, 41, 0.86); border-color: #f5574c; outline: none;}
+
+#header{ background: white; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.16); height: 32px; left: 0; line-height: 32px; padding: 12px 0; position: absolute; top: 0; width: 100%; z-index: 100;}
+#logo{ background: url(bbx.png) no-repeat 0 0; float: left; height: 32px; padding-left: 40px;}
+#name{ color: #f5574c; display: inline;}
+#description{ color: #b0b0b0; display: inline;}
+#nav{ float: right; font-size: 12px; text-transform: uppercase;}
+#nav li{ display: inline;}
+#nav a{ float: left; margin-left: 20px;}
+
+#hello{ background: #292929 url(desktop.jpg) no-repeat fixed center top; height: 800px; text-align: center;}
+#hello hgroup{ color: white; line-height: 1.25; padding-top: 260px; text-shadow: 0 4px 16px black;}
+#hey{ font-size: 48px; font-weight: normal;}
+#there{ color: #dbdbdb; font-size: 32px; font-weight: normal; margin-top: 10px;}
+#hello p{ padding-top: 40px;}
+#hello .button{ margin: 0 10px;}
+
+#testimonials{ background: #f5574c; color: white; padding: 80px 0 40px; position: relative; text-align: center;}
+.testimonial{ margin: 0 160px;}
+.testimonial blockquote{ font-size: 32px; font-style: italic;}
+.testimonial p{ border-top: 1px dotted #d4362b; color: #d4362b; font-size: 20px; margin-top: 20px; padding-top: 20px;}
+#testimonials .dots{ padding-top: 80px;}
+#testimonials .dots a{ background: #d4362b;}
+#testimonials .dots .current{ background: white;}
+#testimonials .arrow{ margin-top: -40px; position: absolute; top: 50%;}
+#testimonials .arrow-previous{ left: 40px;}
+#testimonials .arrow-next{ right: 40px;}
+
+#skills{ padding: 80px 0;}
+.skill{ border-top: 1px dotted #4a4a4a; padding: 20px 0 30px;}
+.skill .level{ float: right; margin-top: 10px;}
+.skill-icon{ background: url(skills.png) no-repeat 0 0; float: left; height: 64px; margin: 10px 30px 0 0; width: 64px;}
+.skill-title{ color: white; font-size: 32px; font-weight: bold;}
+.skill-list{ font-style: italic;}
+.skill-list li{ display: inline; margin-right: 20px;}
+#wordpress .skill-icon{ background-position: 0 -70px;}
+#jquery .skill-icon{ background-position: 0 -140px;}
+#photoshop .skill-icon{ background-position: 0 -210px;}
+#illustrator .skill-icon{ background-position: 0 -280px;}
+
+#portfolio{ background: white url(mountains.jpg) no-repeat fixed center top; padding-bottom: 100px;}
+#portfolio .wrap{ width: 1200px;}
+#portfolio .heading{ margin-bottom: 0; padding: 60px 0;}
+#portfolio .title{ color: #f5574c;}
+
+#projects{ height: 600px; overflow: hidden;}
+.project{ color: white; display: block; float: left; height: 300px; line-height: 1.25; position: relative; text-align: center; width: 300px;}
+.project-image,
+.project-content,
+.project-name,
+.project-description,
+.project-apps{ left: 0; position: absolute; width: 100%;}
+.project-image,
+.project-content{ height: 100%;}
+.project-content{ background: rgba(245, 87, 76, 0.86); display: none;}
+.project-name{ bottom: 150px; font-size: 48px;}
+.project-description{ font-size: 24px; opacity: 0.69; top: 150px;}
+.project-apps{ bottom: 40px; height: 32px;}
+.project-apps .app{ margin: 0 10px;}
+#cv .project-name{ bottom: 130px; font-size: 32px;}
+#cv .project-description{ top: 170px;}
+#wp .project-name{ bottom: 130px; font-size: 32px;}
+#wp .project-description{ top: 170px;}
+#css .project-name{ bottom: 130px; font-size: 32px;}
+#css .project-description{ top: 170px;}
+#at .project-name{ font-size: 32px;}
+#em .project-name{ font-size: 32px;}
+#jg .project-name{ font-size: 32px;}
+.project:hover .project-content{ display: block;}
+
+#timeline{ padding: 80px 0;}
+.calendar{ border-radius: 5px; height: 200px; margin-bottom: 60px; overflow: hidden; position: relative;}
+.time{ background: #1f1f1f; border-bottom: 10px solid #141414; height: 100px; left: 0; opacity: 0.48; position: absolute; top: 0; width: 100%;}
+.chapters{ background: url(time.png) repeat-x -170px 110px; left: 990px; padding: 0 480px 40px; position: absolute; top: 0; width: 2860px;}
+.chapter{ background: #6d89ac; float: left; height: 80px; line-height: 1.25; min-width: 100px; padding: 10px 0; position: relative; text-indent: 15px;}
+.chapter strong{ color: white; display: block; font-size: 24px; font-weight: bold;}
+.chapter em{ color: #c1dbfc; display: block; font-size: 20px; font-style: italic;}
+.chapter time{ color: #325989; display: block; font-size: 24px; position: absolute; right: 10px; top: 10px;}
+.chapter span{ background: #325989; bottom: -10px; height: 10px; left: -5px; position: absolute; width: 100%;}
+.years{ bottom: -40px; color: white; font-size: 24px; font-weight: bold; left: 0; padding-left: 39px; position: absolute; width: 3360px;}
+.years li{ float: left; width: 240px;}
+#magendie{ margin-right: 40px; width: 680px;}
+#cachan{ background: #528f6c; margin-right: 40px; width: 440px;}
+#cachan em{ color: #8fe6b4;}
+#cachan time{ color: #297348;}
+#cachan span{ background: #297348;}
+#bordeaux4{ background: #cdcd00; margin-right: 120px; width: 120px;}
+#bordeaux4 em{ color: #f0f03a;}
+#bordeaux4 time{ color: #8a8a00; display: none;}
+#bordeaux4 span{ background: #8a8a00;}
+#amtv{ background: #4e4e4e; width: 200px;}
+#amtv em{ color: #f29500;}
+#amtv time{ color: #1f1f1f; display: none;}
+#amtv span{ background: #1f1f1f;}
+#mgd{ background: #09c; width: 200px;}
+#mgd em{ color: #a8eaff;}
+#mgd time{ color: #056382; display: none;}
+#mgd span{ background: #056382;}
+#virtuoz{ background: #b60000; width: 200px;}
+#virtuoz em{ color: #e37d7d;}
+#virtuoz time{ color: #850606; display: none;}
+#virtuoz span{ background: #850606;}
+#steaw{ background: #094062; width: 560px;}
+#steaw em{ color: #72b0d5;}
+#steaw time{ color: #021c2c;}
+#steaw span{ background: #021c2c;}
+.story, .restart{ border-radius: 4px;}
+.restart{ color: #dc322f; cursor: pointer; float: left; height: 40px; left: 4825px; padding: 0 15px; position: absolute; text-align: center; top: 80px; white-space: nowrap;}
+.restart: active{ top: 81px;}
+.stories{ height: 300px; overflow: hidden; position: relative;}
+.reel{ left: -6240px; position: absolute; top: 10px; width: 6240px;}
+.story{ color: #586e75; cursor: pointer; display: none; float: left; font-size: 20px; opacity: 0.29; padding-left: 80px; position: relative; text-shadow: none; width: 700px;}
+.current.story{ cursor: default; display: block;}
+.story time{ background: #528f6c; border-radius: 30px; color: white; display: block; float: left; font-size: 40px; font-weight: bold; height: 60px; left: 0; line-height: 50px; position: absolute; text-align: center; top: 0; width: 60px;}
+.story h5{ color: white; font-size: 32px; line-height: 60px;}
+.story p{ margin-top: 10px;}
+
+#contact{ background: white url(forest.jpg) no-repeat fixed center top; min-height: 620px; padding: 80px 0;}
+#contact .title{ color: #f5574c;}
+#contact form{ margin: 0 auto; width: 780px;}
+#contact form p{}
+#contact-name,
+#contact-email{ padding: 0; width: 380px;}
+#contact-name{ float: left;}
+#contact-email{ float: right;}
+#contact-subject{ clear: both; padding-top: 40px;}
+#contact-subject .element{ width: 752px;}
+#contact-message,
+#contact-submit{ padding-top: 20px;;}
+#send{ position: relative; right: 3px;}
+
+/* CSS 3 */
+
+#header{
+  background: white;
+  background: -moz-linear-gradient(top, rgba(255, 255, 255,1) 1%, rgba(255, 255, 255, 0.86) 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(1%,rgba(255, 255, 255,1)), color-stop(100%,rgba(255, 255, 255, 0.86)));
+  background: -webkit-linear-gradient(top, rgba(255, 255, 255,1) 1%,rgba(255, 255, 255, 0.86) 100%);
+  background: -o-linear-gradient(top, rgba(255, 255, 255,1) 1%,rgba(255, 255, 255, 0.86) 100%);
+  background: -ms-linear-gradient(top, rgba(255, 255, 255,1) 1%,rgba(255, 255, 255, 0.86) 100%);
+  background: linear-gradient(to bottom, rgba(255, 255, 255,1) 1%,rgba(255, 255, 255, 0.86) 100%);
+}
+
+#hello, #portfolio, #contact{
+  background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  -webkit-background-size: cover;
+}
+
+.level strong{
+  background: #f5574c;
+  background: -moz-linear-gradient(top, #f5574c 1%, #db2b1f 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(1%,#f5574c), color-stop(100%,#db2b1f));
+  background: -webkit-linear-gradient(top, #f5574c 1%,#db2b1f 100%);
+  background: -o-linear-gradient(top, #f5574c 1%,#db2b1f 100%);
+  background: -ms-linear-gradient(top, #f5574c 1%,#db2b1f 100%);
+  background: linear-gradient(to bottom, #f5574c 1%,#db2b1f 100%);
+}
+
+.level-90 strong{ box-shadow: 0 1px 1px #f8edd1 inset, 0 2px 4px rgba(0, 0, 0, 0.48);}
+.level-90 strong{
+  background: #ecb624;
+  background: -moz-linear-gradient(top, #ecb624 1%, #cb8602 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(1%,#ecb624), color-stop(100%,#cb8602));
+  background: -webkit-linear-gradient(top, #ecb624 1%,#cb8602 100%);
+  background: -o-linear-gradient(top, #ecb624 1%,#cb8602 100%);
+  background: -ms-linear-gradient(top, #ecb624 1%,#cb8602 100%);
+  background: linear-gradient(to bottom, #ecb624 1%,#cb8602 100%);
+}
+
+.level-80 strong{ box-shadow: 0 1px 1px #d3ebab inset, 0 2px 4px rgba(0, 0, 0, 0.48);}
+.level-80 strong{
+  background: #78c905;
+  background: -moz-linear-gradient(top, #78c905 1%, #559501 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(1%,#78c905), color-stop(100%,#559501));
+  background: -webkit-linear-gradient(top, #78c905 1%,#559501 100%);
+  background: -o-linear-gradient(top, #78c905 1%,#559501 100%);
+  background: -ms-linear-gradient(top, #78c905 1%,#559501 100%);
+  background: linear-gradient(to bottom, #78c905 1%,#559501 100%);
+}
+
+.level-60 strong{ box-shadow: 0 1px 1px #a5cfec inset, 0 2px 4px rgba(0, 0, 0, 0.48);}
+.level-60 strong{
+  background: #379ce0;
+  background: -moz-linear-gradient(top, #379ce0 1%, #0777c3 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(1%,#379ce0), color-stop(100%,#0777c3));
+  background: -webkit-linear-gradient(top, #379ce0 1%,#0777c3 100%);
+  background: -o-linear-gradient(top, #379ce0 1%,#0777c3 100%);
+  background: -ms-linear-gradient(top, #379ce0 1%,#0777c3 100%);
+  background: linear-gradient(to bottom, #379ce0 1%,#0777c3 100%);
+}
+
+.chapter span{
+  -moz-transform: skew(-45deg);
+  -webkit-transform: skew(-45deg);
+  transform: skew(-45deg);
+}
+
+/* Animations
+
+@-webkit-keyframes fade-in{
+  0%{ opacity: 0; -webkit-transform: translateY(-24px);}
+  100%{ opacity: 1; -webkit-transform: translateY(0);}
+}
+
+@-webkit-keyframes down{
+  0%{ opacity: 0; -webkit-transform: translateY(-24px);}
+  100%{ opacity: 1; -webkit-transform: translateY(0);}
+}
+
+@-webkit-keyframes up{
+  0%{ opacity: 0; -webkit-transform: translateY(24px);}
+  100%{ opacity: 1; -webkit-transform: translateY(0);}
+}
+
+@-webkit-keyframes left{
+  0%{ opacity: 0; -webkit-transform: translateX(24px);}
+  100%{ opacity: 1; -webkit-transform: translateX(0);}
+}
+
+@-webkit-keyframes right{
+  0%{ opacity: 0; -webkit-transform: translateX(-24px);}
+  100%{ opacity: 1; -webkit-transform: translateX(0);}
+}
+
+@-webkit-keyframes grow{
+  0%{ opacity: 0; -webkit-transform: scale(1, 0);}
+  100%{ opacity: 1; -webkit-transform: scale(1, 1);}
+}
+
+@-webkit-keyframes slide-down{
+  0%{ opacity: 0; max-height: 0;}
+  100%{ opacity: 1; max-height: 60px;}
+}
+
+@-webkit-keyframes fill-100{
+  0%{ width: 0%;}
+  100%{ width: 100%;}
+}
+
+@-webkit-keyframes fill-90{
+  0%{ width: 0%;}
+  100%{ width: 90%;}
+}
+
+@-webkit-keyframes fill-80{
+  0%{ width: 0%;}
+  100%{ width: 80%;}
+}
+
+@-webkit-keyframes fill-60{
+  0%{ width: 0%;}
+  100%{ width: 60%;}
+}
+
+#hey,
+#there,
+#view-portfolio,
+#send-email,
+.title,
+.subtitle,
+.stories,
+.level strong,
+.element,
+#send{ -webkit-animation-duration: 1000ms; -webkit-animation-fill-mode: both; -webkit-animation-timing-function: ease; position: relative; z-index: 200;}
+
+.title,
+.subtitle,
+.skill,
+.stories{ background: #292929;}
+
+#hey,
+#there,
+#view-portfolio,
+#send-email{ -webkit-animation-timing-function: ease-out;}
+#hey{ -webkit-animation-name: down;}
+#there{ -webkit-animation-delay: 500ms; -webkit-animation-name: up;}
+#view-portfolio{ -webkit-animation-delay: 1000ms; -webkit-animation-name: left;}
+#send-email{ -webkit-animation-delay: 1500ms; -webkit-animation-name: right;}
+
+.title{ -webkit-animation-name: left;}
+.subtitle{ -webkit-animation-delay: 250ms; -webkit-animation-name: right;}
+
+#portfolio .title{ background: none;}
+
+.level strong{ position: absolute;}
+#html5{ -webkit-animation-delay: 500ms;}
+#html5 .level strong{ -webkit-animation-delay: 750ms; -webkit-animation-name: fill-100;}
+#wordpress{ -webkit-animation-delay: 750ms;}
+#wordpress .level strong{ -webkit-animation-delay: 750ms; -webkit-animation-name: fill-90;}
+#jquery{ -webkit-animation-delay: 1000ms;}
+#jquery .level strong{ -webkit-animation-delay: 1000ms; -webkit-animation-name: fill-80;}
+#photoshop{ -webkit-animation-delay: 1250ms;}
+#photoshop .level strong{ -webkit-animation-delay: 1250ms; -webkit-animation-name: fill-80;}
+#illustrator{ -webkit-animation-delay: 1500ms;}
+#illustrator .level strong{ -webkit-animation-delay: 1500ms; -webkit-animation-name: fill-60;}
+
+#contact .title{ background: none;}
+.element{ -webkit-animation-name: grow;}
+#contact-name .element{ -webkit-animation-delay: 250ms;}
+#contact-email .element{ -webkit-animation-delay: 500ms;}
+#contact-subject .element{ -webkit-animation-delay: 750ms;}
+#contact-message .element{ -webkit-animation-delay: 1000ms; -webkit-animation-name: up;}
+#send{ -webkit-animation-delay: 1250ms; -webkit-animation-name: up;}
+
+@-moz-keyframes fade-in{
+  0%{ opacity: 0; -moz-transform: translateY(-24px);}
+  100%{ opacity: 1; -moz-transform: translateY(0);}
+}
+
+@-moz-keyframes down{
+  0%{ opacity: 0; -moz-transform: translateY(-24px);}
+  100%{ opacity: 1; -moz-transform: translateY(0);}
+}
+
+@-moz-keyframes up{
+  0%{ opacity: 0; -moz-transform: translateY(24px);}
+  100%{ opacity: 1; -moz-transform: translateY(0);}
+}
+
+@-moz-keyframes left{
+  0%{ opacity: 0; -moz-transform: translateX(24px);}
+  100%{ opacity: 1; -moz-transform: translateX(0);}
+}
+
+@-moz-keyframes right{
+  0%{ opacity: 0; -moz-transform: translateX(-24px);}
+  100%{ opacity: 1; -moz-transform: translateX(0);}
+}
+
+@-moz-keyframes grow{
+  0%{ opacity: 0; -moz-transform: scale(1, 0);}
+  100%{ opacity: 1; -moz-transform: scale(1, 1);}
+}
+
+@-moz-keyframes slide-down{
+  0%{ opacity: 0; max-height: 0;}
+  100%{ opacity: 1; max-height: 60px;}
+}
+
+@-moz-keyframes fill-100{
+  0%{ width: 0%;}
+  100%{ width: 100%;}
+}
+
+@-moz-keyframes fill-90{
+  0%{ width: 0%;}
+  100%{ width: 90%;}
+}
+
+@-moz-keyframes fill-80{
+  0%{ width: 0%;}
+  100%{ width: 80%;}
+}
+
+@-moz-keyframes fill-60{
+  0%{ width: 0%;}
+  100%{ width: 60%;}
+}
+
+#hey,
+#there,
+#view-portfolio,
+#send-email,
+.title,
+.subtitle,
+.stories,
+.level strong,
+.element,
+#send{ -moz-animation-duration: 1000ms; -moz-animation-fill-mode: both; -moz-animation-timing-function: ease; position: relative; z-index: 200;}
+
+.title,
+.subtitle,
+.skill,
+.stories{ background: #292929;}
+
+#hey,
+#there,
+#view-portfolio,
+#send-email{ -moz-animation-timing-function: ease-out;}
+#hey{ -moz-animation-name: down;}
+#there{ -moz-animation-delay: 500ms; -moz-animation-name: up;}
+#view-portfolio{ -moz-animation-delay: 1000ms; -moz-animation-name: left;}
+#send-email{ -moz-animation-delay: 1500ms; -moz-animation-name: right;}
+
+.title{ -moz-animation-name: left;}
+.subtitle{ -moz-animation-delay: 250ms; -moz-animation-name: right;}
+
+#portfolio .title{ background: none;}
+
+.level strong{ position: absolute;}
+#html5{ -moz-animation-delay: 500ms;}
+#html5 .level strong{ -moz-animation-delay: 750ms; -moz-animation-name: fill-100;}
+#wordpress{ -moz-animation-delay: 750ms;}
+#wordpress .level strong{ -moz-animation-delay: 750ms; -moz-animation-name: fill-90;}
+#jquery{ -moz-animation-delay: 1000ms;}
+#jquery .level strong{ -moz-animation-delay: 1000ms; -moz-animation-name: fill-80;}
+#photoshop{ -moz-animation-delay: 1250ms;}
+#photoshop .level strong{ -moz-animation-delay: 1250ms; -moz-animation-name: fill-80;}
+#illustrator{ -moz-animation-delay: 1500ms;}
+#illustrator .level strong{ -moz-animation-delay: 1500ms; -moz-animation-name: fill-60;}
+
+#contact .title{ background: none;}
+.element{ -moz-animation-name: grow;}
+#contact-name .element{ -moz-animation-delay: 250ms;}
+#contact-email .element{ -moz-animation-delay: 500ms;}
+#contact-subject .element{ -moz-animation-delay: 750ms;}
+#contact-message .element{ -moz-animation-delay: 1000ms; -moz-animation-name: up;}
+#send{ -moz-animation-delay: 1250ms; -moz-animation-name: up;}
+
+/*body, body *{
+  -webkit-font-smoothing: antialiased;
+  -webkit-transform: translateZ(0);
+  -webkit-backface-visibility: hidden;
+  position: relative;
+}*/
