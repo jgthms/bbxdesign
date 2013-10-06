@@ -16,7 +16,7 @@
       </hgroup>
       <nav id="nav">
         <ul>
-          <li><a id="nav-home" class="nav">Home</a></li>
+          <li><a id="nav-home" class="nav on">Home</a></li>
           <li><a id="nav-skills" class="nav">Skills</a></li>
           <li><a id="nav-portfolio" class="nav">Portfolio</a></li>
           <li><a id="nav-timeline" class="nav">Timeline</a></li>
@@ -40,7 +40,7 @@
         </p>
       </hgroup>
     </section>
-    <section id="testimonials" class="slider">
+    <div id="testimonials" class="slider">
       <div class="aperture">
         <div class="reel">
           <div class="item testimonial">
@@ -99,7 +99,7 @@
       </p>
       <a id="testimonial-previous" class="arrow arrow-previous">Previous</a>
       <a id="testimonial-next" class="arrow arrow-next">Next</a>
-    </section>
+    </div>
     <section id="skills">
       <div class="wrap">
         <hgroup class="heading">
@@ -297,131 +297,112 @@
         <h3 class="title">Timeline</h3>
         <h4 class="subtitle">Le parcours atypique d’un type pas typique</h4>
       </hgroup>
-      <div class="timeline">
-        <div class="calendar">
-          <div class="time"></div>
-          <div class="chapters" style="left: -90px;">
-            <div id="magendie" class="chapter">
-              <strong>Lyc&eacute;e Fran&ccedil;ois Magendie</strong>
-              <em>ES-OIB</em>
-              <time>3 ans</time>
-              <span></span>
-            </div>
-            <div id="cachan" class="chapter">
-              <strong>Pr&eacute;pa Cachan D2</strong>
-              <em>Eco-Gestion</em>
-              <time>2 ans</time>
-              <span></span>
-            </div>
-            <div id="bordeaux4" class="chapter">
-              <strong>Fac</strong>
-              <em>Licence</em>
-              <time>6 mois</time>
-              <span></span>
-            </div>
-            <div id="amtv" class="chapter">
-              <strong>AMTV</strong>
-              <em>Cursus Web</em>
-              <time>10 mois</time>
-              <span></span>
-            </div>
-            <div id="mgd" class="chapter">
-              <strong>MGD</strong>
-              <em>Graphiste</em>
-              <time>10 mois</time>
-              <span></span>
-            </div>
-            <div id="virtuoz" class="chapter">
-              <strong>VirtuOz</strong>
-              <em>Web Designer</em>
-              <time>10 mois</time>
-              <span></span>
-            </div>
-            <div id="steaw" class="chapter">
-              <strong>Steaw</strong>
-              <em>Directeur Artistique Junior</em>
-              <time>2 ans 4 mois</time>
-              <span></span>
-            </div>
-            <ul class="years">
-              <li>1999</li>
-              <li>2000</li>
-              <li>2001</li>
-              <li>2002</li>
-              <li>2003</li>
-              <li>2004</li>
-              <li>2005</li>
-              <li>2006</li>
-              <li>2007</li>
-              <li>2008</li>
-              <li>2009</li>
-              <li>2010</li>
-              <li>2011</li>
-              <li>2012</li>
-            </ul>
+      <div id="calendar">
+        <div id="time"></div>
+        <div id="chapters">
+          <div id="magendie" class="chapter">
+            <strong>Lyc&eacute;e Fran&ccedil;ois Magendie</strong>
+            <em>ES-OIB</em>
+            <time>3 ans</time>
+            <span></span>
           </div>
+          <div id="cachan" class="chapter">
+            <strong>Pr&eacute;pa Cachan D2</strong>
+            <em>Eco-Gestion</em>
+            <time>2 ans</time>
+            <span></span>
+          </div>
+          <div id="bordeaux4" class="chapter">
+            <strong>Fac</strong>
+            <em>Licence</em>
+            <time>6 mois</time>
+            <span></span>
+          </div>
+          <div id="amtv" class="chapter">
+            <strong>AMTV</strong>
+            <em>Cursus Web</em>
+            <time>10 mois</time>
+            <span></span>
+          </div>
+          <div id="mgd" class="chapter">
+            <strong>MGD</strong>
+            <em>Graphiste</em>
+            <time>10 mois</time>
+            <span></span>
+          </div>
+          <div id="virtuoz" class="chapter">
+            <strong>VirtuOz</strong>
+            <em>Web Designer</em>
+            <time>10 mois</time>
+            <span></span>
+          </div>
+          <div id="steaw" class="chapter">
+            <strong>Steaw</strong>
+            <em>Directeur Artistique Junior</em>
+            <time>2 ans 4 mois</time>
+            <span></span>
+          </div>
+          <ul id="years">
+            <li>1999</li>
+            <li>2000</li>
+            <li>2001</li>
+            <li>2002</li>
+            <li>2003</li>
+            <li>2004</li>
+            <li>2005</li>
+            <li>2006</li>
+            <li>2007</li>
+            <li>2008</li>
+            <li>2009</li>
+            <li>2010</li>
+            <li>2011</li>
+            <li>2012</li>
+          </ul>
         </div>
-        <div class="stories">
-          <div class="stories-reel" style="left: 350px;">
-            <div class="story current" data-related="0" style="opacity: 1;">
-              <time style="background-color: rgb(109, 137, 172); border-bottom-color: rgb(50, 89, 137);">1</time>
-              <h5>Dipl&ocirc;mes et d&eacute;viations</h5>
-              <p>
-                Baccaular&eacute;at ES avec Option Internationale (litt&eacute;rature et histoire en anglais). J&rsquo;encha&icirc;ne avec une pr&eacute;pa Eco-Gestion pendant 2 ans. Malgr&eacute; mon bon niveau et mes chances de rentrer &agrave; Cachan (dixit le professeur principal), je me lasse de ce domaine et ne passe aucun concours. J&rsquo;ai n&eacute;anmoins mon DEUG (inutile) en poche et essaye de m&rsquo;accrocher &agrave; la 3e ann&eacute;e de Licence. Rien &agrave; faire : 6 mois suffiront &agrave; me convaincre de la n&eacute;cessit&eacute; d&rsquo;un parcours alternatif.
-              </p>
-            </div>
-            <div class="story" data-related="2" style="opacity: 0.29;">
-              <time style="background-color: rgb(205, 205, 0); border-bottom-color: rgb(138, 138, 0);">2</time>
-              <h5>Cr&eacute;ativit&eacute; et application</h5>
-              <p>
-                Entre-temps, je commence &agrave; m&rsquo;int&eacute;resser &agrave; Photoshop. Pas pour des sites web non, juste pour des banni&egrave;res et signatures de foot avant tout. L&rsquo;espace cr&eacute;atif apport&eacute; par ce nouvel outil me convainc de m&rsquo;y professionnaliser. J&rsquo;entre en septembre &agrave; l&rsquo;&eacute;cole AMTV de Bordeaux dans le cursus Infographiste. Les 6 premiers mois sont partag&eacute;s avec le cursus Web et m&rsquo;apprennent beaucoup sur le plan graphique. Au bout de cette demi-ann&eacute;e, le Web me s&eacute;duit davantage que l&rsquo;Infographie. Je d&eacute;cide donc de changer de cursus.
-              </p>
-            </div>
-            <div class="story" data-related="3" style="opacity: 0.29;">
-              <time style="background-color: rgb(78, 78, 78); border-bottom-color: rgb(31, 31, 31);">3</time>
-              <h5>Apparence et r&eacute;v&eacute;lation</h5>
-              <p>
-                Autant l&rsquo;&eacute;cole a un bon niveau graphique, autant elle est ex&eacute;crable au niveau web. On int&egrave;gre sous Dreamweaver en &lt;table&gt;, on supprime les Doctype, on se partage du code ASP sur des bouts de papier... Mais un unique cours d&rsquo;accessibilit&eacute; change ma vision du web. L&rsquo;intervenant nous parle de s&eacute;paration contenu/pr&eacute;sentation, de s&eacute;mantique, et de feuille de style, puis nous montre CSS Zen Garden. La r&eacute;v&eacute;lation ultime.
-              </p>
-            </div>
-            <div class="story" data-related="3" style="opacity: 0.29;">
-              <time style="background-color: rgb(78, 78, 78); border-bottom-color: rgb(31, 31, 31);">4</time>
-              <h5>Lecture et professionnalisation</h5>
-              <p>
-                Je me procure <em>CSS 2 Pratique du Design Web</em>, le lit deux fois, et commence &agrave; mettre en pratique ces techniques d'int&eacute;gration, en marge de mes cours &agrave; l'&eacute;cole. Je d&eacute;couvre Stop Design, Alsacreations et WordPress, avec lequel je r&eacute;alise mon projet de fin d'ann&eacute;e. Entre-temps, mes capacit&eacute;s linguistiques FR/NL/EN me permettent de d&eacute;crocher un poste inattendu chez Mistergoodeal en tant que Graphiste.
-              </p>
-            </div>
-            <div class="story" data-related="4" style="opacity: 0.29;">
-              <time style="background-color: rgb(0, 153, 204); border-bottom-color: rgb(5, 99, 130);">5</time>
-              <h5>Capitale et progression</h5>
-              <p>
-                Mon quotidien est fait de newsletters, de banni&egrave;res pub, mais rarement d'int&eacute;gration. Ce n'est que dans les derni&egrave;res semaines que je me vois responsable d'un projet d'envergure : l'int&eacute;gration du nouveau site M6 Boutique. Mais ma d&eacute;cision est d&eacute;j&agrave; prise : suite &agrave; une annonce que Pulupulu m'a refil&eacute;, et apr&egrave;s un test concluant, me voici rendu chez VirtuOz en tant que Web Designer.
-              </p>
-            </div>
-            <div class="story" data-related="5" style="opacity: 0.29;">
-              <time style="background-color: rgb(182, 0, 0); border-bottom-color: rgb(133, 6, 6);">6</time>
-              <h5>Op&eacute;ra et d&eacute;nominations</h5>
-              <p>
-                Mon r&ocirc;le est de travailler sur le site communautaire Skaaz, et d'assister le Directeur Artistique en place, Fran&ccedil;ois Le Pichon. Enfin... D&egrave;s mon 1er jour de travail, il m'annonce qu'il part dans 2 mois pour monter son studio de web design, ColdSteam (finalement appel&eacute; Steaw). Me voici donc &agrave; la fois Web Designer pour Skaaz et DA Junior <em>de facto</em> pour VirtuOz. Mais suite &agrave; la fermeture de Skaaz, et malgr&eacute; une bonne ambiance, mon quotidien parsem&eacute; de r&eacute;unions r&eacute;p&eacute;t&eacute;es et de d&eacute;buggage Flash me pousse &agrave; r&eacute;pondre &agrave; l'appel du pied de Fran&ccedil;ois.
-              </p>
-            </div>
-            <div class="story" data-related="6" style="opacity: 0.29;">
-              <time style="background-color: rgb(9, 64, 98); border-bottom-color: rgb(2, 28, 44);">7</time><h5>St Lazare et horizons</h5>
-              <p>
-                Steaw, malgr&eacute; son jeune &acirc;ge, est d&eacute;j&agrave; en pleine ascension. Fran&ccedil;ois Le Pichon, son fr&egrave;re Vincent, et moi-m&ecirc;me, forment pendant plus d'un an une mini dream-team : le Graphic Fighter, l'Illustrateur, et le CSS Guru. La compl&eacute;mentarit&eacute; et la flexibilit&eacute; de l'&eacute;quipe, ainsi que le s&eacute;rieux reconnu de son travail, la font rapidement conna&icirc;tre, et l'am&egrave;nent notamment &agrave; New York en s&eacute;minaire et &agrave; San Francisco, invit&eacute;e par Microsoft suite &agrave; une collaboration au lancement d'IE9.
-              </p>
-            </div>
-            <div class="story" data-related="6" style="opacity: 0.29;">
-              <time style="background-color: rgb(9, 64, 98); border-bottom-color: rgb(2, 28, 44);">8</time>
-              <h5>Ste Anne et explorations</h5>
-              <p>
-                Le studio s'est entre-temps r&eacute;guli&egrave;rement agrandi, ce qui nous dirige vers de nouveaux locaux. L'axe exclusivement design pr&ocirc;n&eacute; par Steaw am&egrave;ne la cr&eacute;ation d'un studio ax&eacute; exclusivement d&eacute;veloppement : Waest. Malgr&eacute; ma situation que je sais exceptionnelle au sein d'un studio reconnu et moderne, et malgr&eacute; l'ambiance et la coh&eacute;sion in&eacute;galables qui r&egrave;gnent au sein de l'&eacute;quipe, mon d&eacute;sir de parcourir d'autres sentiers m'am&egrave;ne &agrave; quitter le web, et donc Steaw, en sachant pertinemment avoir go&ucirc;t&eacute; au gratin du domaine.
-              </p>
-            </div>
-            <a class="restart">
-              &laquo; Retourner au d&eacute;but
-            </a>
+      </div>
+      <div id="stories">
+        <div id="stories-reel">
+          <div class="story current" data-related="0">
+            <time style="background-color: rgb(109, 137, 172); border-bottom-color: rgb(50, 89, 137);">1</time>
+            <h5>Dipl&ocirc;mes et d&eacute;viations</h5>
+            <p>Baccaular&eacute;at ES avec Option Internationale (litt&eacute;rature et histoire en anglais). J&rsquo;encha&icirc;ne avec une pr&eacute;pa Eco-Gestion pendant 2 ans. Malgr&eacute; mon bon niveau et mes chances de rentrer &agrave; Cachan (dixit le professeur principal), je me lasse de ce domaine et ne passe aucun concours. J&rsquo;ai n&eacute;anmoins mon DEUG (inutile) en poche et essaye de m&rsquo;accrocher &agrave; la 3e ann&eacute;e de Licence. Rien &agrave; faire : 6 mois suffiront &agrave; me convaincre de la n&eacute;cessit&eacute; d&rsquo;un parcours alternatif.</p>
           </div>
+          <div class="story" data-related="2">
+            <time style="background-color: rgb(205, 205, 0); border-bottom-color: rgb(138, 138, 0);">2</time>
+            <h5>Cr&eacute;ativit&eacute; et application</h5>
+            <p>Entre-temps, je commence &agrave; m&rsquo;int&eacute;resser &agrave; Photoshop. Pas pour des sites web non, juste pour des banni&egrave;res et signatures de foot avant tout. L&rsquo;espace cr&eacute;atif apport&eacute; par ce nouvel outil me convainc de m&rsquo;y professionnaliser. J&rsquo;entre en septembre &agrave; l&rsquo;&eacute;cole AMTV de Bordeaux dans le cursus Infographiste. Les 6 premiers mois sont partag&eacute;s avec le cursus Web et m&rsquo;apprennent beaucoup sur le plan graphique. Au bout de cette demi-ann&eacute;e, le Web me s&eacute;duit davantage que l&rsquo;Infographie. Je d&eacute;cide donc de changer de cursus.</p>
+          </div>
+          <div class="story" data-related="3">
+            <time style="background-color: rgb(78, 78, 78); border-bottom-color: rgb(31, 31, 31);">3</time>
+            <h5>Apparence et r&eacute;v&eacute;lation</h5>
+            <p>Autant l&rsquo;&eacute;cole a un bon niveau graphique, autant elle est ex&eacute;crable au niveau web. On int&egrave;gre sous Dreamweaver en &lt;table&gt;, on supprime les Doctype, on se partage du code ASP sur des bouts de papier... Mais un unique cours d&rsquo;accessibilit&eacute; change ma vision du web. L&rsquo;intervenant nous parle de s&eacute;paration contenu/pr&eacute;sentation, de s&eacute;mantique, et de feuille de style, puis nous montre CSS Zen Garden. La r&eacute;v&eacute;lation ultime.</p>
+          </div>
+          <div class="story" data-related="3">
+            <time style="background-color: rgb(78, 78, 78); border-bottom-color: rgb(31, 31, 31);">4</time>
+            <h5>Lecture et professionnalisation</h5>
+            <p>Je me procure <em>CSS 2 Pratique du Design Web</em>, le lit deux fois, et commence &agrave; mettre en pratique ces techniques d'int&eacute;gration, en marge de mes cours &agrave; l'&eacute;cole. Je d&eacute;couvre Stop Design, Alsacreations et WordPress, avec lequel je r&eacute;alise mon projet de fin d'ann&eacute;e. Entre-temps, mes capacit&eacute;s linguistiques FR/NL/EN me permettent de d&eacute;crocher un poste inattendu chez Mistergoodeal en tant que Graphiste.</p>
+          </div>
+          <div class="story" data-related="4">
+            <time style="background-color: rgb(0, 153, 204); border-bottom-color: rgb(5, 99, 130);">5</time>
+            <h5>Capitale et progression</h5>
+            <p>Mon quotidien est fait de newsletters, de banni&egrave;res pub, mais rarement d'int&eacute;gration. Ce n'est que dans les derni&egrave;res semaines que je me vois responsable d'un projet d'envergure : l'int&eacute;gration du nouveau site M6 Boutique. Mais ma d&eacute;cision est d&eacute;j&agrave; prise : suite &agrave; une annonce que Pulupulu m'a refil&eacute;, et apr&egrave;s un test concluant, me voici rendu chez VirtuOz en tant que Web Designer.</p>
+          </div>
+          <div class="story" data-related="5">
+            <time style="background-color: rgb(182, 0, 0); border-bottom-color: rgb(133, 6, 6);">6</time>
+            <h5>Op&eacute;ra et d&eacute;nominations</h5>
+            <p>Mon r&ocirc;le est de travailler sur le site communautaire Skaaz, et d'assister le Directeur Artistique en place, Fran&ccedil;ois Le Pichon. Enfin... D&egrave;s mon 1er jour de travail, il m'annonce qu'il part dans 2 mois pour monter son studio de web design, ColdSteam (finalement appel&eacute; Steaw). Me voici donc &agrave; la fois Web Designer pour Skaaz et DA Junior <em>de facto</em> pour VirtuOz. Mais suite &agrave; la fermeture de Skaaz, et malgr&eacute; une bonne ambiance, mon quotidien parsem&eacute; de r&eacute;unions r&eacute;p&eacute;t&eacute;es et de d&eacute;buggage Flash me pousse &agrave; r&eacute;pondre &agrave; l'appel du pied de Fran&ccedil;ois.</p>
+          </div>
+          <div class="story" data-related="6">
+            <time style="background-color: rgb(9, 64, 98); border-bottom-color: rgb(2, 28, 44);">7</time><h5>St Lazare et horizons</h5>
+            <p>Steaw, malgr&eacute; son jeune &acirc;ge, est d&eacute;j&agrave; en pleine ascension. Fran&ccedil;ois Le Pichon, son fr&egrave;re Vincent, et moi-m&ecirc;me, forment pendant plus d'un an une mini dream-team : le Graphic Fighter, l'Illustrateur, et le CSS Guru. La compl&eacute;mentarit&eacute; et la flexibilit&eacute; de l'&eacute;quipe, ainsi que le s&eacute;rieux reconnu de son travail, la font rapidement conna&icirc;tre, et l'am&egrave;nent notamment &agrave; New York en s&eacute;minaire et &agrave; San Francisco, invit&eacute;e par Microsoft suite &agrave; une collaboration au lancement d'IE9.</p>
+          </div>
+          <div class="story" data-related="6">
+            <time style="background-color: rgb(9, 64, 98); border-bottom-color: rgb(2, 28, 44);">8</time>
+            <h5>Ste Anne et explorations</h5>
+            <p>Le studio s'est entre-temps r&eacute;guli&egrave;rement agrandi, ce qui nous dirige vers de nouveaux locaux. L'axe exclusivement design pr&ocirc;n&eacute; par Steaw am&egrave;ne la cr&eacute;ation d'un studio ax&eacute; exclusivement d&eacute;veloppement : Waest. Malgr&eacute; ma situation que je sais exceptionnelle au sein d'un studio reconnu et moderne, et malgr&eacute; l'ambiance et la coh&eacute;sion in&eacute;galables qui r&egrave;gnent au sein de l'&eacute;quipe, mon d&eacute;sir de parcourir d'autres sentiers m'am&egrave;ne &agrave; quitter le web, et donc Steaw, en sachant pertinemment avoir go&ucirc;t&eacute; au gratin du domaine.</p>
+          </div>
+          <a id="restart">&laquo;</a>
+          <div style="clear: left;"></div>
         </div>
       </div>
     </section>
@@ -439,6 +420,7 @@
         </form>
       </div>
     </section>
+    <div style="background:red; height: 100%; width: 1px; position: fixed; top: 0; left: 50%; display: none;"></div>
     <script src="jquery-1.10.2.min.js"></script>
     <script src="jquery.easing.1.3.js"></script>
     <script src="slider.js"></script>

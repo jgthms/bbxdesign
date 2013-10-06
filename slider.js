@@ -17,7 +17,7 @@
     reel.width(w * c);
     items.width(w);
 
-    function Move (target) {
+    function Move(target) {
       if (target > (c - 1)) {
         n = 0;
       } else if (target < 0) {
