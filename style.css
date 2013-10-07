@@ -6,7 +6,7 @@ blockquote, q{ quotes: none; }
 blockquote:before, blockquote:after, q:before, q:after{ content: ''; content: none; }
 table{ border-collapse: collapse; border-spacing: 0; }
 
-html{ overflow-x: hidden; overflow-y: scroll;}
+html{ min-width: 320px; overflow-x: hidden; overflow-y: scroll;}
 body{ background: #292929; color: #708491; font: 16px/1.5 Arial, sans-serif;}
 a{ cursor: pointer;}
 input:focus, input:active{ outline: none;}
@@ -14,17 +14,17 @@ input:focus, input:active{ outline: none;}
 textarea::-webkit-input-placeholder{ padding-top: 0;}
 
 #header,
-.detail-name{ font-family: 'Museo 700', Georgia, serif; font-weight: normal;}
+#detail-name{ font-family: 'Museo 700', Georgia, serif; font-weight: normal;}
 #description,
 #hello hgroup,
 .heading,
 .project,
-.detail-description,
+#detail-description,
 .story h5{ font-family: 'Museo 300', Georgia, serif; font-weight: normal;}
 #testimonials,
 .skills,
 #calendar,
-.detail-text,
+#detail-text,
 .story,
 .element{ font-family: 'TisaPro', Georgia, serif; font-weight: normal;}
 
@@ -34,7 +34,7 @@ textarea::-webkit-input-placeholder{ padding-top: 0;}
 .button,
 .dots a,
 .arrow,
-.detail-close,
+#detail-close,
 .level strong,
 .app{ overflow: hidden; text-indent: -290486px;}
 
@@ -76,7 +76,8 @@ textarea.element{ height: 300px; line-height: 1.5; max-width: 742px; padding: 10
 #description{ background: url(name.png) no-repeat 0 0; float: left; height: 32px;}
 #name{ color: #f5574c; width: 79px;}
 #description{ background-image: url(description.png); color: #b0b0b0; margin-left: 8px; width: 242px;}
-#nav{ float: right; font-size: 12px; margin-right: 14px; text-transform: uppercase;}
+#menu{ background: url(menu.png) no-repeat 0 0; display: none; height: 21px; position: absolute; right: 20px; top: 20px; width: 24px;}
+#nav{ float: right; font-size: 12px; margin-right: 14px; text-transform: uppercase; width: 508px;}
 #nav li{ display: inline;}
 .nav{ background: url(nav.png) no-repeat 0 0; border-radius: 4px; float: left; padding: 0 15px;}
 .nav:hover{ background-color: #f5574c;}
@@ -100,8 +101,8 @@ textarea.element{ height: 300px; line-height: 1.5; max-width: 742px; padding: 10
 #nav-blog.on{ background-position: -100px -200px;}
 
 #hello{ background: #292929 url(desktop.jpg) no-repeat fixed center top; height: 700px; position: relative; text-align: center;}
-#hello-background{ background: #292929; height: 100%; left: 0; position: fixed; top: 0; width: 100%;}
-#hello hgroup{ color: white; height: 300px; left: 50%; line-height: 1.25; margin: -120px 0 0 -470px; position: absolute; text-shadow: 0 4px 16px black; top: 50%; width: 940px;}
+#hello-background{ background: #292929; height: 100%; left: 0; position: absolute; top: 0; width: 100%;}
+#hello hgroup{ color: white; height: 300px; left: 50%; line-height: 1.25; margin: -120px 0 0 -470px; position: absolute; text-shadow: 0 4px 16px black; top: 50%; width: 960px;}
 #hey{ font-size: 48px; font-weight: normal;}
 #there{ color: #dbdbdb; font-size: 32px; font-weight: normal; margin-top: 10px;}
 #hello p{ padding-top: 20px;}
@@ -111,8 +112,8 @@ textarea.element{ height: 300px; line-height: 1.5; max-width: 742px; padding: 10
 #testimonials .reel{ opacity: 0;}
 .testimonial blockquote,
 .testimonial p{ margin: 0 auto; width: 620px;}
-.testimonial blockquote{ font-size: 32px; font-style: italic; position: relative; z-index: 50;}
-.testimonial p{ border-top: 1px dotted #d4362b; color: #d4362b; font-size: 20px; margin-top: 20px; padding-top: 20px;}
+.testimonial blockquote{ font-size: 32px; font-style: italic; padding-bottom: 20px; position: relative; z-index: 50;}
+.testimonial p{ border-top: 1px dotted #d4362b; color: #d4362b; font-size: 20px; padding-top: 20px;}
 #testimonials .dots{ padding-top: 60px;}
 #testimonials .dots a{ background: #d4362b;}
 #testimonials .dots a:hover{ background: #ba1c11;}
@@ -141,7 +142,7 @@ textarea.element{ height: 300px; line-height: 1.5; max-width: 742px; padding: 10
 #portfolio .title{ color: #f5574c;}
 
 #projects{ height: 600px; overflow: hidden; position: relative;}
-.project{ color: white; display: block; float: left; height: 300px; left: 0; line-height: 1.25; position: absolute; text-align: center; top: 0; width: 300px;}
+.project{ color: white; display: block; float: left; height: 300px; left: 0; line-height: 1; position: absolute; text-align: center; top: 0; width: 300px;}
 .project-image,
 .project-content,
 .project-name,
@@ -154,29 +155,36 @@ textarea.element{ height: 300px; line-height: 1.5; max-width: 742px; padding: 10
 .project-description{ font-size: 24px; opacity: 0.69; top: 60%;}
 .project-apps{ bottom: 40px; height: 32px;}
 .project-apps .app{ margin: 0 10px; opacity: 0; top: 12px;}
-#cv .project-name{ font-size: 32px;}
-#wp .project-name{ font-size: 32px;}
-#css .project-name{ font-size: 32px;}
-#at .project-name{ font-size: 32px;}
-#em .project-name{ font-size: 32px;}
-#jg .project-name{ font-size: 32px;}
+#cv .project-name,
+#wp .project-name,
+#css .project-name,
+#at .project-name,
+#em .project-name,
+#jg .project-name,
+#rtt .project-name{ font-size: 32px;}
 .project:hover .project-content{ opacity: 1;}
-.project:hover .project-name{ bottom: 50%;}
-.project:hover .project-description{ top: 50%;}
+.project:hover .project-name{ bottom: 51%;}
+.project:hover .project-description{ top: 51%;}
 .project:hover .project-apps .app{ opacity: 1; top: 0;}
-.detail-background{ background: #f5574c; height: 100%; left: 0; opacity: 0.86; position: fixed; top: 0; width: 100%; z-index: 1000;}
-.detail{ background: white; background: rgba(255, 255, 255, 0.92); box-shadow: 0 8px 16px rgba(0, 0, 0, 0.48); height: 700px; left: 60px; position: fixed; overflow: hidden; top: 120px; width: 1300px; z-index: 3000;}
-.detail-image{ background: url(previews/jtms.jpg) no-repeat center center; height: 100%; position: absolute; right: 0; top: 0; width: 50%;}
-.detail-left{ height: 100%; left: 0; position: absolute; width: 50%;}
-.detail-content{ padding: 40px;}
-.detail-name{ color: #f5574c; font-size: 48px; line-height: 1.25;}
-.detail-description{ color: #b0b0b0; font-size: 24px; line-height: 1.25;}
-.detail-border{ background: #dbdbdb; border: none; height: 1px; margin: 20px 0;}
-.detail-text{ color: #7a7a7a; font-size: 20px; margin-bottom: 20px;}
-.detail-apps{ bottom: 40px; position: absolute; right: 40px;}
-.detail-apps .app{ margin-left: 20px;}
-.detail-close{ background: url(close.png) no-repeat 0 0; cursor: pointer; display: block; height: 48px; opacity: 0.08; position: absolute; right: 40px; top: 40px; width: 48px; z-index: 4000;}
-.detail-close:hover{ opacity: 0.16;}
+#detail-background{ background: #f5574c; height: 100%; left: 0; opacity: 0.86; position: fixed; top: 0; width: 100%; z-index: 1000;}
+#detail{ background: white; background: rgba(255, 255, 255, 0.92); box-shadow: 0 8px 16px rgba(0, 0, 0, 0.48); height: 700px; left: 60px; position: fixed; overflow: hidden; top: 120px; width: 1300px; z-index: 3000;}
+#detail-image{ background: no-repeat 0 0; height: 100%; position: absolute; right: 0; top: 0; width: 50%; z-index: 5000;}
+#detail-left{ height: 100%; left: 0; position: absolute; width: 50%;}
+#detail-content{ padding: 40px;}
+#detail-name{ color: #f5574c; font-size: 48px; line-height: 1; margin-bottom: 10px; padding-right: 170px;}
+#detail-description{ color: #b0b0b0; font-size: 24px; line-height: 1.25;}
+#detail-border{ background: #dbdbdb; border: none; height: 1px; margin: 20px 0;}
+#detail-text{ color: #7a7a7a; font-size: 20px; margin-bottom: 20px;}
+#detail-apps{ bottom: 40px; position: absolute; right: 40px;}
+#detail-apps .app{ margin-left: 20px;}
+#detail-close,
+#detail-next,
+#detail-previous{ background: url(navigation.png) no-repeat 0 0; cursor: pointer; display: block; height: 48px; opacity: 0.08; position: absolute; right: 40px; top: 40px; width: 48px; z-index: 4000;}
+#detail-next{ background-position: 0 -50px; right: 100px;}
+#detail-previous{ background-position: 0 -100px; right: 150px;}
+#detail-close:hover,
+#detail-next:hover,
+#detail-previous:hover{ opacity: 0.16;}
 #preview{ display: none;}
 #preview.go{ display: block;}
 
@@ -218,7 +226,7 @@ textarea.element{ height: 300px; line-height: 1.5; max-width: 742px; padding: 10
 #steaw span{ background: #021c2c;}
 #stories{ height: 300px; overflow: hidden; padding-bottom: 120px; position: relative;}
 #stories-reel{ left: -2000px; opacity: 0; position: absolute; top: 0; width: 7740px;}
-.story{ color: #586e75; cursor: pointer; float: left; font-size: 20px; margin: 0 40px; opacity: 0.29; padding-left: 80px; position: relative; text-shadow: none; width: 700px;}
+.story{ color: #586e75; cursor: pointer; float: left; font-size: 20px; margin: 0 20px; opacity: 0.29; padding-left: 80px; position: relative; text-shadow: none; width: 700px;}
 .story:hover{ opacity: 0.48;}
 .current.story,
 .current.story:hover{ cursor: default; opacity: 1;}
@@ -231,7 +239,6 @@ textarea.element{ height: 300px; line-height: 1.5; max-width: 742px; padding: 10
 #contact{ background: white url(forest.jpg) no-repeat fixed center top; min-height: 620px; padding: 80px 0;}
 #contact .title{ color: #f5574c;}
 #contact form{ margin: 0 auto; width: 780px;}
-#contact form p{}
 #contact-name,
 #contact-email{ padding: 0; width: 380px;}
 #contact-name{ float: left;}
@@ -239,7 +246,7 @@ textarea.element{ height: 300px; line-height: 1.5; max-width: 742px; padding: 10
 #contact-subject{ clear: both; padding-top: 40px;}
 #contact-subject .element{ width: 752px;}
 #contact-message,
-#contact-submit{ padding-top: 20px;;}
+#contact-submit{ padding-top: 20px;}
 #send{ position: relative; right: 3px;}
 
 /* CSS 3 */
@@ -252,7 +259,7 @@ a{
   -webkit-transition: background-color 250ms ease-out, border 250ms ease-out, color 250ms ease-out;
 }
 
-.project-content, .detail-close, .story, #restart{
+.project-content, #detail-close, #detail-next, #detail-previous, .story, #restart{
   transition: opacity 250ms ease;
   -moz-transition: opacity 250ms ease;
   -ms-transition: opacity 250ms ease;
@@ -302,7 +309,7 @@ a{
   background: linear-gradient(to bottom, rgba(255, 255, 255,1) 1%,rgba(255, 255, 255, 0.86) 100%);
 }
 
-#hello, #portfolio, .detail-image, #contact{
+#hello, #portfolio, #detail-image, #contact{
   background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -491,6 +498,11 @@ a{
   100%{ opacity: 0%; -webkit-transform: translateY(200px);}
 }
 
+@-webkit-keyframes revert-drop{
+  0%{ opacity: 0%; -webkit-transform: translateY(200px);}
+  100%{ opacity: 1; -webkit-transform: translateY(0);}
+}
+
 #hello-background,
 #hey,
 #there,
@@ -504,31 +516,37 @@ a{
 .level strong,
 .project,
 #preview,
-.detail-background,
-.detail,
-.detail-image,
-.detail-name,
-.detail-description,
-.detail-border,
-.detail-text,
-.detail-button,
-.detail-image,
-.detail-apps .app,
+#detail-background,
+#detail,
+#detail-image,
+#detail-name,
+#detail-description,
+#detail-border,
+#detail-text,
+#detail-link,
+#detail-image,
+#detail-apps .app,
 .element,
 #send{ opacity: 0; position: relative; z-index: 100;}
 
 #preview,
-.detail-border,
+#detail-border,
 .level strong{ opacity: 1;}
 
+#hello-background,
 .level strong,
 .project,
-.detail-image,
-.detail-close{ position: absolute;}
+#detail-image{ position: absolute;}
 
-.detail-background{ position: fixed; z-index: 1000;}
-.detail{ position: fixed; z-index: 3000;}
-.detail-image{ z-index: 3500;}
+#detail-background,
+#detail{ position: fixed;}
+
+#detail-background{ z-index: 1000;}
+#detail{ z-index: 3000;}
+#detail-close,
+#detail-next,
+#detail-previous{ z-index: 4000;}
+#detail-image{ z-index: 5000;}
 
 #hello-background,
 #hey,
@@ -542,26 +560,18 @@ a{
 .go .skill,
 .go .level strong,
 .go .project,
-.go .detail-background,
-.go .detail,
-.go .detail-image,
-.go .detail-name,
-.go .detail-description,
-.go .detail-border,
-.go .detail-text,
-.go .detail-button,
-.go .detail-close,
-.go .detail-apps .app,
-.revert .detail-background,
-.revert .detail,
-.revert .detail-image,
-.revert .detail-name,
-.revert .detail-description,
-.revert .detail-border,
-.revert .detail-text,
-.revert .detail-button,
-.revert .detail-close,
-.revert .detail-apps .app,
+.go #detail-background,
+.go #detail,
+.go #detail-image,
+.go #detail-name,
+.go #detail-description,
+.go #detail-border,
+.go #detail-text,
+.go #detail-link,
+.go #detail-close,
+.go #detail-next,
+.go #detail-previous,
+.go #detail-apps .app,
 .go .element,
 .go #send{ -webkit-animation-duration: 1000ms; -webkit-animation-fill-mode: both; -webkit-animation-timing-function: ease;}
 
@@ -611,38 +621,69 @@ a{
 .go .project:nth-child(7){ -webkit-animation-delay: 1500ms;}
 .go .project:nth-child(8){ -webkit-animation-delay: 1750ms;}
 .go .project:nth-child(9){ -webkit-animation-delay: 2000ms;}
+.go .project:nth-child(10){ -webkit-animation-delay: 2250ms;}
+.go .project:nth-child(11){ -webkit-animation-delay: 2500ms;}
+.go .project:nth-child(12){ -webkit-animation-delay: 2750ms;}
 
-.go .detail-background{ -webkit-animation-duration: 500ms; -webkit-animation-name: overlay;}
-.go .detail{ -webkit-animation-duration: 500ms; -webkit-animation-name: grow;}
-.go .detail-image{ -webkit-animation-name: reveal; -webkit-animation-timing-function: cubic-bezier(0, 1.5, 0.75, 1);}
-.go .detail-name{ -webkit-animation-delay: 250ms; -webkit-animation-name: left;}
-.go .detail-description{ -webkit-animation-delay: 500ms; -webkit-animation-name: right;}
-.go .detail-border{ -webkit-animation-delay: 750ms; -webkit-animation-name: fill-100; -webkit-animation-timing-function: cubic-bezier(0, 1, 0.25, 01);}
-.go .detail-text{ -webkit-animation-delay: 1000ms; -webkit-animation-name: up;}
-.go .detail-button{ -webkit-animation-delay: 1250ms; -webkit-animation-name: up;}
-.go .detail-apps .app{ -webkit-animation-delay: 1500ms; -webkit-animation-name: up; -webkit-animation-timing-function: cubic-bezier(0, 2, 0.5, 1);}
-.go .detail-apps .app:nth-child(2){ -webkit-animation-delay: 1750ms;}
-.go .detail-apps .app:nth-child(3){ -webkit-animation-delay: 2000ms;}
-.go .detail-close{ -webkit-animation-delay: 1250ms; -webkit-animation-name: close; -webkit-animation-timing-function: cubic-bezier(0, 1.5, 0.25, 1);}
+.go #detail-background{ -webkit-animation-duration: 500ms; -webkit-animation-name: overlay;}
+.go #detail{ -webkit-animation-duration: 500ms; -webkit-animation-name: grow;}
+.go #detail-image{ -webkit-animation-name: reveal; -webkit-animation-timing-function: cubic-bezier(0, 1.5, 0.75, 1);}
+.go #detail-name{ -webkit-animation-delay: 250ms; -webkit-animation-name: left;}
+.go #detail-description{ -webkit-animation-delay: 500ms; -webkit-animation-name: right;}
+.go #detail-border{ -webkit-animation-delay: 750ms; -webkit-animation-name: fill-100; -webkit-animation-timing-function: cubic-bezier(0, 1, 0.25, 01);}
+.go #detail-text{ -webkit-animation-delay: 1000ms; -webkit-animation-name: up;}
+.go #detail-link{ -webkit-animation-delay: 1250ms; -webkit-animation-name: up;}
+.go #detail-apps .app{ -webkit-animation-delay: 1500ms; -webkit-animation-name: up; -webkit-animation-timing-function: cubic-bezier(0, 2, 0.5, 1);}
+.go #detail-apps .app:nth-child(2){ -webkit-animation-delay: 1625ms;}
+.go #detail-apps .app:nth-child(3){ -webkit-animation-delay: 1750ms;}
+.go #detail-close,
+.go #detail-next,
+.go #detail-previous{ -webkit-animation-delay: 1500ms; -webkit-animation-name: close; -webkit-animation-timing-function: cubic-bezier(0, 1.5, 0.25, 1);}
+.go #detail-next{ -webkit-animation-delay: 1625ms;}
+.go #detail-previous{ -webkit-animation-delay: 1750ms;}
 
-.revert .detail-apps .app,
-.revert .detail-button,
-.revert .detail-text,
-.revert .detail-description,
-.revert .detail-name,
-.revert .detail{ -webkit-animation-duration: 500ms; -webkit-animation-name: drop; -webkit-animation-timing-function: /*cubic-bezier(0.950, 0.050, 0.795, 0.035)*/ cubic-bezier(1, -0.5, 0.5, 1.5);}
-.revert .detail-close{ -webkit-animation-delay: 0ms; -webkit-animation-duration: 500ms; -webkit-animation-name: revert-close; -webkit-animation-timing-function: cubic-bezier(1, -0.5, 0.5, 1.5);}
-.revert .detail-apps .app:nth-child(3){ -webkit-animation-delay: 0ms;}
-.revert .detail-apps .app:nth-child(2){ -webkit-animation-delay: 125ms;}
-.revert .detail-apps .app:nth-child(1){ -webkit-animation-delay: 250ms;}
-.revert .detail-button{ -webkit-animation-delay: 375ms;}
-.revert .detail-text{ -webkit-animation-delay: 500ms;}
-.revert .detail-border{ -webkit-animation-delay: 0ms; -webkit-animation-name: revert-fill-100;}
-.revert .detail-description{ -webkit-animation-delay: 750ms;}
-.revert .detail-name{ -webkit-animation-delay: 875ms;}
-.revert .detail-image{ -webkit-animation-delay: 0ms; -webkit-animation-name: revert-reveal; -webkit-animation-timing-function: cubic-bezier(1, -0.5, 0.5, 1.5);}
-.revert .detail{ -webkit-animation-delay: 1000ms;}
-.revert .detail-background{ -webkit-animation-delay: 1250ms; -webkit-animation-duration: 500ms; -webkit-animation-name: revert-overlay;}
+.close #detail-apps .app,
+.close #detail-link,
+.close #detail-text,
+.close #detail-description,
+.close #detail-name,
+.close #detail{ -webkit-animation-duration: 500ms; -webkit-animation-name: drop; -webkit-animation-timing-function: /*cubic-bezier(0.950, 0.050, 0.795, 0.035)*/ cubic-bezier(1, -0.5, 0.5, 1.5);}
+.close #detail-close,
+.close #detail-next,
+.close #detail-previous{ -webkit-animation-delay: 0ms; -webkit-animation-duration: 500ms; -webkit-animation-name: revert-close; -webkit-animation-timing-function: cubic-bezier(1, -0.5, 0.5, 1.5);}
+.close #detail-next{ -webkit-animation-delay: 125ms;}
+.close #detail-previous{ -webkit-animation-delay: 250ms;}
+.close #detail-apps .app:nth-child(3){ -webkit-animation-delay: 0ms;}
+.close #detail-apps .app:nth-child(2){ -webkit-animation-delay: 125ms;}
+.close #detail-apps .app:nth-child(1){ -webkit-animation-delay: 250ms;}
+.close #detail-link{ -webkit-animation-delay: 375ms;}
+.close #detail-text{ -webkit-animation-delay: 500ms;}
+.close #detail-border{ -webkit-animation-delay: 0ms; -webkit-animation-name: revert-fill-100;}
+.close #detail-description{ -webkit-animation-delay: 750ms;}
+.close #detail-name{ -webkit-animation-delay: 875ms;}
+.close #detail-image{ -webkit-animation-delay: 0ms; -webkit-animation-name: revert-reveal; -webkit-animation-timing-function: cubic-bezier(1, -0.5, 0.5, 1.5);}
+.close #detail{ -webkit-animation-delay: 1000ms;}
+.close #detail-background{ -webkit-animation-delay: 1250ms; -webkit-animation-duration: 500ms; -webkit-animation-name: revert-overlay;}
+
+.removing #detail-apps .app,
+.removing #detail-link,
+.removing #detail-text,
+.removing #detail-description,
+.removing #detail-name{ -webkit-animation-duration: 500ms; -webkit-animation-name: drop; -webkit-animation-timing-function: cubic-bezier(1, -0.5, 0.5, 1.5);}
+.removing #detail-close,
+.removing #detail-next,
+.removing #detail-previous{ -webkit-animation-delay: 0ms; -webkit-animation-duration: 500ms; -webkit-animation-name: revert-close; -webkit-animation-timing-function: cubic-bezier(1, -0.5, 0.5, 1.5);}
+.removing #detail-next{ -webkit-animation-delay: 125ms;}
+.removing #detail-previous{ -webkit-animation-delay: 250ms;}
+.removing #detail-apps .app:nth-child(3){ -webkit-animation-delay: 0ms;}
+.removing #detail-apps .app:nth-child(2){ -webkit-animation-delay: 125ms;}
+.removing #detail-apps .app:nth-child(1){ -webkit-animation-delay: 250ms;}
+.removing #detail-link{ -webkit-animation-delay: 375ms;}
+.removing #detail-text{ -webkit-animation-delay: 500ms;}
+.removing #detail-border{ -webkit-animation-delay: 0ms; -webkit-animation-name: revert-fill-100;}
+.removing #detail-description{ -webkit-animation-delay: 750ms;}
+.removing #detail-name{ -webkit-animation-delay: 875ms;}
+.removing #detail-image{ -webkit-animation-delay: 0ms; -webkit-animation-name: revert-reveal; -webkit-animation-timing-function: cubic-bezier(1, -0.5, 0.5, 1.5);}
 
 .go .element,
 .go #send{ -webkit-animation-name: grow;}
@@ -652,9 +693,329 @@ a{
 .go #contact-message .element{ -webkit-animation-delay: 1000ms;}
 .go #send{ -webkit-animation-delay: 1250ms;}
 
-/*body, body *{
-  -webkit-font-smoothing: antialiased;
-  -webkit-transform: translateZ(0);
-  -webkit-backface-visibility: hidden;
-  position: relative;
-}*/
+@-moz-keyframes fade-in{
+  0%{ opacity: 0;}
+  100%{ opacity: 1;}
+}
+
+@-moz-keyframes fade-out{
+  0%{ opacity: 1;}
+  100%{ opacity: 0;}
+}
+
+@-moz-keyframes overlay{
+  0%{ opacity: 0;}
+  100%{ opacity: 0.86;}
+}
+
+@-moz-keyframes revert-overlay{
+  0%{ opacity: 0.86;}
+  100%{ opacity: 0;}
+}
+
+@-moz-keyframes down{
+  0%{ opacity: 0; -moz-transform: translateY(-24px);}
+  100%{ opacity: 1; -moz-transform: translateY(0);}
+}
+
+@-moz-keyframes up{
+  0%{ opacity: 0; -moz-transform: translateY(24px);}
+  100%{ opacity: 1; -moz-transform: translateY(0);}
+}
+
+@-moz-keyframes revert-up{
+  0%{ opacity: 1; -moz-transform: translateY(0);}
+  100%{ opacity: 0; -moz-transform: translateY(24px);}
+}
+
+@-moz-keyframes revert-up{
+  0%{ opacity: 1; -moz-transform: translateY(0);}
+  100%{ opacity: 0; -moz-transform: translateY(24px);}
+}
+
+@-moz-keyframes up-fast{
+  0%{ opacity: 0; -moz-transform: translateY(24px);}
+  50%{ opacity: 0.50; -moz-transform: translateY(-12px);}
+  100%{ opacity: 1; -moz-transform: translateY(0);}
+}
+
+@-moz-keyframes left{
+  0%{ opacity: 0; -moz-transform: translateX(24px);}
+  100%{ opacity: 1; -moz-transform: translateX(0);}
+}
+
+@-moz-keyframes revert-left{
+  0%{ opacity: 1; -moz-transform: translateX(0);}
+  100%{ opacity: 0; -moz-transform: translateX(24px);}
+}
+
+@-moz-keyframes right{
+  0%{ opacity: 0; -moz-transform: translateX(-24px);}
+  100%{ opacity: 1; -moz-transform: translateX(0);}
+}
+
+@-moz-keyframes revert-right{
+  0%{ opacity: 1; -moz-transform: translateX(0);}
+  100%{ opacity: 0; -moz-transform: translateX(-24px);}
+}
+
+@-moz-keyframes grow{
+  0%{ opacity: 0; -moz-transform: scale(0.96, 0.96);}
+  100%{ opacity: 1; -moz-transform: scale(1, 1);}
+}
+
+@-moz-keyframes revert-grow{
+  0%{ opacity: 1; -moz-transform: scale(1, 1);}
+  100%{ opacity: 0; -moz-transform: scale(0.96, 0.96);}
+}
+
+@-moz-keyframes slide-down{
+  0%{ opacity: 0; max-height: 0;}
+  100%{ opacity: 1; max-height: 60px;}
+}
+
+@-moz-keyframes close{
+  0%{ -moz-transform: translateY(-96px);}
+  100%{ -moz-transform: translateY(0);}
+}
+
+@-moz-keyframes revert-close{
+  0%{ -moz-transform: translateY(0);}
+  100%{ -moz-transform: translateY(-96px);}
+}
+
+@-moz-keyframes reveal{
+  0%{ opacity: 0; left: 100%;}
+  100%{ opacity: 1; left: 50%;}
+}
+
+@-moz-keyframes revert-reveal{
+  0%{ opacity: 1; left: 50%;}
+  100%{ opacity: 0; left: 100%;}
+}
+
+@-moz-keyframes fill-100{
+  0%{ width: 0%;}
+  100%{ width: 100%;}
+}
+
+@-moz-keyframes revert-fill-100{
+  0%{ width: 100%;}
+  100%{ width: 0%;}
+}
+
+@-moz-keyframes fill-90{
+  0%{ width: 0%;}
+  100%{ width: 90%;}
+}
+
+@-moz-keyframes fill-80{
+  0%{ width: 0%;}
+  100%{ width: 80%;}
+}
+
+@-moz-keyframes fill-60{
+  0%{ width: 0%;}
+  100%{ width: 60%;}
+}
+
+@-moz-keyframes drop{
+  0%{ opacity: 1; -moz-transform: translateY(0);}
+  100%{ opacity: 0%; -moz-transform: translateY(200px);}
+}
+
+@-moz-keyframes revert-drop{
+  0%{ opacity: 0%; -moz-transform: translateY(200px);}
+  100%{ opacity: 1; -moz-transform: translateY(0);}
+}
+
+#hello-background,
+#hey,
+#there,
+#view-portfolio,
+#send-email,
+.go .arrow,
+.go .dots a,
+.go .title,
+.go .subtitle,
+.go .skill,
+.go .level strong,
+.go .project,
+.go #detail-background,
+.go #detail,
+.go #detail-image,
+.go #detail-name,
+.go #detail-description,
+.go #detail-border,
+.go #detail-text,
+.go #detail-link,
+.go #detail-close,
+.go #detail-next,
+.go #detail-previous,
+.go #detail-apps .app,
+.go .element,
+.go #send{ -moz-animation-duration: 1000ms; -moz-animation-fill-mode: both; -moz-animation-timing-function: ease;}
+
+#hey,
+#there,
+#view-portfolio,
+#send-email{ -moz-animation-timing-function: ease-out;}
+#hello-background{ -moz-animation-duration: 2000ms; -moz-animation-name: fade-out;}
+#hey{ -moz-animation-delay: 500ms; -moz-animation-name: down;}
+#there{ -moz-animation-delay: 1000ms; -moz-animation-name: up;}
+#view-portfolio{ -moz-animation-delay: 1500ms; -moz-animation-name: left;}
+#send-email{ -moz-animation-delay: 2000ms; -moz-animation-name: right;}
+
+.go .arrow-previous{ -moz-animation-name: right;}
+.go .arrow-next{ -moz-animation-name: left;}
+.go .dots a{ -moz-animation-name: up-fast;}
+.go .dots a:nth-child(1){ -moz-animation-delay: 250ms;}
+.go .dots a:nth-child(2){ -moz-animation-delay: 375ms;}
+.go .dots a:nth-child(3){ -moz-animation-delay: 500ms;}
+.go .dots a:nth-child(4){ -moz-animation-delay: 625ms;}
+.go .dots a:nth-child(5){ -moz-animation-delay: 750ms;}
+.go .dots a:nth-child(6){ -moz-animation-delay: 1000ms;}
+.go .dots a:nth-child(7){ -moz-animation-delay: 1250ms;}
+
+.go .title{ -moz-animation-name: left;}
+.go .subtitle{ -moz-animation-delay: 250ms; -moz-animation-name: right;}
+
+.go .skill{ -moz-animation-delay: 500ms; -moz-animation-name: up;}
+.go #html5{ -moz-animation-delay: 500ms;}
+.go #html5 .level strong{ -moz-animation-delay: 750ms; -moz-animation-name: fill-100;}
+.go #wordpress{ -moz-animation-delay: 750ms;}
+.go #wordpress .level strong{ -moz-animation-delay: 750ms; -moz-animation-name: fill-90;}
+.go #jquery{ -moz-animation-delay: 1000ms;}
+.go #jquery .level strong{ -moz-animation-delay: 1000ms; -moz-animation-name: fill-80;}
+.go #photoshop{ -moz-animation-delay: 1250ms;}
+.go #photoshop .level strong{ -moz-animation-delay: 1250ms; -moz-animation-name: fill-80;}
+.go #illustrator{ -moz-animation-delay: 1500ms;}
+.go #illustrator .level strong{ -moz-animation-delay: 1500ms; -moz-animation-name: fill-60;}
+
+.go#portfolio .title{ -moz-animation-name: up;}
+.go .project{ -moz-animation-name: grow;}
+.go .project:nth-child(2){ -moz-animation-delay: 250ms;}
+.go .project:nth-child(3){ -moz-animation-delay: 500ms;}
+.go .project:nth-child(4){ -moz-animation-delay: 750ms;}
+.go .project:nth-child(5){ -moz-animation-delay: 1000ms;}
+.go .project:nth-child(6){ -moz-animation-delay: 1250ms;}
+.go .project:nth-child(7){ -moz-animation-delay: 1500ms;}
+.go .project:nth-child(8){ -moz-animation-delay: 1750ms;}
+.go .project:nth-child(9){ -moz-animation-delay: 2000ms;}
+.go .project:nth-child(10){ -moz-animation-delay: 2250ms;}
+.go .project:nth-child(11){ -moz-animation-delay: 2500ms;}
+.go .project:nth-child(12){ -moz-animation-delay: 2750ms;}
+
+.go #detail-background{ -moz-animation-duration: 500ms; -moz-animation-name: overlay;}
+.go #detail{ -moz-animation-duration: 500ms; -moz-animation-name: grow;}
+.go #detail-image{ -moz-animation-name: reveal; -moz-animation-timing-function: cubic-bezier(0, 1.5, 0.75, 1);}
+.go #detail-name{ -moz-animation-delay: 250ms; -moz-animation-name: left;}
+.go #detail-description{ -moz-animation-delay: 500ms; -moz-animation-name: right;}
+.go #detail-border{ -moz-animation-delay: 750ms; -moz-animation-name: fill-100; -moz-animation-timing-function: cubic-bezier(0, 1, 0.25, 01);}
+.go #detail-text{ -moz-animation-delay: 1000ms; -moz-animation-name: up;}
+.go #detail-link{ -moz-animation-delay: 1250ms; -moz-animation-name: up;}
+.go #detail-apps .app{ -moz-animation-delay: 1500ms; -moz-animation-name: up; -moz-animation-timing-function: cubic-bezier(0, 2, 0.5, 1);}
+.go #detail-apps .app:nth-child(2){ -moz-animation-delay: 1625ms;}
+.go #detail-apps .app:nth-child(3){ -moz-animation-delay: 1750ms;}
+.go #detail-close,
+.go #detail-next,
+.go #detail-previous{ -moz-animation-delay: 1500ms; -moz-animation-name: close; -moz-animation-timing-function: cubic-bezier(0, 1.5, 0.25, 1);}
+.go #detail-next{ -moz-animation-delay: 1625ms;}
+.go #detail-previous{ -moz-animation-delay: 1750ms;}
+
+.close #detail-apps .app,
+.close #detail-link,
+.close #detail-text,
+.close #detail-description,
+.close #detail-name,
+.close #detail{ -moz-animation-duration: 500ms; -moz-animation-name: drop; -moz-animation-timing-function: /*cubic-bezier(0.950, 0.050, 0.795, 0.035)*/ cubic-bezier(1, -0.5, 0.5, 1.5);}
+.close #detail-close,
+.close #detail-next,
+.close #detail-previous{ -moz-animation-delay: 0ms; -moz-animation-duration: 500ms; -moz-animation-name: revert-close; -moz-animation-timing-function: cubic-bezier(1, -0.5, 0.5, 1.5);}
+.close #detail-next{ -moz-animation-delay: 125ms;}
+.close #detail-previous{ -moz-animation-delay: 250ms;}
+.close #detail-apps .app:nth-child(3){ -moz-animation-delay: 0ms;}
+.close #detail-apps .app:nth-child(2){ -moz-animation-delay: 125ms;}
+.close #detail-apps .app:nth-child(1){ -moz-animation-delay: 250ms;}
+.close #detail-link{ -moz-animation-delay: 375ms;}
+.close #detail-text{ -moz-animation-delay: 500ms;}
+.close #detail-border{ -moz-animation-delay: 0ms; -moz-animation-name: revert-fill-100;}
+.close #detail-description{ -moz-animation-delay: 750ms;}
+.close #detail-name{ -moz-animation-delay: 875ms;}
+.close #detail-image{ -moz-animation-delay: 0ms; -moz-animation-name: revert-reveal; -moz-animation-timing-function: cubic-bezier(1, -0.5, 0.5, 1.5);}
+.close #detail{ -moz-animation-delay: 1000ms;}
+.close #detail-background{ -moz-animation-delay: 1250ms; -moz-animation-duration: 500ms; -moz-animation-name: revert-overlay;}
+
+.removing #detail-apps .app,
+.removing #detail-link,
+.removing #detail-text,
+.removing #detail-description,
+.removing #detail-name{ -moz-animation-duration: 500ms; -moz-animation-name: drop; -moz-animation-timing-function: cubic-bezier(1, -0.5, 0.5, 1.5);}
+.removing #detail-close,
+.removing #detail-next,
+.removing #detail-previous{ -moz-animation-delay: 0ms; -moz-animation-duration: 500ms; -moz-animation-name: revert-close; -moz-animation-timing-function: cubic-bezier(1, -0.5, 0.5, 1.5);}
+.removing #detail-next{ -moz-animation-delay: 125ms;}
+.removing #detail-previous{ -moz-animation-delay: 250ms;}
+.removing #detail-apps .app:nth-child(3){ -moz-animation-delay: 0ms;}
+.removing #detail-apps .app:nth-child(2){ -moz-animation-delay: 125ms;}
+.removing #detail-apps .app:nth-child(1){ -moz-animation-delay: 250ms;}
+.removing #detail-link{ -moz-animation-delay: 375ms;}
+.removing #detail-text{ -moz-animation-delay: 500ms;}
+.removing #detail-border{ -moz-animation-delay: 0ms; -moz-animation-name: revert-fill-100;}
+.removing #detail-description{ -moz-animation-delay: 750ms;}
+.removing #detail-name{ -moz-animation-delay: 875ms;}
+.removing #detail-image{ -moz-animation-delay: 0ms; -moz-animation-name: revert-reveal; -moz-animation-timing-function: cubic-bezier(1, -0.5, 0.5, 1.5);}
+
+.go .element,
+.go #send{ -moz-animation-name: grow;}
+.go #contact-name .element{ -moz-animation-delay: 250ms;}
+.go #contact-email .element{ -moz-animation-delay: 500ms;}
+.go #contact-subject .element{ -moz-animation-delay: 750ms;}
+.go #contact-message .element{ -moz-animation-delay: 1000ms;}
+.go #send{ -moz-animation-delay: 1250ms;}
+
+/* Responsiveness */
+
+@media only screen and (max-width: 1000px) {
+  .wrap,
+  #hello hgroup{ margin: 0 20px; width: auto;}
+  .testimonial blockquote,
+  .testimonial p{ margin: 0 160px; width: auto;}
+  #hello hgroup{ height: auto; padding: 120px 0; position: static;}
+  #there br{ display: none;}
+  .heading{ padding: 0 20px;}
+  .skill .level{ float: none; margin: 0 0 20px; width: auto;}
+}
+
+@media only screen and (max-width: 950px) {
+  #description{ display: none;}
+}
+
+@media only screen and (max-width: 850px) {
+  #calendar{ height: 1px;}
+  #contact form{ margin: 0 20px; width: auto;}
+  input.element,
+  #contact-subject .element,
+  textarea.element{ width: 86%;}
+  textarea.element{ max-width: 86%; padding: 10px;}
+  #contact-name,
+  #contact-email{ float: none; width: auto;}
+  #contact-email,
+  #contact-subject,
+  #contact-message{ padding-top: 20px;}
+}
+
+@media only screen and (max-width: 800px) {
+  .testimonial blockquote,
+  .testimonial p{ margin: 0 20px;}
+  .arrow-previous,
+  .arrow-next{ display: none;}
+}
+
+@media only screen and (max-width: 700px) {
+  #header{ height: auto; position: static;}
+  #logo{ float: none;}
+  #menu{ display: block;}
+  #nav{ display: none; float: none; margin: 0; padding-top: 14px;}
+  .nav{ display: block; float: none;}
+}

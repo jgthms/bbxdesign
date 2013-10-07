@@ -2,6 +2,8 @@ $(document).ready( function() {
 
   var $header = $('#header'),
       $hello = $('#hello'),
+      $menu = $('#menu'),
+      $nav_menu = $('#nav'),
       $nav = $('.nav'),
       $hey = $('#hey'),
       $view_portfolio = $('#view-portfolio'),
@@ -12,12 +14,17 @@ $(document).ready( function() {
       $portfolio = $('#portfolio'),
       $projects_container = $('#projects'),
       $projects = $('.project'),
+      $preview = $('#preview'),
       $calendar = $('#calendar'),
       $contact = $('#contact'),
       $sections = $('section'),
       $zones = $('#testimonials, #skills, #portfolio, #timeline, #contact');
 
-  var navigating = false;
+  var navigating = false,
+      previewing = false,
+      moving = false,
+      hello_width = $hello.width(),
+      projects_count = $projects.length;
 
   // Header
 
@@ -31,14 +38,28 @@ $(document).ready( function() {
 
   $nav.click( function() {
     var s = $(this).parent().index();
-    $('html, body').stop().animate({
-      scrollTop: Math.max($sections.eq(s).offset().top - 59, 0)
-    }, 1000, 'easeInOutExpo');
+    if (previewing) {
+      setTimeout(function() {
+        $('html, body').stop().animate({
+          scrollTop: Math.max($sections.eq(s).offset().top - 59, 0)
+        }, 1000, 'easeInOutExpo');
+      }, 1750);
+    } else {
+      $('html, body').stop().animate({
+        scrollTop: Math.max($sections.eq(s).offset().top - 59, 0)
+      }, 1000, 'easeInOutExpo');
+    }
+  });
+
+  $menu.click( function() {
+    $nav_menu.toggle();
   });
 
   // Hello
 
-  $hello.height($(window).height());
+  if (window.innerWidth > 1000) {
+    $hello.height($(window).height());
+  }
 
   function Navigate(element) {
     navigating = true;
@@ -62,35 +83,115 @@ $(document).ready( function() {
 
   // Testimonials
 
-  $testimonials.bbxslider();
+  var testimonials = $testimonials.bbxslider();
 
   // Portfolio
 
-  var space = $(window).width() / 4;
-  $projects_container.height(space * 2);
-  $projects.height(space);
-  $projects.width(space);
-  $projects.each( function(index) {
-    $(this).css('left', index % 4 * space);
-    $(this).css('top', Math.floor(index / 4) * space);
-    // $(this).stop().animate({
-    //   left: index % 4 * space,
-    //   top: Math.floor(index / 4) * space
-    // }, 1000, 'easeOutExpo');
-  });
+  function Space() {
+    var width = $(window).width();
+    var divider = Math.floor(width / 300);
+    var space = width / divider;
+    $projects_container.height(space * Math.ceil($projects.length / divider));
+    $projects.height(space);
+    $projects.width(space);
+    $projects.each( function(index) {
+      $(this).css('left', index % divider * space);
+      $(this).css('top', Math.floor(index / divider) * space);
+    });
+  }
 
-  $('.detail').width($(window).width() - 120);
-  $('.detail').height($(window).height() - 180);
+  Space();
 
-  $('#jt').click( function() {
-    $('#preview').addClass('go');
-  });
+  function Detail() {
+    $('#detail').width($(window).width() - 120);
+    $('#detail').height($(window).height() - 180);
+  }
 
-  $('.detail-close').click( function() {
-    $('#preview').addClass('revert');
+  Detail();
+
+  function Preview(element) {
+    previewing = true;
+    var detail_index = element.index();
+    var detail_image = 'url(previews/' + element.attr('id') + '.jpg)';
+    var detail_name = element.find('.project-name').text();
+    var detail_description = element.find('.project-description').text();
+    var detail_text = element.data('text');
+    var detail_url = element.attr('href');
+    var detail_apps = element.find('.project-apps').html();
+    $('#detail').data('index', detail_index);
+    $('#detail-image').css('background-image', detail_image);
+    $('#detail-name').text(detail_name);
+    $('#detail-description').text(detail_description);
+    $('#detail-text').text(detail_text);
+    $('#detail-link').attr('href', detail_url);
+    $('#detail-apps').html(detail_apps);
+  }
+
+  function Switch(target) {
+    moving = true;
+    if (target > (projects_count - 1)) {
+      n = 0;
+    } else if (target < 0) {
+      n = projects_count - 1;
+    } else {
+      n = target;
+    }
+    $preview.addClass('removing');
     setTimeout(function() {
-      $('#preview').removeClass();
+      $preview.removeClass('removing');
+      Preview($projects.eq(n));
     }, 1750);
+    setTimeout(function() {
+      moving = false;
+    }, 3500);
+  }
+
+  function Close() {
+    if (!moving) {
+      $preview.addClass('close');
+      setTimeout(function() {
+        $preview.removeClass();
+        previewing = false;
+      }, 1750);
+    }
+  }
+
+  $projects.click( function() {
+    if ($(window).width() > 1000) {
+      moving = true;
+      Preview($(this));
+      $preview.addClass('go');
+      setTimeout(function() {
+        moving = false;
+      }, 1750);
+      return false;
+    }
+  });
+
+  $('#detail-close').click( function() {
+    Close();
+  });
+
+  $('html').click(function() {
+    Close();
+  });
+
+  $('#detail').click(function(event){
+    event.stopPropagation();
+  });
+
+  $('#detail-next').click(function(event){
+    var index = $(this).parent().parent().parent().data('index');
+    if (!moving) {
+      Switch(index + 1);
+    }
+  });
+
+  $('#detail-previous').click(function(event){
+    var index = $(this).parent().parent().parent().data('index');
+    if (!moving) {
+      Switch(index - 1);
+    }
   });
 
   // Timeline
@@ -104,7 +205,8 @@ $(document).ready( function() {
       $restart = $('#restart');
 
   var half = $(window).width() / 2,
-      started_stories = false;
+      started_stories = false,
+      current_story = 0;
   
   function Time(target) {
     target = -(target * 20) + half;
@@ -130,14 +232,18 @@ $(document).ready( function() {
   };
   
   function Read(e) {
+    current_story = e.index();
+    var story_width = Math.min($(window).width(), 820);
+    var story_space = story_width - 120;
+    $story.width(story_space);
     $story.not(e).removeClass('current');
     var related = e.data('related');
     Focus(related);
     e.addClass('current');
     var page = e.index();
-    var flow = 860 * page;
+    var flow = story_width * page; // 820
     flow = -flow;
-    flow += half - 430;
+    flow += half - story_width / 2; // 410
     $stories.stop().animate({
       height: e.height(),
     }, 1000,'easeOutExpo');
@@ -160,7 +266,6 @@ $(document).ready( function() {
 
   $(window).scroll( function() {
     var position = $(window).scrollTop();
-    var width = $(window).width();
     var height = $(window).height();
     var trigger = height / 2;
     if (position == 0) {
@@ -181,60 +286,87 @@ $(document).ready( function() {
         $nav.eq(index).addClass('on');
       }
     });
-    // if (!navigating) {
-      var testimonials_offset = $testimonials.offset();
-      var testimonials_height = $testimonials.height();
-      if (position > testimonials_offset.top + testimonials_height || position + height - 1 < testimonials_offset.top) {
-        $testimonials_reel.stop().animate({
+    var testimonials_offset = $testimonials.offset();
+    var testimonials_height = $testimonials.height();
+    if (position > testimonials_offset.top + testimonials_height || position + height - 1 < testimonials_offset.top) {
+      $testimonials_reel.stop().animate({
+        opacity: 0
+      }, 1000, 'easeOutExpo');
+    } else if (position + trigger > testimonials_offset.top) {
+      $testimonials_reel.stop().animate({
+        opacity: 1
+      }, 2000, 'easeOutExpo');
+    }
+    $zones.each( function(index) {
+      var zone_offset = $(this).offset();
+      var zone_height = $(this).height();
+      if (position > zone_offset.top + zone_height || position + height - 1 < zone_offset.top) {
+        $(this).removeClass('go');
+      } else if (position + trigger > zone_offset.top) {
+        $(this).addClass('go');
+      }
+    });
+    var calendar_offset = $calendar.offset();
+    var calendar_height = $calendar.height();
+    if (position > calendar_offset.top + calendar_height || position + height - 1 < calendar_offset.top) {
+      if (started_stories) {
+        $chapters.stop().animate({
           opacity: 0
         }, 1000, 'easeOutExpo');
-      } else if (position + trigger > testimonials_offset.top) {
-        $testimonials_reel.stop().animate({
+        $stories_reel.stop().animate({
+          opacity: 0
+        }, 1000, 'easeOutExpo');
+      } else {
+        $chapters.stop().animate({
+          left: 2000,
+          opacity: 0
+        }, 1000, 'easeOutExpo');
+        $stories_reel.stop().animate({
+          left: -2000,
+          opacity: 0
+        }, 1000, 'easeOutExpo');
+      }
+    } else if (position + trigger > calendar_offset.top) {
+      if (started_stories) {
+        $chapters.stop().animate({
           opacity: 1
-        }, 2000, 'easeOutExpo');
+        }, 1000, 'easeOutExpo');
+        $stories_reel.stop().animate({
+          opacity: 1
+        }, 1000, 'easeOutExpo');
+      } else {
+        Read($story.eq(0));
       }
-      $zones.each( function(index) {
-        var zone_offset = $(this).offset();
-        var zone_height = $(this).height();
-        if (position > zone_offset.top + zone_height || position + height - 1 < zone_offset.top) {
-          $(this).removeClass('go');
-        } else if (position + trigger > zone_offset.top) {
-          $(this).addClass('go');
-        }
-      });
-      var calendar_offset = $calendar.offset();
-      var calendar_height = $calendar.height();
-      if (position > calendar_offset.top + calendar_height || position + height - 1 < calendar_offset.top) {
-        if (started_stories) {
-          $chapters.stop().animate({
-            opacity: 0
-          }, 1000, 'easeOutExpo');
-          $stories_reel.stop().animate({
-            opacity: 0
-          }, 1000, 'easeOutExpo');
-        } else {
-          $chapters.stop().animate({
-            left: 2000,
-            opacity: 0
-          }, 1000, 'easeOutExpo');
-          $stories_reel.stop().animate({
-            left: -2000,
-            opacity: 0
-          }, 1000, 'easeOutExpo');
-        }
-      } else if (position + trigger > calendar_offset.top) {
-        if (started_stories) {
-          $chapters.stop().animate({
-            opacity: 1
-          }, 1000, 'easeOutExpo');
-          $stories_reel.stop().animate({
-            opacity: 1
-          }, 1000, 'easeOutExpo');
-        } else {
-          Read($story.eq(0));
-        }
+    }
+  });
+      
+  var resize_timer;
+  $(window).resize(function() {
+    var width = $(window).width();
+    var inner_width = window.innerWidth;
+    var height = $(window).height();
+    half = width / 2;
+    clearTimeout(resize_timer);
+    resize_timer = setTimeout(function() {
+      if (inner_width > 700) {
+        $header.css('position', 'fixed');
+        $nav_menu.show();
+      } else {
+        $header.css('position', 'static');
+        $nav_menu.hide();
       }
-    // }
+      if (inner_width > 1000) {
+        $hello.stop().animate({
+          height: height
+        }, 1000, 'easeOutExpo');
+      } else {
+        $hello.height('auto');
+      }
+      testimonials.resize(width);
+      Space();
+      Detail();
+      Read($story.eq(current_story));
+    }, 125);
   });
 
 });

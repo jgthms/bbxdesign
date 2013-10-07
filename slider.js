@@ -1,7 +1,7 @@
 (function ($) {
   'use strict';
 
-  $.fn.bbxslider = function (options) {
+  $.fn.bbxslider = function() {
     var slider = this;
     var aperture = slider.find('.aperture');
     var reel = slider.find('.reel');
@@ -10,18 +10,21 @@
     var previous = slider.find('.arrow-previous');
     var next = slider.find('.arrow-next');
     var easing = 'easeInOutExpo';
-    var c = items.length;
+    var count = items.length;
     var n = 0;
-    var w = $(window).width();
+    var width = $(window).width();
 
-    reel.width(w * c);
-    items.width(w);
+    slider.size = function(new_width) {
+      width = new_width;
+      reel.width(new_width * count);
+      items.width(new_width);
+    }
 
-    function Move(target) {
-      if (target > (c - 1)) {
+    slider.move = function(target) {
+      if (target > (count - 1)) {
         n = 0;
       } else if (target < 0) {
-        n = c - 1;
+        n = count - 1;
       } else {
         n = target;
       }
@@ -29,28 +32,33 @@
         height: items.eq(n).height()
       }, 500, easing);
       reel.stop().animate({
-        left: -(w * n)
+        left: -(width * n)
       }, 500, easing);
       dots.removeClass('current');
       dots.eq(n).addClass('current');
     }
 
+    slider.resize = function(new_width) {
+      width = new_width;
+      reel.width(new_width * count);
+      items.width(new_width);
+      this.move(n);
+    }
+
     next.click( function() {
-      Move(n + 1);
+      slider.move(n + 1);
     });
 
     previous.click( function() {
-      Move(n - 1);
+      slider.move(n - 1);
     });
 
     dots.click( function() {
-      Move($(this).index());
+      slider.move($(this).index());
     });
 
-    var settings = $.extend({
-      'url': slider.attr('action')
-    }, options);
+    slider.size(width);
 
-    return this;
+    return slider;
   };
 })(jQuery);
