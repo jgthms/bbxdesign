@@ -13,15 +13,18 @@ input:focus, input:active{ outline: none;}
 ::-webkit-input-placeholder{ padding-top: 5px;}
 textarea::-webkit-input-placeholder{ padding-top: 0;}
 
-#header{ font-family: 'Museo 700', Georgia, serif; font-weight: normal;}
+#header,
+.detail-name{ font-family: 'Museo 700', Georgia, serif; font-weight: normal;}
 #description,
 #hello hgroup,
 .heading,
 .project,
+.detail-description,
 .story h5{ font-family: 'Museo 300', Georgia, serif; font-weight: normal;}
 #testimonials,
 .skills,
 #calendar,
+.detail-text,
 .story,
 .element{ font-family: 'TisaPro', Georgia, serif; font-weight: normal;}
 
@@ -31,13 +34,18 @@ textarea::-webkit-input-placeholder{ padding-top: 0;}
 .button,
 .dots a,
 .arrow,
+.detail-close,
 .level strong,
 .app{ overflow: hidden; text-indent: -290486px;}
 
 .wrap{ margin: 0 auto; position: relative; width: 960px;}
 .button{ background: url(buttons.png) no-repeat 0 0; display: inline-block; height: 62px; position: relative; width: 234px;}
 .button-email{ background-position: 0 -70px;}
+.button-visit{ background-position: 0 -140px; width: 216px;}
 .button:active{ top: 2px;}
+.button-portfolio:active{ background-position: -240px 0;}
+.button-email:active{ background-position: -240px -70px;}
+.button-visit:active{ background-position: -240px -140px;}
 .dots{ height: 16px; text-align: center;}
 .dots a{ border-radius: 8px; display: inline-block; height: 16px; margin: 0 4px; vertical-align: top; width: 16px;}
 .arrow{ background: url(arrows.png) no-repeat 0 0; display: block; height: 80px; width: 40px;}
@@ -62,7 +70,7 @@ textarea.element{ height: 300px; line-height: 1.5; max-width: 742px; padding: 10
 .reel{ left: 0; position: absolute; top: 0; width: 500%;}
 .item{ float: left; width: 20%;}
 
-#header{ background: white; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.16); height: 32px; left: 0; line-height: 32px; padding: 14px 0; position: fixed; top: -66px; width: 100%; z-index: 1000;}
+#header{ background: white; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.16); height: 32px; left: 0; line-height: 32px; padding: 14px 0; position: fixed; top: -66px; width: 100%; z-index: 2000;}
 #logo{ background: url(bbx.png) no-repeat 0 0; float: left; height: 32px; margin-left: 14px; padding-left: 40px;}
 #name,
 #description{ background: url(name.png) no-repeat 0 0; float: left; height: 32px;}
@@ -100,7 +108,7 @@ textarea.element{ height: 300px; line-height: 1.5; max-width: 742px; padding: 10
 #hello .button{ margin: 0 5px;}
 
 #testimonials{ background: #f5574c; color: white; padding: 80px 0 60px; position: relative; text-align: center;}
-#testimonials .reel{ left: 100%; opacity: 0;}
+#testimonials .reel{ opacity: 0;}
 .testimonial blockquote,
 .testimonial p{ margin: 0 auto; width: 620px;}
 .testimonial blockquote{ font-size: 32px; font-style: italic; position: relative; z-index: 50;}
@@ -156,11 +164,26 @@ textarea.element{ height: 300px; line-height: 1.5; max-width: 742px; padding: 10
 .project:hover .project-name{ bottom: 50%;}
 .project:hover .project-description{ top: 50%;}
 .project:hover .project-apps .app{ opacity: 1; top: 0;}
+.detail-background{ background: #f5574c; height: 100%; left: 0; opacity: 0.86; position: fixed; top: 0; width: 100%; z-index: 1000;}
+.detail{ background: white; background: rgba(255, 255, 255, 0.92); box-shadow: 0 8px 16px rgba(0, 0, 0, 0.48); height: 700px; left: 60px; position: fixed; overflow: hidden; top: 120px; width: 1300px; z-index: 3000;}
+.detail-image{ background: url(previews/jtms.jpg) no-repeat center center; height: 100%; position: absolute; right: 0; top: 0; width: 50%;}
+.detail-left{ height: 100%; left: 0; position: absolute; width: 50%;}
+.detail-content{ padding: 40px;}
+.detail-name{ color: #f5574c; font-size: 48px; line-height: 1.25;}
+.detail-description{ color: #b0b0b0; font-size: 24px; line-height: 1.25;}
+.detail-border{ background: #dbdbdb; border: none; height: 1px; margin: 20px 0;}
+.detail-text{ color: #7a7a7a; font-size: 20px; margin-bottom: 20px;}
+.detail-apps{ bottom: 40px; position: absolute; right: 40px;}
+.detail-apps .app{ margin-left: 20px;}
+.detail-close{ background: url(close.png) no-repeat 0 0; cursor: pointer; display: block; height: 48px; opacity: 0.08; position: absolute; right: 40px; top: 40px; width: 48px; z-index: 4000;}
+.detail-close:hover{ opacity: 0.16;}
+#preview{ display: none;}
+#preview.go{ display: block;}
 
 #timeline{ padding-top: 80px;}
 #calendar{ border-radius: 5px; height: 180px; margin-bottom: 80px; overflow: hidden; position: relative;}
 #time{ background: #1f1f1f; border-bottom: 10px solid #141414; height: 100px; left: 0; opacity: 0.48; position: absolute; top: 0; width: 100%;}
-#chapters{ background: url(time.png) repeat-x -170px 110px; left: 2000px; padding: 0 480px 40px; position: absolute; top: 0; width: 2860px;}
+#chapters{ background: url(time.png) repeat-x -170px 110px; left: 2000px; opacity: 0; padding: 0 480px 40px; position: absolute; top: 0; width: 2860px;}
 .chapter{ background: #6d89ac; float: left; height: 80px; line-height: 1.25; min-width: 100px; padding: 10px 0; position: relative; text-indent: 15px;}
 .chapter strong{ color: white; display: block; font-size: 24px; font-weight: bold;}
 .chapter em{ color: #c1dbfc; display: block; font-size: 20px; font-style: italic;}
@@ -229,7 +252,7 @@ a{
   -webkit-transition: background-color 250ms ease-out, border 250ms ease-out, color 250ms ease-out;
 }
 
-.project-content, .story, #restart{
+.project-content, .detail-close, .story, #restart{
   transition: opacity 250ms ease;
   -moz-transition: opacity 250ms ease;
   -ms-transition: opacity 250ms ease;
@@ -279,7 +302,7 @@ a{
   background: linear-gradient(to bottom, rgba(255, 255, 255,1) 1%,rgba(255, 255, 255, 0.86) 100%);
 }
 
-#hello, #portfolio, #contact{
+#hello, #portfolio, .detail-image, #contact{
   background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -347,6 +370,16 @@ a{
   100%{ opacity: 0;}
 }
 
+@-webkit-keyframes overlay{
+  0%{ opacity: 0;}
+  100%{ opacity: 0.86;}
+}
+
+@-webkit-keyframes revert-overlay{
+  0%{ opacity: 0.86;}
+  100%{ opacity: 0;}
+}
+
 @-webkit-keyframes down{
   0%{ opacity: 0; -webkit-transform: translateY(-24px);}
   100%{ opacity: 1; -webkit-transform: translateY(0);}
@@ -355,6 +388,16 @@ a{
 @-webkit-keyframes up{
   0%{ opacity: 0; -webkit-transform: translateY(24px);}
   100%{ opacity: 1; -webkit-transform: translateY(0);}
+}
+
+@-webkit-keyframes revert-up{
+  0%{ opacity: 1; -webkit-transform: translateY(0);}
+  100%{ opacity: 0; -webkit-transform: translateY(24px);}
+}
+
+@-webkit-keyframes revert-up{
+  0%{ opacity: 1; -webkit-transform: translateY(0);}
+  100%{ opacity: 0; -webkit-transform: translateY(24px);}
 }
 
 @-webkit-keyframes up-fast{
@@ -368,9 +411,19 @@ a{
   100%{ opacity: 1; -webkit-transform: translateX(0);}
 }
 
+@-webkit-keyframes revert-left{
+  0%{ opacity: 1; -webkit-transform: translateX(0);}
+  100%{ opacity: 0; -webkit-transform: translateX(24px);}
+}
+
 @-webkit-keyframes right{
   0%{ opacity: 0; -webkit-transform: translateX(-24px);}
   100%{ opacity: 1; -webkit-transform: translateX(0);}
+}
+
+@-webkit-keyframes revert-right{
+  0%{ opacity: 1; -webkit-transform: translateX(0);}
+  100%{ opacity: 0; -webkit-transform: translateX(-24px);}
 }
 
 @-webkit-keyframes grow{
@@ -378,14 +431,44 @@ a{
   100%{ opacity: 1; -webkit-transform: scale(1, 1);}
 }
 
+@-webkit-keyframes revert-grow{
+  0%{ opacity: 1; -webkit-transform: scale(1, 1);}
+  100%{ opacity: 0; -webkit-transform: scale(0.96, 0.96);}
+}
+
 @-webkit-keyframes slide-down{
   0%{ opacity: 0; max-height: 0;}
   100%{ opacity: 1; max-height: 60px;}
 }
 
+@-webkit-keyframes close{
+  0%{ -webkit-transform: translateY(-96px);}
+  100%{ -webkit-transform: translateY(0);}
+}
+
+@-webkit-keyframes revert-close{
+  0%{ -webkit-transform: translateY(0);}
+  100%{ -webkit-transform: translateY(-96px);}
+}
+
+@-webkit-keyframes reveal{
+  0%{ opacity: 0; left: 100%;}
+  100%{ opacity: 1; left: 50%;}
+}
+
+@-webkit-keyframes revert-reveal{
+  0%{ opacity: 1; left: 50%;}
+  100%{ opacity: 0; left: 100%;}
+}
+
 @-webkit-keyframes fill-100{
   0%{ width: 0%;}
   100%{ width: 100%;}
+}
+
+@-webkit-keyframes revert-fill-100{
+  0%{ width: 100%;}
+  100%{ width: 0%;}
 }
 
 @-webkit-keyframes fill-90{
@@ -403,6 +486,11 @@ a{
   100%{ width: 60%;}
 }
 
+@-webkit-keyframes drop{
+  0%{ opacity: 1; -webkit-transform: translateY(0);}
+  100%{ opacity: 0%; -webkit-transform: translateY(200px);}
+}
+
 #hello-background,
 #hey,
 #there,
@@ -415,13 +503,32 @@ a{
 .skill,
 .level strong,
 .project,
+#preview,
+.detail-background,
+.detail,
+.detail-image,
+.detail-name,
+.detail-description,
+.detail-border,
+.detail-text,
+.detail-button,
+.detail-image,
+.detail-apps .app,
 .element,
 #send{ opacity: 0; position: relative; z-index: 100;}
 
+#preview,
+.detail-border,
 .level strong{ opacity: 1;}
 
 .level strong,
-.project{ position: absolute;}
+.project,
+.detail-image,
+.detail-close{ position: absolute;}
+
+.detail-background{ position: fixed; z-index: 1000;}
+.detail{ position: fixed; z-index: 3000;}
+.detail-image{ z-index: 3500;}
 
 #hello-background,
 #hey,
@@ -435,6 +542,26 @@ a{
 .go .skill,
 .go .level strong,
 .go .project,
+.go .detail-background,
+.go .detail,
+.go .detail-image,
+.go .detail-name,
+.go .detail-description,
+.go .detail-border,
+.go .detail-text,
+.go .detail-button,
+.go .detail-close,
+.go .detail-apps .app,
+.revert .detail-background,
+.revert .detail,
+.revert .detail-image,
+.revert .detail-name,
+.revert .detail-description,
+.revert .detail-border,
+.revert .detail-text,
+.revert .detail-button,
+.revert .detail-close,
+.revert .detail-apps .app,
 .go .element,
 .go #send{ -webkit-animation-duration: 1000ms; -webkit-animation-fill-mode: both; -webkit-animation-timing-function: ease;}
 
@@ -456,6 +583,8 @@ a{
 .go .dots a:nth-child(3){ -webkit-animation-delay: 500ms;}
 .go .dots a:nth-child(4){ -webkit-animation-delay: 625ms;}
 .go .dots a:nth-child(5){ -webkit-animation-delay: 750ms;}
+.go .dots a:nth-child(6){ -webkit-animation-delay: 1000ms;}
+.go .dots a:nth-child(7){ -webkit-animation-delay: 1250ms;}
 
 .go .title{ -webkit-animation-name: left;}
 .go .subtitle{ -webkit-animation-delay: 250ms; -webkit-animation-name: right;}
@@ -482,6 +611,38 @@ a{
 .go .project:nth-child(7){ -webkit-animation-delay: 1500ms;}
 .go .project:nth-child(8){ -webkit-animation-delay: 1750ms;}
 .go .project:nth-child(9){ -webkit-animation-delay: 2000ms;}
+
+.go .detail-background{ -webkit-animation-duration: 500ms; -webkit-animation-name: overlay;}
+.go .detail{ -webkit-animation-duration: 500ms; -webkit-animation-name: grow;}
+.go .detail-image{ -webkit-animation-name: reveal; -webkit-animation-timing-function: cubic-bezier(0, 1.5, 0.75, 1);}
+.go .detail-name{ -webkit-animation-delay: 250ms; -webkit-animation-name: left;}
+.go .detail-description{ -webkit-animation-delay: 500ms; -webkit-animation-name: right;}
+.go .detail-border{ -webkit-animation-delay: 750ms; -webkit-animation-name: fill-100; -webkit-animation-timing-function: cubic-bezier(0, 1, 0.25, 01);}
+.go .detail-text{ -webkit-animation-delay: 1000ms; -webkit-animation-name: up;}
+.go .detail-button{ -webkit-animation-delay: 1250ms; -webkit-animation-name: up;}
+.go .detail-apps .app{ -webkit-animation-delay: 1500ms; -webkit-animation-name: up; -webkit-animation-timing-function: cubic-bezier(0, 2, 0.5, 1);}
+.go .detail-apps .app:nth-child(2){ -webkit-animation-delay: 1750ms;}
+.go .detail-apps .app:nth-child(3){ -webkit-animation-delay: 2000ms;}
+.go .detail-close{ -webkit-animation-delay: 1250ms; -webkit-animation-name: close; -webkit-animation-timing-function: cubic-bezier(0, 1.5, 0.25, 1);}
+
+.revert .detail-apps .app,
+.revert .detail-button,
+.revert .detail-text,
+.revert .detail-description,
+.revert .detail-name,
+.revert .detail{ -webkit-animation-duration: 500ms; -webkit-animation-name: drop; -webkit-animation-timing-function: /*cubic-bezier(0.950, 0.050, 0.795, 0.035)*/ cubic-bezier(1, -0.5, 0.5, 1.5);}
+.revert .detail-close{ -webkit-animation-delay: 0ms; -webkit-animation-duration: 500ms; -webkit-animation-name: revert-close; -webkit-animation-timing-function: cubic-bezier(1, -0.5, 0.5, 1.5);}
+.revert .detail-apps .app:nth-child(3){ -webkit-animation-delay: 0ms;}
+.revert .detail-apps .app:nth-child(2){ -webkit-animation-delay: 125ms;}
+.revert .detail-apps .app:nth-child(1){ -webkit-animation-delay: 250ms;}
+.revert .detail-button{ -webkit-animation-delay: 375ms;}
+.revert .detail-text{ -webkit-animation-delay: 500ms;}
+.revert .detail-border{ -webkit-animation-delay: 0ms; -webkit-animation-name: revert-fill-100;}
+.revert .detail-description{ -webkit-animation-delay: 750ms;}
+.revert .detail-name{ -webkit-animation-delay: 875ms;}
+.revert .detail-image{ -webkit-animation-delay: 0ms; -webkit-animation-name: revert-reveal; -webkit-animation-timing-function: cubic-bezier(1, -0.5, 0.5, 1.5);}
+.revert .detail{ -webkit-animation-delay: 1000ms;}
+.revert .detail-background{ -webkit-animation-delay: 1250ms; -webkit-animation-duration: 500ms; -webkit-animation-name: revert-overlay;}
 
 .go .element,
 .go #send{ -webkit-animation-name: grow;}

@@ -4,14 +4,20 @@ $(document).ready( function() {
       $hello = $('#hello'),
       $nav = $('.nav'),
       $hey = $('#hey'),
+      $view_portfolio = $('#view-portfolio'),
+      $send_email = $('#send-email'),
       $testimonials = $('#testimonials'),
       $testimonials_reel = $('#testimonials .reel'),
       $skill = $('.skill'),
-      $portfolio = $('#projects'),
+      $portfolio = $('#portfolio'),
+      $projects_container = $('#projects'),
       $projects = $('.project'),
       $calendar = $('#calendar'),
+      $contact = $('#contact'),
       $sections = $('section'),
       $zones = $('#testimonials, #skills, #portfolio, #timeline, #contact');
+
+  var navigating = false;
 
   // Header
 
@@ -26,13 +32,33 @@ $(document).ready( function() {
   $nav.click( function() {
     var s = $(this).parent().index();
     $('html, body').stop().animate({
-      scrollTop: $sections.eq(s).offset().top - 59
+      scrollTop: Math.max($sections.eq(s).offset().top - 59, 0)
     }, 1000, 'easeInOutExpo');
   });
 
   // Hello
 
   $hello.height($(window).height());
+
+  function Navigate(element) {
+    navigating = true;
+    $('html, body').stop().animate({
+      scrollTop: element.offset().top - 59
+    }, 1000, 'easeInOutExpo', function() {
+      element.addClass('go');
+      setTimeout(function() {
+        navigating = false;
+      }, 1000);
+    });
+  }
+
+  $view_portfolio.click( function() {
+    Navigate($portfolio);
+  });
+
+  $send_email.click( function() {
+    Navigate($contact);
+  });
 
   // Testimonials
 
@@ -41,7 +67,7 @@ $(document).ready( function() {
   // Portfolio
 
   var space = $(window).width() / 4;
-  $portfolio.height(space * 2);
+  $projects_container.height(space * 2);
   $projects.height(space);
   $projects.width(space);
   $projects.each( function(index) {
@@ -53,6 +79,20 @@ $(document).ready( function() {
     // }, 1000, 'easeOutExpo');
   });
 
+  $('.detail').width($(window).width() - 120);
+  $('.detail').height($(window).height() - 180);
+
+  $('#jt').click( function() {
+    $('#preview').addClass('go');
+  });
+
+  $('.detail-close').click( function() {
+    $('#preview').addClass('revert');
+    setTimeout(function() {
+      $('#preview').removeClass();
+    }, 1750);
+  });
+
   // Timeline
 
   var $chapters = $('#chapters'),
@@ -61,8 +101,10 @@ $(document).ready( function() {
       $stories = $('#stories'),
       $stories_reel = $('#stories-reel'),
       $story = $('.story'),
-      $restart = $('#restart'),
-      half = $(window).width() / 2;
+      $restart = $('#restart');
+
+  var half = $(window).width() / 2,
+      started_stories = false;
   
   function Time(target) {
     target = -(target * 20) + half;
@@ -82,8 +124,9 @@ $(document).ready( function() {
       target = 0;
     }
     $chapters.stop().animate({
-      left: target
-    },1000,'easeOutExpo');
+      left: target,
+      opacity: 1
+    }, 1000, 'easeInOutExpo');
   };
   
   function Read(e) {
@@ -98,7 +141,7 @@ $(document).ready( function() {
     $stories.stop().animate({
       height: e.height(),
     }, 1000,'easeOutExpo');
-    $stories_reel.stop().delay(250).animate({
+    $stories_reel.stop().animate({
       left: flow,
       opacity: 1
     }, 1000,'easeOutExpo');
@@ -106,6 +149,7 @@ $(document).ready( function() {
 
   $story.click( function() {
     Read($(this));
+    started_stories = true;
   });
 
   $restart.click( function() {
@@ -116,7 +160,9 @@ $(document).ready( function() {
 
   $(window).scroll( function() {
     var position = $(window).scrollTop();
-    var trigger = $(window).height() / 2;
+    var width = $(window).width();
+    var height = $(window).height();
+    var trigger = height / 2;
     if (position == 0) {
       if (!($header.is(":hover"))) {
         $header.stop().animate({
@@ -135,23 +181,60 @@ $(document).ready( function() {
         $nav.eq(index).addClass('on');
       }
     });
-    var testimonials_offset = $testimonials.offset();
-    if (position + trigger > testimonials_offset.top) {
-      $testimonials_reel.stop().animate({
-        left: 0,
-        opacity: 1
-      }, 1000, 'easeOutExpo');
-    }
-    $zones.each( function(index) {
-      var zone_offset = $(this).offset();
-      if (position + trigger > zone_offset.top) {
-        $(this).addClass('go');
+    // if (!navigating) {
+      var testimonials_offset = $testimonials.offset();
+      var testimonials_height = $testimonials.height();
+      if (position > testimonials_offset.top + testimonials_height || position + height - 1 < testimonials_offset.top) {
+        $testimonials_reel.stop().animate({
+          opacity: 0
+        }, 1000, 'easeOutExpo');
+      } else if (position + trigger > testimonials_offset.top) {
+        $testimonials_reel.stop().animate({
+          opacity: 1
+        }, 2000, 'easeOutExpo');
       }
-    });
-    var calendar_offset = $calendar.offset();
-    if (position + trigger > calendar_offset.top) {
-      Read($story.eq(0));
-    }
+      $zones.each( function(index) {
+        var zone_offset = $(this).offset();
+        var zone_height = $(this).height();
+        if (position > zone_offset.top + zone_height || position + height - 1 < zone_offset.top) {
+          $(this).removeClass('go');
+        } else if (position + trigger > zone_offset.top) {
+          $(this).addClass('go');
+        }
+      });
+      var calendar_offset = $calendar.offset();
+      var calendar_height = $calendar.height();
+      if (position > calendar_offset.top + calendar_height || position + height - 1 < calendar_offset.top) {
+        if (started_stories) {
+          $chapters.stop().animate({
+            opacity: 0
+          }, 1000, 'easeOutExpo');
+          $stories_reel.stop().animate({
+            opacity: 0
+          }, 1000, 'easeOutExpo');
+        } else {
+          $chapters.stop().animate({
+            left: 2000,
+            opacity: 0
+          }, 1000, 'easeOutExpo');
+          $stories_reel.stop().animate({
+            left: -2000,
+            opacity: 0
+          }, 1000, 'easeOutExpo');
+        }
+      } else if (position + trigger > calendar_offset.top) {
+        if (started_stories) {
+          $chapters.stop().animate({
+            opacity: 1
+          }, 1000, 'easeOutExpo');
+          $stories_reel.stop().animate({
+            opacity: 1
+          }, 1000, 'easeOutExpo');
+        } else {
+          Read($story.eq(0));
+        }
+      }
+    // }
   });
 
 });
