@@ -1,4 +1,14 @@
 $(document).ready( function() {
+});
+
+$(window).load( function() {
+  setTimeout(function() {
+    $('#loading').addClass('go');
+    $hello.addClass('go');
+  }, 1000);
+  setTimeout(function() {
+    $('#loading').remove();
+  }, 2000);
 
   var $header = $('#header'),
       $hello = $('#hello'),
@@ -25,6 +35,11 @@ $(document).ready( function() {
       moving = false,
       hello_width = $hello.width(),
       projects_count = $projects.length;
+
+  $('html, body').scrollTop(0);
+  $('html, body').animate({
+    scrollTop: 0
+  }, 'fast');
 
   // Header
 
