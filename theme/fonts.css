@@ -1,0 +1,54 @@
+@font-face {
+  font-family: 'bbx300';
+  font-style: normal;
+  font-weight: normal;
+  src: url('fonts/museo300-regular.eot');
+  src: url('fonts/museo300-regular.eot') format('embedded-opentype'),
+       url('fonts/museo300-regular.woff') format('woff'),
+       url('fonts/museo300-regular.ttf') format('truetype'),
+       url('fonts/museo300-regular.svg#Museo300') format('svg');
+}
+
+@font-face {
+  font-family: 'bbx700';
+  font-style: normal;
+  font-weight: normal;
+  src: url('fonts/museo700-regular.eot');
+  src: url('fonts/museo700-regular.eot') format('embedded-opentype'),
+       url('fonts/museo700-regular.woff') format('woff'),
+       url('fonts/museo700-regular.ttf') format('truetype'),
+       url('fonts/museo700-regular.svg#Museo700') format('svg');
+}
+
+@font-face {
+  font-family: 'bbx';
+  font-style: normal;
+  font-weight: normal;
+  src: url('fonts/tisaot.eot');
+  src: url('fonts/tisaot.eot') format('embedded-opentype'),
+       url('fonts/tisaot.woff') format('woff'),
+       url('fonts/tisaot.ttf') format('truetype'),
+       url('fonts/tisaot.svg#TisaOTRegular') format('svg');
+}
+
+@font-face {
+  font-family: 'bbx';
+  font-style: normal;
+  font-weight: bold;
+  src: url('fonts/tisaot-bold.eot');
+  src: url('fonts/tisaot-bold.eot') format('embedded-opentype'),
+       url('fonts/tisaot-bold.woff') format('woff'),
+       url('fonts/tisaot-bold.ttf') format('truetype'),
+       url('fonts/tisaot-bold.svg#TisaOTBold') format('svg');
+}
+
+@font-face {
+  font-family: 'bbx';
+  font-style: italic;
+  font-weight: normal;
+  src: url('fonts/tisaot-ita.eot');
+  src: url('fonts/tisaot-ita.eot') format('embedded-opentype'),
+       url('fonts/tisaot-ita.woff') format('woff'),
+       url('fonts/tisaot-ita.ttf') format('truetype'),
+       url('fonts/tisaot-ita.svg#TisaOTRegularItalic') format('svg');
+}

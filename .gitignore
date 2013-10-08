@@ -1,2 +1,6 @@
-/projects
+/html/*.png
+/html/previews
+/html/projects
+/theme/fonts
+/theme/previews
 *.jpg
