@@ -16,7 +16,7 @@ textarea::-webkit-input-placeholder{ padding-top: 0;}
 #header,
 #detail-name{ font-family: 'bbx700', Georgia, serif; font-weight: normal;}
 #description,
-#hello hgroup,
+#you,
 .heading,
 .project,
 #detail-description,
@@ -109,7 +109,7 @@ textarea.element{ height: 300px; line-height: 1.5; max-width: 742px; padding: 10
 
 #hello{ background: #292929 url(desktop.jpg) no-repeat fixed center top; height: 700px; position: relative; text-align: center;}
 /*#hello-background{ background: #292929; height: 100%; left: 0; position: absolute; top: 0; width: 100%;}*/
-#hello hgroup{ color: white; height: 300px; left: 50%; line-height: 1.25; margin: -120px 0 0 -470px; position: absolute; text-shadow: 0 4px 16px black; top: 50%; width: 960px;}
+#you{ color: white; height: 300px; left: 50%; line-height: 1.25; margin: -120px 0 0 -470px; position: absolute; text-shadow: 0 4px 16px black; top: 50%; width: 960px;}
 #hey{ font-size: 48px; font-weight: normal;}
 #there{ color: #dbdbdb; font-size: 32px; font-weight: normal; margin-top: 10px;}
 #hello p{ padding-top: 20px;}
@@ -181,7 +181,7 @@ textarea.element{ height: 300px; line-height: 1.5; max-width: 742px; padding: 10
 #detail-name{ color: #f5574c; font-size: 48px; line-height: 1; margin-bottom: 10px; padding-right: 170px;}
 #detail-description{ color: #b0b0b0; font-size: 24px; line-height: 1.25;}
 #detail-border{ background: #dbdbdb; border: none; height: 1px; margin: 20px 0;}
-#detail-text{ color: #7a7a7a; font-size: 20px; margin-bottom: 20px;}
+#detail-text{ color: #7a7a7a; font-size: 22px; margin-bottom: 20px;}
 #detail-apps{ bottom: 40px; position: absolute; right: 40px;}
 #detail-apps .app{ margin-left: 20px;}
 #detail-close,
@@ -202,34 +202,34 @@ textarea.element{ height: 300px; line-height: 1.5; max-width: 742px; padding: 10
 .chapter{ background: #6d89ac; float: left; height: 80px; line-height: 1.25; min-width: 100px; padding: 10px 0; position: relative; text-indent: 15px;}
 .chapter strong{ color: white; display: block; font-size: 24px; font-weight: bold;}
 .chapter em{ color: #c1dbfc; display: block; font-size: 20px; font-style: italic;}
-.chapter time{ color: #325989; display: block; font-size: 24px; position: absolute; right: 10px; top: 10px;}
+.chapter-time{ color: #325989; display: block; font-size: 24px; position: absolute; right: 10px; top: 10px;}
 .chapter span{ background: #325989; bottom: -10px; height: 10px; left: -5px; position: absolute; width: 100%;}
 #years{ bottom: -40px; color: white; font-size: 24px; font-weight: bold; left: 0; padding-left: 39px; position: absolute; width: 3360px;}
 #years li{ float: left; width: 240px;}
 #magendie{ margin-right: 40px; width: 680px;}
 #cachan{ background: #528f6c; margin-right: 40px; width: 440px;}
 #cachan em{ color: #8fe6b4;}
-#cachan time{ color: #297348;}
+#cachan .chapter-time{ color: #297348;}
 #cachan span{ background: #297348;}
 #bordeaux4{ background: #cdcd00; margin-right: 120px; width: 120px;}
 #bordeaux4 em{ color: #f0f03a;}
-#bordeaux4 time{ color: #8a8a00; display: none;}
+#bordeaux4 .chapter-time{ color: #8a8a00; display: none;}
 #bordeaux4 span{ background: #8a8a00;}
 #amtv{ background: #4e4e4e; width: 200px;}
 #amtv em{ color: #f29500;}
-#amtv time{ color: #1f1f1f; display: none;}
+#amtv .chapter-time{ color: #1f1f1f; display: none;}
 #amtv span{ background: #1f1f1f;}
 #mgd{ background: #09c; width: 200px;}
 #mgd em{ color: #a8eaff;}
-#mgd time{ color: #056382; display: none;}
+#mgd .chapter-time{ color: #056382; display: none;}
 #mgd span{ background: #056382;}
 #virtuoz{ background: #b60000; width: 200px;}
 #virtuoz em{ color: #e37d7d;}
-#virtuoz time{ color: #850606; display: none;}
+#virtuoz .chapter-time{ color: #850606; display: none;}
 #virtuoz span{ background: #850606;}
 #steaw{ background: #094062; width: 560px;}
 #steaw em{ color: #72b0d5;}
-#steaw time{ color: #021c2c;}
+#steaw .chapter-time{ color: #021c2c;}
 #steaw span{ background: #021c2c;}
 #stories{ height: 300px; overflow: hidden; padding-bottom: 120px; position: relative;}
 #stories-reel{ left: -2000px; opacity: 0; position: absolute; top: 0; width: 7740px;}
@@ -237,7 +237,7 @@ textarea.element{ height: 300px; line-height: 1.5; max-width: 742px; padding: 10
 .story:hover{ opacity: 0.48;}
 .current.story,
 .current.story:hover{ cursor: default; opacity: 1;}
-.story time, #restart{ background: #528f6c; border-radius: 30px; color: white; display: block; float: left; font-size: 40px; font-weight: bold; height: 60px; left: 0; line-height: 50px; position: absolute; text-align: center; top: 0; width: 60px;}
+.story-number, #restart{ background: #528f6c; border-radius: 30px; color: white; display: block; float: left; font-size: 40px; font-weight: bold; height: 60px; left: 0; line-height: 50px; position: absolute; text-align: center; top: 0; width: 60px;}
 .story h5{ color: white; font-size: 32px; line-height: 60px;}
 .story p{ margin-top: 10px;}
 #restart{ background: #f5574c; float: left; margin-left: 40px; opacity: 0.29; position: static;}
@@ -1026,14 +1026,317 @@ a{
 .go #contact-message .element{ -moz-animation-delay: 1000ms;}
 .go #send{ -moz-animation-delay: 1250ms;}
 
+@keyframes loading-one{
+  0%{ width: 0;}
+  100%{ width: 69%;}
+}
+
+@keyframes loading-two{
+  0%{ width: 69%;}
+  100%{ width: 100%;}
+}
+
+@keyframes loading-three{
+  0%{ border-width: 2px; height: 50%; width: 100%;}
+  100%{ border-width: 0; height: 0; width: 100%;}
+}
+
+@keyframes fade-in{
+  0%{ opacity: 0;}
+  100%{ opacity: 1;}
+}
+
+@keyframes fade-out{
+  0%{ opacity: 1;}
+  100%{ opacity: 0;}
+}
+
+@keyframes overlay{
+  0%{ opacity: 0;}
+  100%{ opacity: 0.86;}
+}
+
+@keyframes revert-overlay{
+  0%{ opacity: 0.86;}
+  100%{ opacity: 0;}
+}
+
+@keyframes down{
+  0%{ opacity: 0; transform: translateY(-24px);}
+  100%{ opacity: 1; transform: translateY(0);}
+}
+
+@keyframes up{
+  0%{ opacity: 0; transform: translateY(24px);}
+  100%{ opacity: 1; transform: translateY(0);}
+}
+
+@keyframes revert-up{
+  0%{ opacity: 1; transform: translateY(0);}
+  100%{ opacity: 0; transform: translateY(24px);}
+}
+
+@keyframes revert-up{
+  0%{ opacity: 1; transform: translateY(0);}
+  100%{ opacity: 0; transform: translateY(24px);}
+}
+
+@keyframes up-fast{
+  0%{ opacity: 0; transform: translateY(24px);}
+  50%{ opacity: 0.50; transform: translateY(-12px);}
+  100%{ opacity: 1; transform: translateY(0);}
+}
+
+@keyframes left{
+  0%{ opacity: 0; transform: translateX(24px);}
+  100%{ opacity: 1; transform: translateX(0);}
+}
+
+@keyframes revert-left{
+  0%{ opacity: 1; transform: translateX(0);}
+  100%{ opacity: 0; transform: translateX(24px);}
+}
+
+@keyframes right{
+  0%{ opacity: 0; transform: translateX(-24px);}
+  100%{ opacity: 1; transform: translateX(0);}
+}
+
+@keyframes revert-right{
+  0%{ opacity: 1; transform: translateX(0);}
+  100%{ opacity: 0; transform: translateX(-24px);}
+}
+
+@keyframes grow{
+  0%{ opacity: 0; transform: scale(0.96, 0.96);}
+  100%{ opacity: 1; transform: scale(1, 1);}
+}
+
+@keyframes revert-grow{
+  0%{ opacity: 1; transform: scale(1, 1);}
+  100%{ opacity: 0; transform: scale(0.96, 0.96);}
+}
+
+@keyframes slide-down{
+  0%{ opacity: 0; max-height: 0;}
+  100%{ opacity: 1; max-height: 60px;}
+}
+
+@keyframes close{
+  0%{ transform: translateY(-96px);}
+  100%{ transform: translateY(0);}
+}
+
+@keyframes revert-close{
+  0%{ transform: translateY(0);}
+  100%{ transform: translateY(-96px);}
+}
+
+@keyframes reveal{
+  0%{ opacity: 0; left: 100%;}
+  100%{ opacity: 1; left: 50%;}
+}
+
+@keyframes revert-reveal{
+  0%{ opacity: 1; left: 50%;}
+  100%{ opacity: 0; left: 100%;}
+}
+
+@keyframes fill-100{
+  0%{ width: 0%;}
+  100%{ width: 100%;}
+}
+
+@keyframes revert-fill-100{
+  0%{ width: 100%;}
+  100%{ width: 0%;}
+}
+
+@keyframes fill-90{
+  0%{ width: 0%;}
+  100%{ width: 90%;}
+}
+
+@keyframes fill-80{
+  0%{ width: 0%;}
+  100%{ width: 80%;}
+}
+
+@keyframes fill-60{
+  0%{ width: 0%;}
+  100%{ width: 60%;}
+}
+
+@keyframes drop{
+  0%{ opacity: 1; transform: translateY(0);}
+  100%{ opacity: 0%; transform: translateY(200px);}
+}
+
+@keyframes revert-drop{
+  0%{ opacity: 0%; transform: translateY(200px);}
+  100%{ opacity: 1; transform: translateY(0);}
+}
+
+#loading-top,
+#loading-bottom,
+.go #hey,
+.go #there,
+.go #view-portfolio,
+.go #send-email,
+.go .arrow,
+.go .dots a,
+.go .title,
+.go .subtitle,
+.go .skill,
+.go .level strong,
+.go .project,
+.go #detail-background,
+.go #detail,
+.go #detail-image,
+.go #detail-name,
+.go #detail-description,
+.go #detail-border,
+.go #detail-text,
+.go #detail-link,
+.go #detail-close,
+.go #detail-next,
+.go #detail-previous,
+.go #detail-apps .app,
+.go .element,
+.go #send{ animation-duration: 1000ms; animation-fill-mode: both; animation-timing-function: ease;}
+
+#loading-top,
+#loading-bottom{ animation-duration: 3000ms; animation-name: loading-one; animation-timing-function: cubic-bezier(1, 0, 0, 1);}
+.go #loading-top,
+.go #loading-bottom{ animation-duration: 1000ms; animation-name: loading-two; animation-timing-function: cubic-bezier(0.08, 0.86, 0.08, 1);}
+.end #loading-top,
+.end #loading-bottom{ animation-duration: 1000ms; animation-name: loading-three; animation-timing-function: cubic-bezier(0.08, 0.86, 0.08, 1);}
+
+.go #hey,
+.go #there,
+.go #view-portfolio,
+.go #send-email{ animation-timing-function: ease-out;}
+.go #hey{ animation-name: down;}
+.go #there{ animation-delay: 500ms; animation-name: up;}
+.go #view-portfolio{ animation-delay: 1000ms; animation-name: left;}
+.go #send-email{ animation-delay: 1500ms; animation-name: right;}
+
+.go .arrow-previous{ animation-name: right;}
+.go .arrow-next{ animation-name: left;}
+.go .dots a{ animation-name: up-fast;}
+.go .dots a:nth-child(1){ animation-delay: 250ms;}
+.go .dots a:nth-child(2){ animation-delay: 375ms;}
+.go .dots a:nth-child(3){ animation-delay: 500ms;}
+.go .dots a:nth-child(4){ animation-delay: 625ms;}
+.go .dots a:nth-child(5){ animation-delay: 750ms;}
+.go .dots a:nth-child(6){ animation-delay: 1000ms;}
+.go .dots a:nth-child(7){ animation-delay: 1250ms;}
+
+.go .title{ animation-name: left;}
+.go .subtitle{ animation-delay: 250ms; animation-name: right;}
+
+.go .skill{ animation-delay: 500ms; animation-name: up;}
+.go #html5{ animation-delay: 500ms;}
+.go #html5 .level strong{ animation-delay: 750ms; animation-name: fill-100;}
+.go #wordpress{ animation-delay: 750ms;}
+.go #wordpress .level strong{ animation-delay: 750ms; animation-name: fill-90;}
+.go #jquery{ animation-delay: 1000ms;}
+.go #jquery .level strong{ animation-delay: 1000ms; animation-name: fill-80;}
+.go #photoshop{ animation-delay: 1250ms;}
+.go #photoshop .level strong{ animation-delay: 1250ms; animation-name: fill-80;}
+.go #illustrator{ animation-delay: 1500ms;}
+.go #illustrator .level strong{ animation-delay: 1500ms; animation-name: fill-60;}
+
+.go#portfolio .title{ animation-name: up;}
+.go .project{ animation-name: grow;}
+.go .project:nth-child(2){ animation-delay: 250ms;}
+.go .project:nth-child(3){ animation-delay: 500ms;}
+.go .project:nth-child(4){ animation-delay: 750ms;}
+.go .project:nth-child(5){ animation-delay: 1000ms;}
+.go .project:nth-child(6){ animation-delay: 1250ms;}
+.go .project:nth-child(7){ animation-delay: 1500ms;}
+.go .project:nth-child(8){ animation-delay: 1750ms;}
+.go .project:nth-child(9){ animation-delay: 2000ms;}
+.go .project:nth-child(10){ animation-delay: 2250ms;}
+.go .project:nth-child(11){ animation-delay: 2500ms;}
+.go .project:nth-child(12){ animation-delay: 2750ms;}
+
+.go #detail-background{ animation-duration: 500ms; animation-name: overlay;}
+.go #detail{ animation-duration: 500ms; animation-name: grow;}
+.loaded #detail-image{ animation-name: reveal; animation-timing-function: cubic-bezier(0, 1.5, 0.75, 1);}
+.go #detail-name{ animation-delay: 250ms; animation-name: left;}
+.go #detail-description{ animation-delay: 500ms; animation-name: right;}
+.go #detail-border{ animation-delay: 750ms; animation-name: fill-100; animation-timing-function: cubic-bezier(0, 1, 0.25, 01);}
+.go #detail-text{ animation-delay: 1000ms; animation-name: up;}
+.go #detail-link{ animation-delay: 1250ms; animation-name: up;}
+.go #detail-apps .app{ animation-delay: 1500ms; animation-name: up; animation-timing-function: cubic-bezier(0, 2, 0.5, 1);}
+.go #detail-apps .app:nth-child(2){ animation-delay: 1625ms;}
+.go #detail-apps .app:nth-child(3){ animation-delay: 1750ms;}
+.go #detail-close,
+.go #detail-next,
+.go #detail-previous{ animation-delay: 1500ms; animation-name: close; animation-timing-function: cubic-bezier(0, 1.5, 0.25, 1);}
+.go #detail-next{ animation-delay: 1625ms;}
+.go #detail-previous{ animation-delay: 1750ms;}
+
+.close #detail-apps .app,
+.close #detail-link,
+.close #detail-text,
+.close #detail-description,
+.close #detail-name,
+.close #detail{ animation-duration: 500ms; animation-name: drop; animation-timing-function: /*cubic-bezier(0.950, 0.050, 0.795, 0.035)*/ cubic-bezier(1, -0.5, 0.5, 1.5);}
+.close #detail-close,
+.close #detail-next,
+.close #detail-previous{ animation-delay: 0ms; animation-duration: 500ms; animation-name: revert-close; animation-timing-function: cubic-bezier(1, -0.5, 0.5, 1.5);}
+.close #detail-next{ animation-delay: 125ms;}
+.close #detail-previous{ animation-delay: 250ms;}
+.close #detail-apps .app:nth-child(3){ animation-delay: 0ms;}
+.close #detail-apps .app:nth-child(2){ animation-delay: 125ms;}
+.close #detail-apps .app:nth-child(1){ animation-delay: 250ms;}
+.close #detail-link{ animation-delay: 375ms;}
+.close #detail-text{ animation-delay: 500ms;}
+.close #detail-border{ animation-delay: 0ms; animation-name: revert-fill-100;}
+.close #detail-description{ animation-delay: 750ms;}
+.close #detail-name{ animation-delay: 875ms;}
+.close #detail-image{ animation-delay: 0ms; animation-name: revert-reveal; animation-timing-function: cubic-bezier(1, -0.5, 0.5, 1.5);}
+.close #detail{ animation-delay: 1000ms;}
+.close #detail-background{ animation-delay: 1250ms; animation-duration: 500ms; animation-name: revert-overlay;}
+
+.removing #detail-apps .app,
+.removing #detail-link,
+.removing #detail-text,
+.removing #detail-description,
+.removing #detail-name{ animation-duration: 500ms; animation-name: drop; animation-timing-function: cubic-bezier(1, -0.5, 0.5, 1.5);}
+.removing #detail-close,
+.removing #detail-next,
+.removing #detail-previous{ animation-delay: 0ms; animation-duration: 500ms; animation-name: revert-close; animation-timing-function: cubic-bezier(1, -0.5, 0.5, 1.5);}
+.removing #detail-next{ animation-delay: 125ms;}
+.removing #detail-previous{ animation-delay: 250ms;}
+.removing #detail-apps .app:nth-child(3){ animation-delay: 0ms;}
+.removing #detail-apps .app:nth-child(2){ animation-delay: 125ms;}
+.removing #detail-apps .app:nth-child(1){ animation-delay: 250ms;}
+.removing #detail-link{ animation-delay: 375ms;}
+.removing #detail-text{ animation-delay: 500ms;}
+.removing #detail-border{ animation-delay: 0ms; animation-name: revert-fill-100;}
+.removing #detail-description{ animation-delay: 750ms;}
+.removing #detail-name{ animation-delay: 875ms;}
+.removing #detail-image{ animation-delay: 0ms; animation-name: revert-reveal; animation-timing-function: cubic-bezier(1, -0.5, 0.5, 1.5);}
+
+.go .element,
+.go #send{ animation-name: grow;}
+.go #contact-name .element{ animation-delay: 250ms;}
+.go #contact-email .element{ animation-delay: 500ms;}
+.go #contact-subject .element{ animation-delay: 750ms;}
+.go #contact-message .element{ animation-delay: 1000ms;}
+.go #send{ animation-delay: 1250ms;}
+
 /* Responsiveness */
 
 @media only screen and (max-width: 1000px) {
   .wrap,
-  #hello hgroup{ margin: 0 20px; width: auto;}
+  #you{ margin: 0 20px; width: auto;}
   .testimonial blockquote,
   .testimonial p{ margin: 0 160px; width: auto;}
-  #hello hgroup{ height: auto; padding: 120px 0; position: static;}
+  #you{ height: auto; padding: 120px 0; position: static;}
   #there br{ display: none;}
   .heading{ padding: 0 20px;}
   .skill .level{ float: none; margin: 0 0 20px; width: auto;}

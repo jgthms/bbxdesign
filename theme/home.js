@@ -166,7 +166,7 @@ $(window).load( function() {
     var detail_url = element.attr('href');
     var detail_apps = element.find('.project-apps').html();
     Preload(detail_image_url);
-    $('#detail').data('index', detail_index);
+    $('#detail').attr('data-index', detail_index);
     $('#detail-image').css('background-image', detail_image);
     $('#detail-name').text(detail_name);
     $('#detail-description').text(detail_description);
@@ -229,14 +229,14 @@ $(window).load( function() {
   });
 
   $('#detail-next').click( function(event) {
-    var index = $(this).parent().parent().parent().data('index');
+    var index = $(this).parent().parent().parent().attr('data-index');
     if (!moving) {
       Switch(index + 1);
     }
   });
 
   $('#detail-previous').click( function(event) {
-    var index = $(this).parent().parent().parent().data('index');
+    var index = $(this).parent().parent().parent().attr('data-index');
     if (!moving) {
       Switch(index - 1);
     }

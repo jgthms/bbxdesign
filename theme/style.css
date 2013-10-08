@@ -150,15 +150,6 @@ input.element{ height: 16px; line-height: 1; padding: 5px 15px 10px; width: 266p
 #types p{ float: left;}
 #types .type{ float: left; margin-right: 4px;}
 #types .type:last-child{ margin-right: 0;}
-/*#types p:hover .type{ opacity: 1 !important;}
-#types span:hover .type{ opacity: 0.29 !important;}
-#types .type-all:hover,
-#types span:hover .type:hover{ opacity: 1 !important;}*/
-/*body.tax-post_format #types .type{ opacity: 0.29;}
-body.term-post-format-link #types .type-link,
-body.term-post-format-image #types .type-image,
-body.term-post-format-quote #types .type-quote,
-body.term-post-format-status #types .type-status{ opacity: 1;}*/
 #bestof{ margin-top: 0;}
 #categories{ padding: 20px 0;}
 #categories .box-title{ border-bottom: 1px solid #ebf1f5; margin: 0 20px; padding-bottom: 10px;}

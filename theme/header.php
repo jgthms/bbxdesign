@@ -42,7 +42,7 @@
         </ul>
       </nav>
     </header>
-    <hgroup id="heading">
+    <div id="heading">
       <div class="wrap">
         <a id="home" href="http://bbxdesign.com/blog">
           <h3 id="title">blog</h3>
@@ -57,4 +57,4 @@
         </div>
         <div style="clear: both;"></div>
       </div>
-    </hgroup>
+    </div>
