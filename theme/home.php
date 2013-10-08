@@ -19,6 +19,39 @@
     <link rel="stylesheet" href="<?php echo $template_url; ?>fonts.css" type="text/css">
     <link rel="stylesheet" href="<?php echo $template_url; ?>home.css" type="text/css">
     <link rel="icon" href="/the-bbx.ico">
+    <noscript>
+      <style type="text/css">
+        #loading,
+        #timeline{ display: none;}
+        #hey,
+        #there,
+        #view-portfolio,
+        #send-email,
+        .title,
+        .subtitle,
+        #testimonials .reel,
+        .skill,
+        .level strong,
+        .project,
+        #detail-background,
+        #detail,
+        #detail-image,
+        #detail-name,
+        #detail-description,
+        #detail-border,
+        #detail-text,
+        #detail-link,
+        #detail-close,
+        #detail-next,
+        #detail-previous,
+        #detail-apps .app,
+        .element,
+        #send{ opacity: 1;}
+        #header{ position: fixed; top: 0;}
+        #projects{ height: auto;}
+        .project{ position: relative;}
+      </style>
+    </noscript>
   </head>
   <body data-zone="<?php echo $zone; ?>">
     <div id="loading">
