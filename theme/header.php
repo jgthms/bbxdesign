@@ -6,19 +6,13 @@
       <?php
 
       global $page, $paged;
+
+      if ( $paged >= 2 || $page >= 2 )
+        echo sprintf( 'Page %s | ', max( $paged, $page ) );
+
       wp_title( '@', true, 'right' );
 
-      // Add the blog name.
-      bloginfo( 'name' );
-
-      // Add the blog description for the home/front page.
-      $site_description = get_bloginfo( 'description', 'display' );
-      if ( $site_description && ( is_page( 'blog' ) ) )
-        echo " @ $site_description : Web Designer / Intégrateur WordPress";
-
-      // Add a page number if necessary:
-      if ( $paged >= 2 || $page >= 2 )
-        echo ' @ ' . sprintf( 'Page %s', max( $paged, $page ) );
+      echo 'bbxdesign : Web Designer / Intégrateur WordPress';
 
       ?>
     </title>
@@ -32,18 +26,18 @@
   </head>
   <body <?php body_class(); ?>>
     <header id="header">
-      <a id="logo" href="http://bbxdesign.com">
+      <a id="logo" href="http://bbxdesign.com/home">
         <h1 id="name">bbxdesign</h1>
         <h2 id="description">Web Designer / Intégrateur WordPress</h2>
       </a>
       <a id="menu"></a>
       <nav id="nav">
         <ul>
-          <li><a id="nav-home" class="nav" href="http://bbxdesign.com">Home</a></li>
-          <li><a id="nav-skills" class="nav" href="http://bbxdesign.com">Skills</a></li>
-          <li><a id="nav-portfolio" class="nav" href="http://bbxdesign.com">Portfolio</a></li>
-          <li><a id="nav-timeline" class="nav" href="http://bbxdesign.com">Timeline</a></li>
-          <li><a id="nav-contact" class="nav" href="http://bbxdesign.com">Contact</a></li>
+          <li><a id="nav-home" class="nav" href="http://bbxdesign.com/home">Home</a></li>
+          <li><a id="nav-skills" class="nav" href="http://bbxdesign.com/skills">Skills</a></li>
+          <li><a id="nav-portfolio" class="nav" href="http://bbxdesign.com/portfolio">Portfolio</a></li>
+          <li><a id="nav-timeline" class="nav" href="http://bbxdesign.com/timeline">Timeline</a></li>
+          <li><a id="nav-contact" class="nav" href="http://bbxdesign.com/contact">Contact</a></li>
           <li><a id="nav-blog" class="nav on" href="http://bbxdesign.com/blog">Blog</a></li>
         </ul>
       </nav>

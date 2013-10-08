@@ -66,7 +66,7 @@ textarea::-webkit-input-placeholder{ padding-top: 0;}
 input.element{ line-height: 1; padding: 10px; padding-top: 5px; width: 352px;}
 textarea.element{ height: 300px; line-height: 1.5; max-width: 742px; padding: 10px 15px; width: 742px;}
 .element:focus{ background: rgba(41, 41, 41, 0.86); border-color: #f5574c; outline: none;}
-.aperture{ position: relative; height: 215px;}
+.aperture{ overflow: hidden; position: relative; height: 215px;}
 .reel{ left: 0; position: absolute; top: 0; width: 500%;}
 .item{ float: left; width: 20%;}
 
@@ -255,6 +255,9 @@ textarea.element{ height: 300px; line-height: 1.5; max-width: 742px; padding: 10
 #contact-message,
 #contact-submit{ padding-top: 20px;}
 #send{ position: relative; right: 3px;}
+#send:active{ right: 3px; top: 2px;}
+span.wpcf7-not-valid-tip{ background: #f5574c; border: 4px solid white; color: white; font-size: 14px; padding: 5px 10px;}
+div.wpcf7-response-output{ background: rgba(41, 41, 41, 0.48); border-width: 4px !important; color: white; margin: 20px 0 0; padding: 5px 10px;}
 
 /* CSS 3 */
 

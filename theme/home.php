@@ -1,4 +1,10 @@
 <?php
+  session_start();
+  if ( isset( $_SESSION['zone'] ) ):
+    $zone = $_SESSION['zone'];
+  else:
+    $zone = 0;
+  endif;
   $template_url = get_bloginfo( 'template_url' ) . '/';
   $projects_url = get_bloginfo( 'template_url' ) . '/projects/';
 ?>
@@ -9,11 +15,16 @@
     <title>bbxdesign : Web Designer / Intégrateur WordPress</title>
     <meta name="author" content="bbx">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <?php wp_head(); ?>
     <link rel="stylesheet" href="<?php echo $template_url; ?>fonts.css" type="text/css">
     <link rel="stylesheet" href="<?php echo $template_url; ?>home.css" type="text/css">
     <link rel="icon" href="/the-bbx.ico">
   </head>
-  <body>
+  <body data-zone="<?php echo $zone; ?>">
+    <div id="loading">
+      <div id="loading-top"></div>
+      <div id="loading-bottom"></div>
+    </div>
     <header id="header">
       <hgroup id="logo">
         <h1 id="name">bbxdesign</h1>
@@ -22,11 +33,11 @@
       <a id="menu"></a>
       <nav id="nav">
         <ul>
-          <li><a id="nav-home" class="nav on">Home</a></li>
-          <li><a id="nav-skills" class="nav">Skills</a></li>
-          <li><a id="nav-portfolio" class="nav">Portfolio</a></li>
-          <li><a id="nav-timeline" class="nav">Timeline</a></li>
-          <li><a id="nav-contact" class="nav">Contact</a></li>
+          <li><a id="nav-home" class="nav on" href="http://bbxdesign.com/home">Home</a></li>
+          <li><a id="nav-skills" class="nav" href="http://bbxdesign.com/skills">Skills</a></li>
+          <li><a id="nav-portfolio" class="nav" href="http://bbxdesign.com/portfolio">Portfolio</a></li>
+          <li><a id="nav-timeline" class="nav" href="http://bbxdesign.com/timeline">Timeline</a></li>
+          <li><a id="nav-contact" class="nav" href="http://bbxdesign.com/contact">Contact</a></li>
           <li><a id="nav-blog" class="nav" href="http://bbxdesign.com/blog">Blog</a></li>
         </ul>
       </nav>
@@ -441,13 +452,7 @@
       <hgroup class="heading">
         <h3 class="title">Contact</h3>
       </hgroup>
-      <form>
-        <p id="contact-name"><input class="element" type="text" placeholder="Nom" value="Jeremy Thomas"></p>
-        <p id="contact-email"><input class="element" type="text" placeholder="Email"></p>
-        <p id="contact-subject"><input class="element" type="text" placeholder="Sujet"></p>
-        <p id="contact-message"><textarea class="element" placeholder="Bonjour CSS Guru,"></textarea></p>
-        <p id="contact-submit"><input id="send" type="image" src="<?php echo $template_url; ?>envoyer.png"></p>
-      </form>
+      <?php echo do_shortcode( '[contact-form-7 id="2265" title="Contact"]' ); ?>
     </section>
     <div id="preview">
       <div id="detail-background"></div>
@@ -468,13 +473,23 @@
         <div>
       </article>
     </div>
-    <div id="loading">
-      <div id="loading-top"></div>
-      <div id="loading-bottom"></div>
-    </div>
     <script src="<?php echo $template_url; ?>jquery-1.10.2.min.js"></script>
     <script src="<?php echo $template_url; ?>jquery.easing.1.3.js"></script>
     <script src="<?php echo $template_url; ?>slider.js"></script>
     <script src="<?php echo $template_url; ?>home.js"></script>
+    <script type="text/javascript">
+
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-5349320-1']);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+
+    </script>
+    <?php wp_footer(); ?>
   </body>
 </html>

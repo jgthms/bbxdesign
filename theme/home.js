@@ -1,6 +1,3 @@
-$(document).ready( function() {
-});
-
 $(window).load( function() {
   setTimeout(function() {
     $('#loading').addClass('go');
@@ -30,16 +27,52 @@ $(window).load( function() {
       $sections = $('section'),
       $zones = $('#testimonials, #skills, #portfolio, #timeline, #contact');
 
-  var navigating = false,
+  var current_zone = $('body').data('zone'),
+      navigating = false,
       previewing = false,
       moving = false,
       hello_width = $hello.width(),
       projects_count = $projects.length;
 
-  $('html, body').scrollTop(0);
-  $('html, body').animate({
-    scrollTop: 0
-  }, 'fast');
+  history.replaceState(null, '', $nav.eq(current_zone).attr('href'));
+
+  if (current_zone != '0') {
+    setTimeout(function() {
+      $('html, body').scrollTop($sections.eq(current_zone).offset().top - 59);
+    }, 125);
+  } else{
+    $('html, body').scrollTop(0);
+    $('html, body').animate({
+      scrollTop: 0
+    }, 'fast');
+  }
+
+  console.log(current_zone);
+
+  function Navigate(element) {
+    navigating = true;
+    if (!moving) {
+      if (previewing) {
+        setTimeout(function() {
+          $('html, body').stop().animate({
+            scrollTop: Math.max(element.offset().top - 59, 0)
+          }, 1000, 'easeInOutExpo', function() {
+            setTimeout(function() {
+              navigating = false;
+            }, 1000);
+          });
+        }, 1750);
+      } else {
+        $('html, body').stop().animate({
+          scrollTop: Math.max(element.offset().top - 59, 0)
+        }, 1000, 'easeInOutExpo', function() {
+          setTimeout(function() {
+            navigating = false;
+          }, 1000);
+        });
+      }
+    }
+  }
 
   // Header
 
@@ -52,18 +85,14 @@ $(window).load( function() {
   });
 
   $nav.click( function() {
-    var s = $(this).parent().index();
-    if (previewing) {
-      setTimeout(function() {
-        $('html, body').stop().animate({
-          scrollTop: Math.max($sections.eq(s).offset().top - 59, 0)
-        }, 1000, 'easeInOutExpo');
-      }, 1750);
-    } else {
-      $('html, body').stop().animate({
-        scrollTop: Math.max($sections.eq(s).offset().top - 59, 0)
-      }, 1000, 'easeInOutExpo');
+    if (!navigating) {
+      var s = $(this).parent().index();
+      Navigate($sections.eq(s));
     }
+    if (previewing) {
+      Close();
+    }
+    return false;
   });
 
   $menu.click( function() {
@@ -76,24 +105,16 @@ $(window).load( function() {
     $hello.height($(window).height());
   }
 
-  function Navigate(element) {
-    navigating = true;
-    $('html, body').stop().animate({
-      scrollTop: element.offset().top - 59
-    }, 1000, 'easeInOutExpo', function() {
-      element.addClass('go');
-      setTimeout(function() {
-        navigating = false;
-      }, 1000);
-    });
-  }
-
   $view_portfolio.click( function() {
-    Navigate($portfolio);
+    if (!navigating) {
+      Navigate($portfolio);
+    }
   });
 
   $send_email.click( function() {
-    Navigate($contact);
+    if (!navigating) {
+      Navigate($contact);
+    }
   });
 
   // Testimonials
@@ -127,7 +148,7 @@ $(window).load( function() {
   function Preview(element) {
     previewing = true;
     var detail_index = element.index();
-    var detail_image = 'url(previews/' + element.attr('id') + '.jpg)';
+    var detail_image = 'url(http://bbxdesign.com/wp-content/themes/the-bbx/previews/' + element.attr('id') + '.jpg)';
     var detail_name = element.find('.project-name').text();
     var detail_description = element.find('.project-description').text();
     var detail_text = element.data('text');
@@ -191,18 +212,18 @@ $(window).load( function() {
     Close();
   });
 
-  $('#detail').click(function(event){
+  $('#detail').click( function(event) {
     event.stopPropagation();
   });
 
-  $('#detail-next').click(function(event){
+  $('#detail-next').click( function(event) {
     var index = $(this).parent().parent().parent().data('index');
     if (!moving) {
       Switch(index + 1);
     }
   });
 
-  $('#detail-previous').click(function(event){
+  $('#detail-previous').click( function(event) {
     var index = $(this).parent().parent().parent().data('index');
     if (!moving) {
       Switch(index - 1);
@@ -279,10 +300,12 @@ $(window).load( function() {
 
   // Window Events
 
+  var zone_timer;
   $(window).scroll( function() {
     var position = $(window).scrollTop();
     var height = $(window).height();
     var trigger = height / 2;
+    var new_zone = current_zone;
     if (position == 0) {
       if (!($header.is(":hover"))) {
         $header.stop().animate({
@@ -299,8 +322,18 @@ $(window).load( function() {
       if ((position + 61) > section_offset.top) {
         $nav.removeClass('on');
         $nav.eq(index).addClass('on');
+        // setTimeout(function() {
+          new_zone = index;
+        // }, 1000);
       }
     });
+    clearTimeout(zone_timer);
+    zone_timer = setTimeout(function() {
+      if (new_zone != current_zone) {
+        history.replaceState(null, '', $nav.eq(new_zone).attr('href'));
+        current_zone = new_zone;
+      }
+    }, 1000);
     var testimonials_offset = $testimonials.offset();
     var testimonials_height = $testimonials.height();
     if (position > testimonials_offset.top + testimonials_height || position + height - 1 < testimonials_offset.top) {
