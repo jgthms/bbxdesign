@@ -1,11 +1,14 @@
 $(window).load( function() {
   setTimeout(function() {
     $('#loading').addClass('go');
-    $hello.addClass('go');
   }, 1000);
   setTimeout(function() {
-    $('#loading').remove();
+    $('#loading').addClass('end');
+    $hello.addClass('go');
   }, 2000);
+  setTimeout(function() {
+    $('#loading').remove();
+  }, 3000);
 
   var $header = $('#header'),
       $hello = $('#hello'),
@@ -31,6 +34,7 @@ $(window).load( function() {
       navigating = false,
       previewing = false,
       moving = false,
+      loading = false,
       hello_width = $hello.width(),
       projects_count = $projects.length;
 
@@ -47,11 +51,9 @@ $(window).load( function() {
     }, 'fast');
   }
 
-  console.log(current_zone);
-
   function Navigate(element) {
     navigating = true;
-    if (!moving) {
+    if (!moving && !loading) {
       if (previewing) {
         setTimeout(function() {
           $('html, body').stop().animate({
@@ -145,15 +147,25 @@ $(window).load( function() {
 
   Detail();
 
+  function Preload(url) {
+    loading = true;
+    $.get(url, function() {
+      loading = false;
+      $preview.addClass('loaded');
+    });
+  }
+
   function Preview(element) {
     previewing = true;
     var detail_index = element.index();
-    var detail_image = 'url(http://bbxdesign.com/wp-content/themes/the-bbx/previews/' + element.attr('id') + '.jpg)';
+    var detail_image_url = 'http://bbxdesign.com/wp-content/themes/the-bbx/previews/' + element.attr('id') + '.jpg';
+    var detail_image = 'url(' + detail_image_url + ')';
     var detail_name = element.find('.project-name').text();
     var detail_description = element.find('.project-description').text();
     var detail_text = element.data('text');
     var detail_url = element.attr('href');
     var detail_apps = element.find('.project-apps').html();
+    Preload(detail_image_url);
     $('#detail').data('index', detail_index);
     $('#detail-image').css('background-image', detail_image);
     $('#detail-name').text(detail_name);
@@ -174,7 +186,7 @@ $(window).load( function() {
     }
     $preview.addClass('removing');
     setTimeout(function() {
-      $preview.removeClass('removing');
+      $preview.removeClass('loaded removing');
       Preview($projects.eq(n));
     }, 1750);
     setTimeout(function() {
@@ -183,7 +195,7 @@ $(window).load( function() {
   }
 
   function Close() {
-    if (!moving) {
+    if (!moving && !loading) {
       $preview.addClass('close');
       setTimeout(function() {
         $preview.removeClass();

@@ -71,7 +71,7 @@ textarea.element{ height: 300px; line-height: 1.5; max-width: 742px; padding: 10
 .item{ float: left; width: 20%;}
 
 #loading{ background: #f5574c; height: 100%; left: 0; position: fixed; top: 0; width: 100%; z-index: 9999;}
-.go#loading{ background: none;}
+.end#loading{ background: none;}
 #loading-top,
 #loading-bottom{ background: #f5574c; height: 50%; left: 0; position: fixed; width: 100%;}
 #loading-top{ border-bottom: 2px solid white; top: 0;}
@@ -420,12 +420,17 @@ a{
 #detail-previous{ z-index: 4000;}
 #detail-image{ z-index: 5000;}
 
-@-webkit-keyframes loading-in{
+@-webkit-keyframes loading-one{
   0%{ width: 0;}
+  100%{ width: 69%;}
+}
+
+@-webkit-keyframes loading-two{
+  0%{ width: 69%;}
   100%{ width: 100%;}
 }
 
-@-webkit-keyframes loading-out{
+@-webkit-keyframes loading-three{
   0%{ border-width: 2px; height: 50%; width: 100%;}
   100%{ border-width: 0; height: 0; width: 100%;}
 }
@@ -558,11 +563,11 @@ a{
 
 @-webkit-keyframes drop{
   0%{ opacity: 1; -webkit-transform: translateY(0);}
-  100%{ opacity: 0%; -webkit-transform: translateY(200px);}
+  100%{ opacity: 0; -webkit-transform: translateY(200px);}
 }
 
 @-webkit-keyframes revert-drop{
-  0%{ opacity: 0%; -webkit-transform: translateY(200px);}
+  0%{ opacity: 0; -webkit-transform: translateY(200px);}
   100%{ opacity: 1; -webkit-transform: translateY(0);}
 }
 
@@ -595,9 +600,11 @@ a{
 .go #send{ -webkit-animation-duration: 1000ms; -webkit-animation-fill-mode: both; -webkit-animation-timing-function: ease;}
 
 #loading-top,
-#loading-bottom{ -webkit-animation-duration: 1000ms; -webkit-animation-name: loading-in; -webkit-animation-timing-function: cubic-bezier(1, 0, 0, 1);}
+#loading-bottom{ -webkit-animation-duration: 3000ms; -webkit-animation-name: loading-one; -webkit-animation-timing-function: cubic-bezier(1, 0, 0, 1);}
 .go #loading-top,
-.go #loading-bottom{ -webkit-animation-duration: 1000ms; -webkit-animation-name: loading-out; -webkit-animation-timing-function: cubic-bezier(0.08, 0.86, 0.08, 1);}
+.go #loading-bottom{ -webkit-animation-duration: 1000ms; -webkit-animation-name: loading-two; -webkit-animation-timing-function: cubic-bezier(0.08, 0.86, 0.08, 1);}
+.end #loading-top,
+.end #loading-bottom{ -webkit-animation-duration: 1000ms; -webkit-animation-name: loading-three; -webkit-animation-timing-function: cubic-bezier(0.08, 0.86, 0.08, 1);}
 
 .go #hey,
 .go #there,
@@ -650,7 +657,7 @@ a{
 
 .go #detail-background{ -webkit-animation-duration: 500ms; -webkit-animation-name: overlay;}
 .go #detail{ -webkit-animation-duration: 500ms; -webkit-animation-name: grow;}
-.go #detail-image{ -webkit-animation-name: reveal; -webkit-animation-timing-function: cubic-bezier(0, 1.5, 0.75, 1);}
+.loaded #detail-image{ -webkit-animation-name: reveal; -webkit-animation-timing-function: cubic-bezier(0, 1.5, 0.75, 1);}
 .go #detail-name{ -webkit-animation-delay: 250ms; -webkit-animation-name: left;}
 .go #detail-description{ -webkit-animation-delay: 500ms; -webkit-animation-name: right;}
 .go #detail-border{ -webkit-animation-delay: 750ms; -webkit-animation-name: fill-100; -webkit-animation-timing-function: cubic-bezier(0, 1, 0.25, 01);}
@@ -716,13 +723,17 @@ a{
 .go #contact-message .element{ -webkit-animation-delay: 1000ms;}
 .go #send{ -webkit-animation-delay: 1250ms;}
 
-
-@-moz-keyframes loading-in{
+@-moz-keyframes loading-one{
   0%{ width: 0;}
+  100%{ width: 69%;}
+}
+
+@-moz-keyframes loading-two{
+  0%{ width: 69%;}
   100%{ width: 100%;}
 }
 
-@-moz-keyframes loading-out{
+@-moz-keyframes loading-three{
   0%{ border-width: 2px; height: 50%; width: 100%;}
   100%{ border-width: 0; height: 0; width: 100%;}
 }
@@ -892,9 +903,11 @@ a{
 .go #send{ -moz-animation-duration: 1000ms; -moz-animation-fill-mode: both; -moz-animation-timing-function: ease;}
 
 #loading-top,
-#loading-bottom{ -moz-animation-duration: 1000ms; -moz-animation-name: loading-in; -moz-animation-timing-function: cubic-bezier(1, 0, 0, 1);}
+#loading-bottom{ -moz-animation-duration: 3000ms; -moz-animation-name: loading-one; -moz-animation-timing-function: cubic-bezier(1, 0, 0, 1);}
 .go #loading-top,
-.go #loading-bottom{ -moz-animation-duration: 1000ms; -moz-animation-name: loading-out; -moz-animation-timing-function: cubic-bezier(0.08, 0.86, 0.08, 1);}
+.go #loading-bottom{ -moz-animation-duration: 1000ms; -moz-animation-name: loading-two; -moz-animation-timing-function: cubic-bezier(0.08, 0.86, 0.08, 1);}
+.end #loading-top,
+.end #loading-bottom{ -moz-animation-duration: 1000ms; -moz-animation-name: loading-three; -moz-animation-timing-function: cubic-bezier(0.08, 0.86, 0.08, 1);}
 
 .go #hey,
 .go #there,
@@ -947,7 +960,7 @@ a{
 
 .go #detail-background{ -moz-animation-duration: 500ms; -moz-animation-name: overlay;}
 .go #detail{ -moz-animation-duration: 500ms; -moz-animation-name: grow;}
-.go #detail-image{ -moz-animation-name: reveal; -moz-animation-timing-function: cubic-bezier(0, 1.5, 0.75, 1);}
+.loaded #detail-image{ -moz-animation-name: reveal; -moz-animation-timing-function: cubic-bezier(0, 1.5, 0.75, 1);}
 .go #detail-name{ -moz-animation-delay: 250ms; -moz-animation-name: left;}
 .go #detail-description{ -moz-animation-delay: 500ms; -moz-animation-name: right;}
 .go #detail-border{ -moz-animation-delay: 750ms; -moz-animation-name: fill-100; -moz-animation-timing-function: cubic-bezier(0, 1, 0.25, 01);}

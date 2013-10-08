@@ -4,11 +4,14 @@ $(document).ready( function() {
 $(window).load( function() {
   setTimeout(function() {
     $('#loading').addClass('go');
+  }, 3000);
+  setTimeout(function() {
+    $('#loading').addClass('end');
     $hello.addClass('go');
-  }, 1000);
+  }, 4000);
   setTimeout(function() {
     $('#loading').remove();
-  }, 2000);
+  }, 5000);
 
   var $header = $('#header'),
       $hello = $('#hello'),
