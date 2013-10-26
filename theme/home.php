@@ -57,6 +57,39 @@
     <div id="loading">
       <div id="loading-top"></div>
       <div id="loading-bottom"></div>
+      <div id="loading-grid">
+        <div id="loading-gh-1" class="loading-gh"></div>
+        <div id="loading-gh-2" class="loading-gh"></div>
+        <div id="loading-gh-3" class="loading-gh"></div>
+        <div id="loading-gh-4" class="loading-gh"></div>
+        <div id="loading-gv-1" class="loading-gv"></div>
+        <div id="loading-gv-2" class="loading-gv"></div>
+        <div id="loading-gv-3" class="loading-gv"></div>
+        <div id="loading-gv-4" class="loading-gv"></div>
+        <div id="loading-gv-5" class="loading-gv"></div>
+        <div id="loading-gd-1" class="loading-gd"></div>
+        <div id="loading-gd-2" class="loading-gd"></div>
+        <div id="loading-h-1" class="loading-h"></div>
+        <div id="loading-h-2" class="loading-h"></div>
+        <div id="loading-h-3" class="loading-h"></div>
+        <div id="loading-h-4" class="loading-h"></div>
+        <div id="loading-h-5" class="loading-h"></div>
+        <div id="loading-v-1" class="loading-v"></div>
+        <div id="loading-v-2" class="loading-v"></div>
+        <div id="loading-v-3" class="loading-v"></div>
+        <div id="loading-v-4" class="loading-v"></div>
+        <div id="loading-v-5" class="loading-v"></div>
+        <div id="loading-d-1" class="loading-d"></div>
+        <div id="loading-d-2" class="loading-d"></div>
+      </div>
+      <div id="loading-b">
+        <div id="loading-b-1" class="loading-b"></div>
+        <div id="loading-b-2" class="loading-b"></div>
+        <div id="loading-b-3" class="loading-b"></div>
+        <div id="loading-b-4" class="loading-b"></div>
+        <div id="loading-b-5" class="loading-b"></div>
+        <div id="loading-b-6" class="loading-b"></div>
+      </div>
     </div>
     <header id="header">
       <div id="logo">
@@ -511,7 +544,7 @@
     </section>
     <div id="preview">
       <div id="detail-background"></div>
-      <article id="detail" data-index="">
+      <article id="detail">
         <div id="detail-image"></div>
         <div id="detail-left">
           <div id="detail-content">

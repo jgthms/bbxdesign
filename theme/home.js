@@ -33,6 +33,7 @@ $(window).load( function() {
   var current_zone = $('body').data('zone'),
       navigating = false,
       previewing = false,
+      current_index = 0,
       moving = false,
       loading = false,
       hello_width = $hello.width(),
@@ -157,7 +158,7 @@ $(window).load( function() {
 
   function Preview(element) {
     previewing = true;
-    var detail_index = element.index();
+    current_index = element.index();
     var detail_image_url = 'http://bbxdesign.com/wp-content/themes/the-bbx/previews/' + element.attr('id') + '.jpg';
     var detail_image = 'url(' + detail_image_url + ')';
     var detail_name = element.find('.project-name').text();
@@ -166,7 +167,6 @@ $(window).load( function() {
     var detail_url = element.attr('href');
     var detail_apps = element.find('.project-apps').html();
     Preload(detail_image_url);
-    $('#detail').attr('data-index', detail_index);
     $('#detail-image').css('background-image', detail_image);
     $('#detail-name').text(detail_name);
     $('#detail-description').text(detail_description);
@@ -216,6 +216,13 @@ $(window).load( function() {
     }
   });
 
+  $('#detail-link').click( function() {
+    if (current_index == 0) {
+      $('#detail-text').html('<img src="http://bbxdesign.com/wp-content/themes/the-bbx/derp.png" alt="Herp Derp">');
+      return false;
+    }
+  });
+
   $('#detail-close').click( function() {
     Close();
   });
@@ -229,16 +236,14 @@ $(window).load( function() {
   });
 
   $('#detail-next').click( function(event) {
-    var index = $(this).parent().parent().parent().attr('data-index');
     if (!moving) {
-      Switch(index + 1);
+      Switch(current_index + 1);
     }
   });
 
   $('#detail-previous').click( function(event) {
-    var index = $(this).parent().parent().parent().attr('data-index');
     if (!moving) {
-      Switch(index - 1);
+      Switch(current_index - 1);
     }
   });
 
