@@ -72,55 +72,25 @@ textarea.element{ height: 300px; line-height: 1.5; max-width: 742px; padding: 10
 
 #loading{ background: #f5574c; height: 100%; left: 0; overflow: hidden; position: fixed; top: 0; width: 100%; z-index: 9999;}
 .end#loading{ background: none;}
+.end#loading-atoms{ display: none;}
 #loading-top,
 #loading-bottom{ background: #f5574c; height: 50%; left: 0; position: fixed; width: 100%;}
-#loading-top{ border-bottom: 1px solid white; top: 0;}
-#loading-bottom{ bottom: 0; border-top: 1px solid white;}
-
-#loading-grid, #loading-b{ height: 60px; left: 50%; margin: -42px 0 0 -45px; position: absolute; top: 50%; width: 90px;}
-.end #loading-b{ display: none;}
-
-.loading-b{ background: #f5574c; position: absolute;}
-#loading-b-1{ height: 19px; left: 1px; top: 41px; width: 49px;}
-#loading-b-2{ height: 48px; left: 31px; top: 11px; width: 18px;}
-#loading-b-3{ height: 18px; left: 41px; top: 1px; width: 38px;}
-#loading-b-4{ height: 48px; left: 71px; top: 11px; width: 18px;}
-#loading-b-5{ background: transparent; border: 5px solid transparent; border-bottom-color: #f5574c; border-right-color: #f5574c; height: 0; left: 30px; top: 0; width: 0;}
-#loading-b-6{ background: transparent; border: 5px solid transparent; border-bottom-color: #f5574c; border-left-color: #f5574c; height: 0; left: 78px; top: 1px; width: 0;}
-
-.loading-gh, .loading-gv, .loading-gd, .loading-h, .loading-v, .loading-d{ background: white; height: 1px; position: absolute;}
-.loading-gh, .loading-gv, .loading-gd{ background: #d4362b; display: block;}
-.loading-gh{ width: 90px;}
-#loading-gh-1{ left: 45px; top: 0;}
-#loading-gh-2{ left: 0; top: 20px;}
-#loading-gh-3{ left: -45px; top: 40px;}
-#loading-gh-4{ left: 90px; top: 60px;}
-.loading-gv{ height: 60px; width: 1px}
-#loading-gv-1{ left: 0; top: 0;}
-#loading-gv-2{ left: 30px; top: 20px;}
-#loading-gv-3{ left: 50px; top: 40px;}
-#loading-gv-4{ left: 70px; top: -20px;}
-#loading-gv-5{ left: 90px; top: 80px;}
-#loading-gv-6{ left: 100px; top: 60px;}
-.loading-gd{ width: 90px;}
-
-.loading-h, .loading-v, .loading-d{ display: none;}
-.go .loading-h, .go .loading-v, .go .loading-d{ display: block;}
-#loading-h-1{ left: 0; top: 40px; width: 30px;}
-#loading-h-2{ left: 0; top: 60px; width: 50px;}
-#loading-h-3{ left: 40px; top: 0; width: 40px;}
-#loading-h-4{ left: 50px; top: 20px; width: 20px;}
-#loading-h-5{ left: 70px; top: 60px; width: 20px;}
-.loading-v{ height: 0; width: 1px;}
-#loading-v-1{ height: 50px; left: 90px; top: 10px;}
-#loading-v-2{ height: 40px; left: 70px; top: 20px;}
-#loading-v-3{ height: 40px; left: 50px; top: 20px;}
-#loading-v-4{ height: 30px; left: 30px; top: 10px;}
-#loading-v-5{ height: 20px; left: 0; top: 40px;}
-#loading-d-1, #loading-gd-1{ left: 28px; top: 5px; width: 14px;}
-#loading-d-2, #loading-gd-2{ left: 78px; top: 5px; width: 14px;}
-#loading-gd-1{ left: 34px;}
-#loading-gd-2{ left: 84px;}
+#loading-top{ border-bottom: 2px solid white; top: 0;}
+#loading-bottom{ bottom: 0; border-top: 2px solid white;}
+#loading-atoms,
+.loading-atom,
+#loading-disc,
+#loading-circle{ left: 50%; position: fixed; top: 50%;}
+#loading-atoms{ height: 20px; margin: -11px 0 0 -10px; width: 20px;}
+.loading-atom{ border-radius: 10px; height: 20px; left: 0; top: 0; width: 20px;}
+#loading-atom-1{ background: #379ce0;}
+#loading-atom-2{ background: #78c905;}
+#loading-atom-3{ background: #ecb624;}
+#loading-atom-4{ background: #f5574c;}
+#loading-circle,
+#loading-disc{ border-radius: 50px; margin: -51px 0 0 -50px;}
+#loading-circle{ border: 2px solid white; height: 96px; width: 96px;}
+#loading-disc{ background: white; height: 100px; width: 100px;}
 
 #header{ background: white; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.16); height: 32px; left: 0; line-height: 32px; padding: 14px 0; position: fixed; top: -66px; width: 100%; z-index: 2000;}
 #logo{ background: url(bbx.png) no-repeat 0 0; float: left; height: 32px; margin-left: 14px; padding-left: 40px;}
@@ -469,13 +439,13 @@ a{
 #detail-image{ z-index: 5000;}
 
 @-webkit-keyframes loading-one{
-  0%{ left: 50%; width: 0;}
-  100%{ left: 16%; width: 69%;}
+  0%{ width: 0;}
+  100%{ width: 69%;}
 }
 
 @-webkit-keyframes loading-two{
-  0%{ left: 16%; width: 69%;}
-  100%{ left: 0; width: 100%;}
+  0%{ width: 69%;}
+  100%{ width: 100%;}
 }
 
 @-webkit-keyframes loading-three{
@@ -483,64 +453,48 @@ a{
   100%{ border-width: 0; height: 0; width: 100%;}
 }
 
-@-webkit-keyframes loading-gh{
-  0%{ opacity: 0; margin-left: 0; width: 0;}
-  100%{ opacity: 1; margin-left: -100%; width: 200%;}
+@-webkit-keyframes spin{
+  0% { -webkit-transform: rotate(0deg);}
+  50% { -webkit-transform: rotate(-180deg);}
+  100% { -webkit-transform: rotate(-360deg);}
 }
 
-@-webkit-keyframes loading-gv{
-  0%{ height: 0; opacity: 0; margin-top: 0;}
-  100%{ height: 200%; opacity: 1; margin-top: -50%;}
+@-webkit-keyframes rotate-top-right{
+  0% { -webkit-transform: rotate(0deg);}
+  50% { -webkit-transform: rotate(-180deg); -webkit-transform-origin: 20% 20%;}
+  100% { -webkit-transform: rotate(-360deg);}
 }
 
-@-webkit-keyframes loading-h{
-  0%{ opacity: 0; -webkit-transform: scale(0, 1);}
-  100%{ opacity: 1; -webkit-transform: scale(1, 1);}
+@-webkit-keyframes rotate-top-left{
+  0% { -webkit-transform: rotate(0deg);}
+  50% { -webkit-transform: rotate(180deg); -webkit-transform-origin: 80% 20%;}
+  100% { -webkit-transform: rotate(360deg);}
 }
 
-@-webkit-keyframes loading-v{
-  0%{ opacity: 0; -webkit-transform: scale(1, 0);}
-  100%{ opacity: 1; -webkit-transform: scale(1, 1);}
+@-webkit-keyframes rotate-bottom-right{
+  0% { -webkit-transform: rotate(0deg);}
+  50% { -webkit-transform: rotate(-180deg); -webkit-transform-origin: 80% 80%;}
+  100% { -webkit-transform: rotate(-360deg);}
 }
 
-@-webkit-keyframes loading-d1{
-  0%{ opacity: 0; -webkit-transform: translate(-10px, 10px) rotate(-45deg);}
-  100%{ opacity: 1; -webkit-transform: translate(0, 0) rotate(-45deg);}
+@-webkit-keyframes rotate-bottom-left{
+  0% { -webkit-transform: rotate(0deg);}
+  50% { -webkit-transform: rotate(180deg); -webkit-transform-origin: 20% 80%;}
+  100% { -webkit-transform: rotate(360deg);}
+}
+@-webkit-keyframes circle{
+  0% { -webkit-transform: scale(1.25, 1.25);}
+  100% { -webkit-transform: scale(0, 0);}
 }
 
-@-webkit-keyframes loading-d2{
-  0%{ opacity: 0; -webkit-transform: translate(-10px, -10px) rotate(45deg);}
-  100%{ opacity: 1; -webkit-transform: translate(0, 0) rotate(45deg);}
+@-webkit-keyframes disc{
+  0% { -webkit-transform: scale(0, 0);}
+  100% { -webkit-transform: scale(1, 1);}
 }
 
-@-webkit-keyframes loading-revert-gh{
-  0%{ opacity: 1; margin-left: -100%; width: 200%;}
-  100%{ opacity: 0; margin-left: 0; width: 0;}
-}
-
-@-webkit-keyframes loading-revert-gv{
-  0%{ height: 200%; opacity: 1; margin-top: -50%;}
-  100%{ height: 0; opacity: 0; margin-top: 0;}
-}
-
-@-webkit-keyframes loading-revert-h{
-  0%{ opacity: 1; -webkit-transform: scale(1, 1);}
-  100%{ opacity: 0; -webkit-transform: scale(0, 1);}
-}
-
-@-webkit-keyframes loading-revert-v{
-  0%{ opacity: 1; -webkit-transform: scale(1, 1);}
-  100%{ opacity: 0; -webkit-transform: scale(1, 0);}
-}
-
-@-webkit-keyframes loading-revert-d1{
-  0%{ opacity: 1; -webkit-transform: translate(0, 0) rotate(-45deg);}
-  100%{ opacity: 0; -webkit-transform: translate(-10px, 10px) rotate(-45deg);}
-}
-
-@-webkit-keyframes loading-revert-d2{
-  0%{ opacity: 1; -webkit-transform: translate(0, 0) rotate(45deg);}
-  100%{ opacity: 0; -webkit-transform: translate(-10px, -10px) rotate(45deg);}
+@-webkit-keyframes revert-scale{
+  0% { -webkit-transform: scale(1, 1);}
+  100% { -webkit-transform: scale(0, 0);}
 }
 
 @-webkit-keyframes fade-in{
@@ -679,7 +633,12 @@ a{
   100%{ opacity: 1; -webkit-transform: translateY(0);}
 }
 
-#loading div,
+#loading-top,
+#loading-bottom,
+#loading-atoms,
+.loading-atom,
+#loading-circle,
+#loading-disc,
 .go #hey,
 .go #there,
 .go #view-portfolio,
@@ -707,21 +666,23 @@ a{
 .go #send{ -webkit-animation-duration: 1000ms; -webkit-animation-fill-mode: both; -webkit-animation-timing-function: ease;}
 
 #loading-top,
-#loading-bottom{ -webkit-animation-duration: 5000ms; -webkit-animation-name: loading-one; -webkit-animation-timing-function: cubic-bezier(1, 0, 0, 1);}
-.loading-gh, .loading-gd{ -webkit-animation-name: loading-gh;}
-.loading-gv{ -webkit-animation-name: loading-gv;}
-.go .loading-h{ -webkit-animation-name: loading-h;}
-.go .loading-v{ -webkit-animation-name: loading-v;}
-.go #loading-d-1{ -webkit-animation-name: loading-d1;}
-.go #loading-d-2{ -webkit-animation-name: loading-d2;}
+#loading-bottom{ -webkit-animation-duration: 3000ms; -webkit-animation-name: loading-one; -webkit-animation-timing-function: cubic-bezier(1, 0, 0, 1);}
+#loading-atoms{ -webkit-animation-duration: 1250ms; -webkit-animation-iteration-count: infinite; -webkit-animation-name: spin; -webkit-animation-timing-function: linear;}
+.loading-atom{ -webkit-animation-duration: 1250ms; -webkit-animation-iteration-count: infinite; -webkit-animation-timing-function: linear;}
+#loading-atom-1{ -webkit-animation-name: rotate-top-left;}
+#loading-atom-2{ -webkit-animation-name: rotate-top-right;}
+#loading-atom-3{ -webkit-animation-name: rotate-bottom-left;}
+#loading-atom-4{ -webkit-animation-name: rotate-bottom-right;}
+#loading-circle{ -webkit-animation-duration: 2000ms; -webkit-animation-name: circle; -webkit-animation-timing-function: cubic-bezier(0.48, 0, 0, 1);}
+#loading-disc{ -webkit-animation-duration: 2000ms; -webkit-animation-name: disc; -webkit-animation-timing-function: cubic-bezier(0.48, 0, 0, 1);}
 .go #loading-top,
-.go #loading-bottom{ -webkit-animation-duration: 1000ms; -webkit-animation-name: loading-two; -webkit-animation-timing-function: cubic-bezier(0.08, 0.86, 0.08, 1);}
-.end .loading-gh, .end .loading-gd{ -webkit-animation-name: loading-revert-gh;}
-.end .loading-gv{ -webkit-animation-name: loading-revert-gv;}
-.end .loading-h{ -webkit-animation-name: loading-revert-h;}
-.end .loading-v{ -webkit-animation-name: loading-revert-v;}
-.end #loading-d-1{ -webkit-animation-name: loading-revert-d1;}
-.end #loading-d-2{ -webkit-animation-name: loading-revert-d2;}
+.go #loading-bottom,
+.go #loading-atoms,
+.go #loading-atoms .loading-atom,
+.go #loading-disc{ -webkit-animation-duration: 1000ms; -webkit-animation-name: loading-two; -webkit-animation-timing-function: cubic-bezier(0.08, 0.86, 0.08, 1);}
+.go #loading-atoms,
+.go #loading-atoms .loading-atom,
+.go #loading-disc{-webkit-animation-iteration-count: 1; -webkit-animation-name: revert-scale;}
 .end #loading-top,
 .end #loading-bottom{ -webkit-animation-duration: 1000ms; -webkit-animation-name: loading-three; -webkit-animation-timing-function: cubic-bezier(0.08, 0.86, 0.08, 1);}
 
@@ -857,64 +818,48 @@ a{
   100%{ border-width: 0; height: 0; width: 100%;}
 }
 
-@-moz-keyframes loading-gh{
-  0%{ opacity: 0; margin-left: 0; width: 0;}
-  100%{ opacity: 1; margin-left: -100%; width: 200%;}
+@-moz-keyframes spin{
+  0% { -moz-transform: rotate(0deg);}
+  50% { -moz-transform: rotate(-180deg);}
+  100% { -moz-transform: rotate(-360deg);}
 }
 
-@-moz-keyframes loading-gv{
-  0%{ height: 0; opacity: 0; margin-top: 0;}
-  100%{ height: 200%; opacity: 1; margin-top: -50%;}
+@-moz-keyframes rotate-top-right{
+  0% { -moz-transform: rotate(0deg);}
+  50% { -moz-transform: rotate(-180deg); -moz-transform-origin: 20% 20%;}
+  100% { -moz-transform: rotate(-360deg);}
 }
 
-@-moz-keyframes loading-h{
-  0%{ opacity: 0; -moz-transform: scale(0, 1);}
-  100%{ opacity: 1; -moz-transform: scale(1, 1);}
+@-moz-keyframes rotate-top-left{
+  0% { -moz-transform: rotate(0deg);}
+  50% { -moz-transform: rotate(180deg); -moz-transform-origin: 80% 20%;}
+  100% { -moz-transform: rotate(360deg);}
 }
 
-@-moz-keyframes loading-v{
-  0%{ opacity: 0; -moz-transform: scale(1, 0);}
-  100%{ opacity: 1; -moz-transform: scale(1, 1);}
+@-moz-keyframes rotate-bottom-right{
+  0% { -moz-transform: rotate(0deg);}
+  50% { -moz-transform: rotate(-180deg); -moz-transform-origin: 80% 80%;}
+  100% { -moz-transform: rotate(-360deg);}
 }
 
-@-moz-keyframes loading-d1{
-  0%{ opacity: 0; -moz-transform: translate(-10px, 10px) rotate(-45deg);}
-  100%{ opacity: 1; -moz-transform: translate(0, 0) rotate(-45deg);}
+@-moz-keyframes rotate-bottom-left{
+  0% { -moz-transform: rotate(0deg);}
+  50% { -moz-transform: rotate(180deg); -moz-transform-origin: 20% 80%;}
+  100% { -moz-transform: rotate(360deg);}
+}
+@-moz-keyframes circle{
+  0% { -moz-transform: scale(1.25, 1.25);}
+  100% { -moz-transform: scale(0, 0);}
 }
 
-@-moz-keyframes loading-d2{
-  0%{ opacity: 0; -moz-transform: translate(-10px, -10px) rotate(45deg);}
-  100%{ opacity: 1; -moz-transform: translate(0, 0) rotate(45deg);}
+@-moz-keyframes disc{
+  0% { -moz-transform: scale(0, 0);}
+  100% { -moz-transform: scale(1, 1);}
 }
 
-@-moz-keyframes loading-revert-gh{
-  0%{ opacity: 1; margin-left: -100%; width: 200%;}
-  100%{ opacity: 0; margin-left: 0; width: 0;}
-}
-
-@-moz-keyframes loading-revert-gv{
-  0%{ height: 200%; opacity: 1; margin-top: -50%;}
-  100%{ height: 0; opacity: 0; margin-top: 0;}
-}
-
-@-moz-keyframes loading-revert-h{
-  0%{ opacity: 1; -moz-transform: scale(1, 1);}
-  100%{ opacity: 0; -moz-transform: scale(0, 1);}
-}
-
-@-moz-keyframes loading-revert-v{
-  0%{ opacity: 1; -moz-transform: scale(1, 1);}
-  100%{ opacity: 0; -moz-transform: scale(1, 0);}
-}
-
-@-moz-keyframes loading-revert-d1{
-  0%{ opacity: 1; -moz-transform: translate(0, 0) rotate(-45deg);}
-  100%{ opacity: 0; -moz-transform: translate(-10px, 10px) rotate(-45deg);}
-}
-
-@-moz-keyframes loading-revert-d2{
-  0%{ opacity: 1; -moz-transform: translate(0, 0) rotate(45deg);}
-  100%{ opacity: 0; -moz-transform: translate(-10px, -10px) rotate(45deg);}
+@-moz-keyframes revert-scale{
+  0% { -moz-transform: scale(1, 1);}
+  100% { -moz-transform: scale(0, 0);}
 }
 
 @-moz-keyframes fade-in{
@@ -1045,15 +990,20 @@ a{
 
 @-moz-keyframes drop{
   0%{ opacity: 1; -moz-transform: translateY(0);}
-  100%{ opacity: 0%; -moz-transform: translateY(200px);}
+  100%{ opacity: 0; -moz-transform: translateY(200px);}
 }
 
 @-moz-keyframes revert-drop{
-  0%{ opacity: 0%; -moz-transform: translateY(200px);}
+  0%{ opacity: 0; -moz-transform: translateY(200px);}
   100%{ opacity: 1; -moz-transform: translateY(0);}
 }
 
-#loading div,
+#loading-top,
+#loading-bottom,
+#loading-atoms,
+.loading-atom,
+#loading-circle,
+#loading-disc,
 .go #hey,
 .go #there,
 .go #view-portfolio,
@@ -1081,21 +1031,23 @@ a{
 .go #send{ -moz-animation-duration: 1000ms; -moz-animation-fill-mode: both; -moz-animation-timing-function: ease;}
 
 #loading-top,
-#loading-bottom{ -moz-animation-duration: 5000ms; -moz-animation-name: loading-one; -moz-animation-timing-function: cubic-bezier(1, 0, 0, 1);}
-.loading-gh, .loading-gd{ -moz-animation-name: loading-gh;}
-.loading-gv{ -moz-animation-name: loading-gv;}
-.go .loading-h{ -moz-animation-name: loading-h;}
-.go .loading-v{ -moz-animation-name: loading-v;}
-.go #loading-d-1{ -moz-animation-name: loading-d1;}
-.go #loading-d-2{ -moz-animation-name: loading-d2;}
+#loading-bottom{ -moz-animation-duration: 3000ms; -moz-animation-name: loading-one; -moz-animation-timing-function: cubic-bezier(1, 0, 0, 1);}
+#loading-atoms{ -moz-animation-duration: 1250ms; -moz-animation-iteration-count: infinite; -moz-animation-name: spin; -moz-animation-timing-function: linear;}
+.loading-atom{ -moz-animation-duration: 1250ms; -moz-animation-iteration-count: infinite; -moz-animation-timing-function: linear;}
+#loading-atom-1{ -moz-animation-name: rotate-top-left;}
+#loading-atom-2{ -moz-animation-name: rotate-top-right;}
+#loading-atom-3{ -moz-animation-name: rotate-bottom-left;}
+#loading-atom-4{ -moz-animation-name: rotate-bottom-right;}
+#loading-circle{ -moz-animation-duration: 2000ms; -moz-animation-name: circle; -moz-animation-timing-function: cubic-bezier(0.48, 0, 0, 1);}
+#loading-disc{ -moz-animation-duration: 2000ms; -moz-animation-name: disc; -moz-animation-timing-function: cubic-bezier(0.48, 0, 0, 1);}
 .go #loading-top,
-.go #loading-bottom{ -moz-animation-duration: 1000ms; -moz-animation-name: loading-two; -moz-animation-timing-function: cubic-bezier(0.08, 0.86, 0.08, 1);}
-.end .loading-gh, .end .loading-gd{ -moz-animation-name: loading-revert-gh;}
-.end .loading-gv{ -moz-animation-name: loading-revert-gv;}
-.end .loading-h{ -moz-animation-name: loading-revert-h;}
-.end .loading-v{ -moz-animation-name: loading-revert-v;}
-.end #loading-d-1{ -moz-animation-name: loading-revert-d1;}
-.end #loading-d-2{ -moz-animation-name: loading-revert-d2;}
+.go #loading-bottom,
+.go #loading-atoms,
+.go #loading-atoms .loading-atom,
+.go #loading-disc{ -moz-animation-duration: 1000ms; -moz-animation-name: loading-two; -moz-animation-timing-function: cubic-bezier(0.08, 0.86, 0.08, 1);}
+.go #loading-atoms,
+.go #loading-atoms .loading-atom,
+.go #loading-disc{-moz-animation-iteration-count: 1; -moz-animation-name: revert-scale;}
 .end #loading-top,
 .end #loading-bottom{ -moz-animation-duration: 1000ms; -moz-animation-name: loading-three; -moz-animation-timing-function: cubic-bezier(0.08, 0.86, 0.08, 1);}
 
@@ -1231,64 +1183,48 @@ a{
   100%{ border-width: 0; height: 0; width: 100%;}
 }
 
-@keyframes loading-gh{
-  0%{ opacity: 0; margin-left: 0; width: 0;}
-  100%{ opacity: 1; margin-left: -100%; width: 200%;}
+@keyframes spin{
+  0% { transform: rotate(0deg);}
+  50% { transform: rotate(-180deg);}
+  100% { transform: rotate(-360deg);}
 }
 
-@keyframes loading-gv{
-  0%{ height: 0; opacity: 0; margin-top: 0;}
-  100%{ height: 200%; opacity: 1; margin-top: -50%;}
+@keyframes rotate-top-right{
+  0% { transform: rotate(0deg);}
+  50% { transform: rotate(-180deg); transform-origin: 20% 20%;}
+  100% { transform: rotate(-360deg);}
 }
 
-@keyframes loading-h{
-  0%{ opacity: 0; transform: scale(0, 1);}
-  100%{ opacity: 1; transform: scale(1, 1);}
+@keyframes rotate-top-left{
+  0% { transform: rotate(0deg);}
+  50% { transform: rotate(180deg); transform-origin: 80% 20%;}
+  100% { transform: rotate(360deg);}
 }
 
-@keyframes loading-v{
-  0%{ opacity: 0; transform: scale(1, 0);}
-  100%{ opacity: 1; transform: scale(1, 1);}
+@keyframes rotate-bottom-right{
+  0% { transform: rotate(0deg);}
+  50% { transform: rotate(-180deg); transform-origin: 80% 80%;}
+  100% { transform: rotate(-360deg);}
 }
 
-@keyframes loading-d1{
-  0%{ opacity: 0; transform: translate(-10px, 10px) rotate(-45deg);}
-  100%{ opacity: 1; transform: translate(0, 0) rotate(-45deg);}
+@keyframes rotate-bottom-left{
+  0% { transform: rotate(0deg);}
+  50% { transform: rotate(180deg); transform-origin: 20% 80%;}
+  100% { transform: rotate(360deg);}
+}
+@keyframes circle{
+  0% { transform: scale(1.25, 1.25);}
+  100% { transform: scale(0, 0);}
 }
 
-@keyframes loading-d2{
-  0%{ opacity: 0; transform: translate(-10px, -10px) rotate(45deg);}
-  100%{ opacity: 1; transform: translate(0, 0) rotate(45deg);}
+@keyframes disc{
+  0% { transform: scale(0, 0);}
+  100% { transform: scale(1, 1);}
 }
 
-@keyframes loading-revert-gh{
-  0%{ opacity: 1; margin-left: -100%; width: 200%;}
-  100%{ opacity: 0; margin-left: 0; width: 0;}
-}
-
-@keyframes loading-revert-gv{
-  0%{ height: 200%; opacity: 1; margin-top: -50%;}
-  100%{ height: 0; opacity: 0; margin-top: 0;}
-}
-
-@keyframes loading-revert-h{
-  0%{ opacity: 1; transform: scale(1, 1);}
-  100%{ opacity: 0; transform: scale(0, 1);}
-}
-
-@keyframes loading-revert-v{
-  0%{ opacity: 1; transform: scale(1, 1);}
-  100%{ opacity: 0; transform: scale(1, 0);}
-}
-
-@keyframes loading-revert-d1{
-  0%{ opacity: 1; transform: translate(0, 0) rotate(-45deg);}
-  100%{ opacity: 0; transform: translate(-10px, 10px) rotate(-45deg);}
-}
-
-@keyframes loading-revert-d2{
-  0%{ opacity: 1; transform: translate(0, 0) rotate(45deg);}
-  100%{ opacity: 0; transform: translate(-10px, -10px) rotate(45deg);}
+@keyframes revert-scale{
+  0% { transform: scale(1, 1);}
+  100% { transform: scale(0, 0);}
 }
 
 @keyframes fade-in{
@@ -1419,15 +1355,20 @@ a{
 
 @keyframes drop{
   0%{ opacity: 1; transform: translateY(0);}
-  100%{ opacity: 0%; transform: translateY(200px);}
+  100%{ opacity: 0; transform: translateY(200px);}
 }
 
 @keyframes revert-drop{
-  0%{ opacity: 0%; transform: translateY(200px);}
+  0%{ opacity: 0; transform: translateY(200px);}
   100%{ opacity: 1; transform: translateY(0);}
 }
 
-#loading div,
+#loading-top,
+#loading-bottom,
+#loading-atoms,
+.loading-atom,
+#loading-circle,
+#loading-disc,
 .go #hey,
 .go #there,
 .go #view-portfolio,
@@ -1455,21 +1396,23 @@ a{
 .go #send{ animation-duration: 1000ms; animation-fill-mode: both; animation-timing-function: ease;}
 
 #loading-top,
-#loading-bottom{ animation-duration: 5000ms; animation-name: loading-one; animation-timing-function: cubic-bezier(1, 0, 0, 1);}
-.loading-gh, .loading-gd{ animation-name: loading-gh;}
-.loading-gv{ animation-name: loading-gv;}
-.go .loading-h{ animation-name: loading-h;}
-.go .loading-v{ animation-name: loading-v;}
-.go #loading-d-1{ animation-name: loading-d1;}
-.go #loading-d-2{ animation-name: loading-d2;}
+#loading-bottom{ animation-duration: 3000ms; animation-name: loading-one; animation-timing-function: cubic-bezier(1, 0, 0, 1);}
+#loading-atoms{ animation-duration: 1250ms; animation-iteration-count: infinite; animation-name: spin; animation-timing-function: linear;}
+.loading-atom{ animation-duration: 1250ms; animation-iteration-count: infinite; animation-timing-function: linear;}
+#loading-atom-1{ animation-name: rotate-top-left;}
+#loading-atom-2{ animation-name: rotate-top-right;}
+#loading-atom-3{ animation-name: rotate-bottom-left;}
+#loading-atom-4{ animation-name: rotate-bottom-right;}
+#loading-circle{ animation-duration: 2000ms; animation-name: circle; animation-timing-function: cubic-bezier(0.48, 0, 0, 1);}
+#loading-disc{ animation-duration: 2000ms; animation-name: disc; animation-timing-function: cubic-bezier(0.48, 0, 0, 1);}
 .go #loading-top,
-.go #loading-bottom{ animation-duration: 1000ms; animation-name: loading-two; animation-timing-function: cubic-bezier(0.08, 0.86, 0.08, 1);}
-.end .loading-gh, .end .loading-gd{ animation-name: loading-revert-gh;}
-.end .loading-gv{ animation-name: loading-revert-gv;}
-.end .loading-h{ animation-name: loading-revert-h;}
-.end .loading-v{ animation-name: loading-revert-v;}
-.end #loading-d-1{ animation-name: loading-revert-d1;}
-.end #loading-d-2{ animation-name: loading-revert-d2;}
+.go #loading-bottom,
+.go #loading-atoms,
+.go #loading-atoms .loading-atom,
+.go #loading-disc{ animation-duration: 1000ms; animation-name: loading-two; animation-timing-function: cubic-bezier(0.08, 0.86, 0.08, 1);}
+.go #loading-atoms,
+.go #loading-atoms .loading-atom,
+.go #loading-disc{animation-iteration-count: 1; animation-name: revert-scale;}
 .end #loading-top,
 .end #loading-bottom{ animation-duration: 1000ms; animation-name: loading-three; animation-timing-function: cubic-bezier(0.08, 0.86, 0.08, 1);}
 
